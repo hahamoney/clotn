@@ -1,0 +1,14 @@
+<!--logs.wxml-->
+<view class="container log-list">
+  <block wx:for="{{logs}}" wx:for-item="log">
+    <text class="log-item">{{index + 1}}. {{log}}</text>
+  </block>
+</view>
+/*
+    "pages/index/index", //首页
+    "pages/user/user", //用户页
+    "pages/news/index", //分类信息
+    "pages/news/list", //分类信息内页
+    "pages/news/detail", //信息详情
+    "pages/merchant/index", //商户页
+*/
