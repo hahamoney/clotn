@@ -7,10 +7,27 @@
     "pages/news/detail",
     "pages/merchant/index"
   ],
+    "tabBar": {
+      "list": [
+        {
+          "pagePath": "pages/index/index",
+          "text": "首页"
+        },
+        {
+          "pagePath": "pages/user/user",
+          "text": "日志"
+        }
+      ]
+    },
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
+  },
+  "usingComponents": {
+    "van-cell": "vant-weapp/dist/cell/index",
+    "van-cell-group": "vant-weapp/dist/cell-group/index"
   }
 }
+

@@ -1,14 +1,16 @@
 <view
   class="van-swipe-cell"
   data-key="cell"
-  catchtap="onClick"
+  bindtap="onClick"
   bindtouchstart="startDrag"
-  catchtouchmove="{{ catchMove ? 'noop' : '' }}"
-  capture-bind:touchmove="onDrag"
-  catchtouchend="endDrag"
-  catchtouchcancel="endDrag"
+  bindtouchmove="onDrag"
+  bindtouchend="endDrag"
+  bindtouchcancel="endDrag"
 >
-  <view style="{{ wrapperStyle }}">
+  <view
+    style="{{ wrapperStyle }}"
+    bindtransitionend="onTransitionend"
+  >
     <view wx:if="{{ leftWidth }}" class="van-swipe-cell__left" data-key="left" catch:tap="onClick">
       <slot name="left" />
     </view>

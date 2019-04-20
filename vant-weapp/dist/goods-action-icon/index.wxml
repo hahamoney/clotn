@@ -6,7 +6,6 @@
   loading="{{ loading }}"
   disabled="{{ disabled }}"
   open-type="{{ openType }}"
-  business-id="{{ businessId }}"
   custom-class="van-goods-action-icon"
   session-from="{{ sessionFrom }}"
   app-parameter="{{ appParameter }}"
@@ -20,7 +19,6 @@
   bindopensetting="bindOpenSetting"
   bindgetuserinfo="bindGetUserInfo"
   bindgetphonenumber="bindGetPhoneNumber"
-  bindlaunchapp="bindLaunchApp"
 >
   <view class="van-goods-action-icon__content van-hairline--right">
     <van-icon
@@ -28,8 +26,7 @@
       name="{{ icon }}"
       info="{{ info }}"
       class="van-goods-action-icon__icon"
-      custom-class="icon-class"
     />
-    <text class="text-class">{{ text }}</text>
+    {{ text }}
   </view>
 </van-button>

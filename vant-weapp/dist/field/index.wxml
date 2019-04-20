@@ -10,7 +10,6 @@
   custom-style="{{ customStyle }}"
   title-width="{{ titleWidth }}"
   custom-class="van-field"
-  size="{{ size }}"
 >
   <slot name="left-icon" slot="icon" />
   <slot name="label" slot="title" />
@@ -76,7 +75,7 @@
       <slot name="button" />
     </view>
   </view>
-  <view wx:if="{{ errorMessage }}" class="van-field__error-message {{ utils.bem('field__error', [errorMessageAlign, { disabled, error }]) }}">
+  <view wx:if="{{ errorMessage }}" class="van-field__error-message">
     {{ errorMessage }}
   </view>
 </van-cell>

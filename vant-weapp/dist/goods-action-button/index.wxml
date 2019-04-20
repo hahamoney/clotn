@@ -8,7 +8,6 @@
   disabled="{{ disabled }}"
   open-type="{{ openType }}"
   custom-class="custom-class"
-  business-id="{{ businessId }}"
   session-from="{{ sessionFrom }}"
   app-parameter="{{ appParameter }}"
   send-message-img="{{ sendMessageImg }}"
@@ -21,7 +20,6 @@
   bindopensetting="bindOpenSetting"
   bindgetuserinfo="bindGetUserInfo"
   bindgetphonenumber="bindGetPhoneNumber"
-  bindlaunchapp="bindLaunchApp"
 >
   {{ text }}
 </van-button>
