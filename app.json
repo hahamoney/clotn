@@ -5,6 +5,7 @@
     "pages/news/index",
     "pages/news/list",
     "pages/news/detail",
+    "pages/news/submit",
     "pages/merchant/index"
   ],
     "tabBar": {
@@ -14,8 +15,20 @@
           "text": "首页"
         },
         {
+          "pagePath": "pages/news/index",
+          "text": "分类信息"
+        },
+        {
+          "pagePath": "pages/news/submit",
+          "text": "发布"
+        },
+        {
+          "pagePath": "pages/merchant/index",
+          "text": "商家"
+        },
+        {
           "pagePath": "pages/user/user",
-          "text": "日志"
+          "text": "我的"
         }
       ]
     },
@@ -27,7 +40,13 @@
   },
   "usingComponents": {
     "van-cell": "vant-weapp/dist/cell/index",
-    "van-cell-group": "vant-weapp/dist/cell-group/index"
+    "van-cell-group": "vant-weapp/dist/cell-group/index",
+    "van-row": "vant-weapp/dist/row/index",
+    "van-col": "vant-weapp/dist/col/index",
+    "van-search": "vant-weapp/dist/search/index",
+    "van-notice-bar": "vant-weapp/dist/notice-bar/index",
+      "van-tab": "vant-weapp/dist/tab/index",
+      "van-tabs": "vant-weapp/dist/tabs/index"
   }
 }
 

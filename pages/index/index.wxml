@@ -1,3 +1,10 @@
+<van-search
+  value="{{ value }}"
+  placeholder="请输入搜索关键词"
+  show-action
+  bind:search="onSearch"
+  bind:cancel="onCancel"
+/>
 <swiper
   indicator-dots="{{indicatorDots}}"
   autoplay="{{autoplay}}"
@@ -6,7 +13,7 @@
 >
   <block wx:for="{{imgUrls}}">
     <swiper-item>
-      <image src="{{item}}" class="slide-image"  mode="widthFix" />
+      <image src="{{item}}" style="width:100%" class="slide-image"  mode="widthFix" />
     </swiper-item>
   </block>
 </swiper>
@@ -16,3 +23,57 @@
   />
 
 </van-cell-group>
+
+<van-row>
+    <van-col span="6">
+    <image src="/image/home4.png" class="image_font"  mode="widthFix" />
+     <view>招聘求职</view>
+    </van-col>
+    <van-col span="6">
+     <image src="/image/home3.png" class="image_font"  mode="widthFix" />
+    <view>招租求租</view></van-col>
+    <van-col span="6">
+     <image src="/image/home2.png" class="image_font"  mode="widthFix" />
+    <view>采购找版</view></van-col>
+    <van-col span="6">
+     <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+    <view>产品发布</view>
+    </van-col>
+</van-row>
+
+
+<van-notice-bar
+  mode="closeable"
+  text="通告栏"
+/>
+
+
+<view class="van-hairline--bottom">品质商家
+<text style="float:right">更多></text>
+</view>
+
+  <scroll-view scroll-x="true" style=" white-space: nowrap;height:180rpx;text-align:center;">
+    <view class='hot_merchant' wx:for="{{[1, 2, 3, 4, 5]}}">
+      <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+      <view>品质商家</view>
+    </view>
+  </scroll-view>
+
+  <van-tabs active="0" bind:change="onChange">
+  <van-tab title="最新消息">
+    <view class="news">
+        <view class="title">
+          <view class="messageuser" style="float:left;display:inline-block;">
+             <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+             发布人
+          </view>
+          <view class="tel" style='float:right;display:inline-block;'>
+              拨打电话
+          </view>
+        </view>
+    </view>
+  </van-tab>
+  <van-tab title="热门商家">热门商家</van-tab>
+  <van-tab title="拼车"> 拼车</van-tab>
+<van-tab title="" disabled></van-tab>
+</van-tabs>

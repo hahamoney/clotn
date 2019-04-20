@@ -12,7 +12,8 @@ Page({
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
-    duration: 1000
+    duration: 1000,
+    scrollTop: 100
   },
 
   onLoad: function () {
