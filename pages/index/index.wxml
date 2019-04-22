@@ -49,7 +49,9 @@
 
 
 <view class="van-hairline--bottom">品质商家
-<text style="float:right">更多></text>
+<text style="float:right" bindtap="postmerchant">
+    申请入驻
+</text>
 </view>
 
   <scroll-view scroll-x="true" style=" white-space: nowrap;height:180rpx;text-align:center;">

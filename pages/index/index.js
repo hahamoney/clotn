@@ -17,5 +17,10 @@ Page({
   },
 
   onLoad: function () {
+  },
+  postmerchant(){
+    wx.navigateTo({
+      url: '/pages/merchant/apply',
+    })
   }
 })
