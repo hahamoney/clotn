@@ -1,0 +1,56 @@
+  <view class="infocard">
+    <van-row>
+      <van-col span="22" offset="1">
+        <view class="image_font">
+            <image src="/image/home1.png"  mode="widthFix" />
+        </view>
+        <view class="messageuser">
+            <view>发布人</view> 
+            <view>发布类型</view> 
+        </view>
+        <view class="tel">
+            <van-icon name="phone" color='#fce45a'/>
+        </view>
+        <!-- <view class="news_foot">
+          <van-row>
+            <van-col span="24">
+              <view> 2019-4-21 10:10发布     距离100KM </view>
+              <view>浏览100次     查看详情</view>
+            </van-col>
+          </van-row>
+        </view> -->
+      </van-col>
+    </van-row>
+  </view>
+  <view class="infocard">
+    <van-row>
+      <van-col span="22" offset="1">
+        <view class="image_font">
+            <image src="/image/home1.png"  mode="widthFix" />
+        </view>
+        <view class="messageuser">
+            <view>发布人</view> 
+            <view>发布类型</view> 
+        </view>
+        <view class="tel">
+            <van-icon name="phone" color='#fce45a'/>
+        </view>
+      </van-col>
+    </van-row>
+  </view>
+  <view class="infocard">
+    <van-row>
+      <van-col span="22" offset="1">
+        <view class="image_font">
+            <image src="/image/home1.png"  mode="widthFix" />
+        </view>
+        <view class="messageuser">
+            <view>发布人</view> 
+            <view>发布类型</view> 
+        </view>
+        <view class="tel">
+            <van-icon name="phone" color='#fce45a'/>
+        </view>
+      </van-col>
+    </van-row>
+  </view>

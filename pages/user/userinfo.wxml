@@ -1,0 +1,30 @@
+<van-cell-group>
+  <van-field
+    value="{{ username }}"
+    clearable
+    label="用户名"
+    left-icon="user-circle-o"
+    placeholder="请输入用户名"
+  />
+
+  <van-field
+    value="{{ password }}"
+    clearable
+    type="password"
+    label="密码"
+    left-icon="closed-eye"
+    placeholder="请输入密码"
+  />
+
+  <van-field
+    value="{{ phone }}"
+    type="number"
+    label="手机号码"
+    left-icon="phone-o"
+    placeholder="请输入手机号码"
+    bind:change="checkNum"
+    error-message="{{ errormsg }}"
+  />
+</van-cell-group>
+
+<van-button size="large" type="primary" class="subbtn">提交</van-button>

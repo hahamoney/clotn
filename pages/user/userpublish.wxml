@@ -1,0 +1,106 @@
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="全部">
+    <view class="infocard">
+      <van-row>
+        <van-col span="22" offset="1">
+          <view class="image_font">
+             <image src="/image/home1.png"  mode="widthFix" />
+          </view>
+          <view class="messageuser">
+              <view>发布人</view> 
+              <view>发布类型</view> 
+          </view>
+          <view class="tag">
+              <van-tag>审核中</van-tag>
+          </view>
+        </van-col>
+      </van-row>
+    </view>
+    <view class="infocard">
+      <van-row>
+        <van-col span="22" offset="1">
+          <view class="image_font">
+             <image src="/image/home1.png"  mode="widthFix" />
+          </view>
+          <view class="messageuser">
+              <view>发布人</view> 
+              <view>发布类型</view> 
+          </view>
+          <view class="tag">
+              <van-tag type="success">已通过</van-tag>
+          </view>
+        </van-col>
+      </van-row>
+    </view>
+    <view class="infocard">
+      <van-row>
+        <van-col span="22" offset="1">
+          <view class="image_font">
+             <image src="/image/home1.png"  mode="widthFix" />
+          </view>
+          <view class="messageuser">
+              <view>发布人</view> 
+              <view>发布类型</view> 
+          </view>
+          <view class="tag">
+              <van-tag type="danger">已拒绝</van-tag>
+          </view>
+        </van-col>
+      </van-row>
+    </view>
+  </van-tab>
+  <van-tab title="审核中">
+    <view class="infocard">
+      <van-row>
+        <van-col span="22" offset="1">
+          <view class="image_font">
+             <image src="/image/home1.png"  mode="widthFix" />
+          </view>
+          <view class="messageuser">
+              <view>发布人</view> 
+              <view>发布类型</view> 
+          </view>
+          <view class="tag">
+              <van-tag>审核中</van-tag>
+          </view>
+        </van-col>
+      </van-row>
+    </view>
+  </van-tab>
+  <van-tab title="已通过">
+    <view class="infocard">
+      <van-row>
+        <van-col span="22" offset="1">
+          <view class="image_font">
+             <image src="/image/home1.png"  mode="widthFix" />
+          </view>
+          <view class="messageuser">
+              <view>发布人</view> 
+              <view>发布类型</view> 
+          </view>
+          <view class="tag">
+              <van-tag type="success">已通过</van-tag>
+          </view>
+        </van-col>
+      </van-row>
+    </view>
+  </van-tab>
+  <van-tab title="已拒绝">
+    <view class="infocard">
+      <van-row>
+        <van-col span="22" offset="1">
+          <view class="image_font">
+             <image src="/image/home1.png"  mode="widthFix" />
+          </view>
+          <view class="messageuser">
+              <view>发布人</view> 
+              <view>发布类型</view> 
+          </view>
+          <view class="tag">
+              <van-tag type="danger">已拒绝</van-tag>
+          </view>
+        </van-col>
+      </van-row>
+    </view>
+  </van-tab>
+</van-tabs>

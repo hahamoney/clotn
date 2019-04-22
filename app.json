@@ -1,52 +1,63 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/user/user",
     "pages/news/index",
     "pages/news/list",
     "pages/news/detail",
     "pages/news/submit",
-    "pages/merchant/index"
+    "pages/merchant/index",
+    "pages/user/userinfo",
+    "pages/user/userpublish",
+    "pages/user/userstar"
   ],
-    "tabBar": {
-      "list": [
-        {
-          "pagePath": "pages/index/index",
-          "text": "首页"
-        },
-        {
-          "pagePath": "pages/news/index",
-          "text": "分类信息"
-        },
-        {
-          "pagePath": "pages/news/submit",
-          "text": "发布"
-        },
-        {
-          "pagePath": "pages/merchant/index",
-          "text": "商家"
-        },
-        {
-          "pagePath": "pages/user/user",
-          "text": "我的"
-        }
-      ]
-    },
-  "window":{
-    "backgroundTextStyle":"light",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/news/index",
+        "text": "分类信息"
+      },
+      {
+        "pagePath": "pages/news/submit",
+        "text": "发布"
+      },
+      {
+        "pagePath": "pages/merchant/index",
+        "text": "商家"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的"
+      }
+    ]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "usingComponents": {
+    "van-button": "vant-weapp/dist/button/index",
     "van-cell": "vant-weapp/dist/cell/index",
     "van-cell-group": "vant-weapp/dist/cell-group/index",
-    "van-row": "vant-weapp/dist/row/index",
     "van-col": "vant-weapp/dist/col/index",
-    "van-search": "vant-weapp/dist/search/index",
+    "van-field": "vant-weapp/dist/field/index",
+    "van-nav-bar": "vant-weapp/dist/nav-bar/index",
     "van-notice-bar": "vant-weapp/dist/notice-bar/index",
-      "van-tab": "vant-weapp/dist/tab/index",
-      "van-tabs": "vant-weapp/dist/tabs/index"
-  }
+    "van-panel": "vant-weapp/dist/panel/index",
+    "van-row": "vant-weapp/dist/row/index",
+    "van-search": "vant-weapp/dist/search/index",
+    "van-tab": "vant-weapp/dist/tab/index",
+    "van-tabs": "vant-weapp/dist/tabs/index",
+    "van-tabbar": "vant-weapp/dist/tabbar/index",
+    "van-tabbar-item": "vant-weapp/dist/tabbar-item/index",
+    "van-tag": "vant-weapp/dist/tag/index",
+    "van-icon": "vant-weapp/dist/icon/index"
+  },
+  "sitemapLocation": "sitemap.json"
 }
-

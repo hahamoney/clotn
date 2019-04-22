@@ -1,0 +1,6 @@
+/* pages/user/userinfo.wxss */
+.subbtn{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

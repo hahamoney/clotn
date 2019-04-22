@@ -1,1 +1,87 @@
 /* pages/user/user.wxss */
+page{
+  background-color: rgba(241, 241, 241, 0.705);
+}
+.clear{
+  clear: both;
+}
+.header{
+  background-color: #19b5ff;
+  color: #ffffff;
+  margin: 0;
+  padding: 80rpx 0 80rpx;
+}
+.header_card{
+  width: 90%;
+  margin: 0 auto;
+}
+.headerimg{
+  width: 20%;
+  float: left;
+}
+.headerimg image{
+  width: 100%;
+}
+.username, .usertype{
+  margin: 15rpx 0 0 0;
+  width: 78%;
+  float: right;
+  text-align: left;
+}
+.username{
+  font-size: 32rpx;
+}
+.usertype{
+  font-size: 22rpx;
+}
+.typebox{
+  width: 37%;
+  padding: 3px 10px;
+  background-color: #1e5372;
+  border-radius: 20px; 
+}
+.farrow .van-icon{
+  top: 5rpx;
+  margin-right: 10rpx;
+}
+.rarrow .van-icon{
+  top: 2rpx;
+  margin-left: 15rpx;
+}
+.container{
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  top: -35rpx;
+}
+.containerbox{
+  line-height: 2;
+  border: 0;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+.box_header{
+  padding: 10rpx 15rpx;
+  border-bottom: 1px solid #f2f2f2;
+}
+.box_header text{
+  color: #333333;
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-left: 12rpx;
+}
+.box_header .van-icon{
+  font-size: 38rpx;
+  top: 6rpx;
+}
+.box_container{
+  text-align: center;
+  padding: 20rpx 5%;
+}
+.box_container .van-col{
+  font-size: 24rpx;
+  margin: 0 2%;
+}
+.box_container .van-icon{
+  font-size: 60rpx;
+}
