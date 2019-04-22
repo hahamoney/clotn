@@ -6,7 +6,9 @@
     "pages/news/list",
     "pages/news/detail",
     "pages/news/submit",
-    "pages/merchant/index"
+    "pages/merchant/index",
+    "pages/merchant/apply",
+    "pages/merchant/map"
   ],
     "tabBar": {
       "list": [
@@ -45,8 +47,15 @@
     "van-col": "vant-weapp/dist/col/index",
     "van-search": "vant-weapp/dist/search/index",
     "van-notice-bar": "vant-weapp/dist/notice-bar/index",
-      "van-tab": "vant-weapp/dist/tab/index",
-      "van-tabs": "vant-weapp/dist/tabs/index"
-  }
+    "van-tab": "vant-weapp/dist/tab/index",
+    "van-tabs": "vant-weapp/dist/tabs/index",
+    "van-field": "vant-weapp/dist/field/index",
+    "van-picker": "vant-weapp/dist/picker/index"
+  },
+    "permission": {
+      "scope.userLocation": {
+        "desc": "你的位置信息将用于小程序位置接口的效果展示"
+      }
+    }
 }
 

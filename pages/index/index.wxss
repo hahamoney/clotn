@@ -3,3 +3,4 @@
 .hot_merchant{width:25%;display:inline-block;}
 .messageuser{float:left;display:inline-block;}
 .title{height: 110rpx;}
+.van-hairline--bottom{margin:10rpx  0;}

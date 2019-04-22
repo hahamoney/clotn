@@ -1,0 +1,33 @@
+<form bindsubmit="formSubmit" >
+<van-cell-group>
+  <van-field
+    value="{{ username }}"
+    label="商家名称"
+    placeholder="请输入商家名称"
+    name="merchant_name"
+  />
+
+  <picker bindchange="classify" range-key="name" value="{{index}}" range="{{merchant_classify}}">
+    <view class="picker">
+      行业分类：{{merchant_classify[index].name}}
+    </view>
+  </picker>
+
+    <van-field
+    value="{{ username }}"
+    label="关键字"
+    placeholder="请输入关键字"
+    name="merchant_name"
+  />
+  
+      <van-field
+    value="{{ address }}"
+    label="详细地址"
+    placeholder="地址"
+    name="merchant_name"
+  />
+   <view class='address' bindtap='onChangeAddress'>
+      点击选位置
+ </view>
+  </van-cell-group>
+  </form>
