@@ -63,17 +63,41 @@
   <van-tab title="最新消息">
     <view class="news">
         <view class="title">
-          <view class="messageuser" style="float:left;display:inline-block;">
+          <view class="messageuser">
              <image src="/image/home1.png" class="image_font"  mode="widthFix" />
-             发布人
+          </view>
+          <view class="messageuser">
+              <view>发布人</view> 
+              <view>发布类型</view> 
           </view>
           <view class="tel" style='float:right;display:inline-block;'>
               拨打电话
           </view>
         </view>
+        <view  class="content">
+         发布正文发布正文发布正文发布正文发布正文发布正文发布正文发布正文发布正文
+        </view>
+
+        <view class="image">
+         <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+          <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+           <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+        </view>
+
+        <view class="news_foot">
+         <view> 2019-4-21 10:10发布     距离100KM </view>
+         <view>浏览100次     查看详情</view>
+        </view>
     </view>
   </van-tab>
-  <van-tab title="热门商家">热门商家</van-tab>
+
+
+  <van-tab title="热门商家">
+      <view class="merchant">
+      
+      </view>
+  
+  </van-tab>
   <van-tab title="拼车"> 拼车</van-tab>
 <van-tab title="" disabled></van-tab>
 </van-tabs>

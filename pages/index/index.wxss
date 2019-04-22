@@ -1,3 +1,5 @@
-.van-row{text-align: center;}
+.van-row{text-align: center;margin-top: 10rpx;}
 .image_font{width: 100rpx;}
 .hot_merchant{width:25%;display:inline-block;}
+.messageuser{float:left;display:inline-block;}
+.title{height: 110rpx;}
