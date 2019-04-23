@@ -14,24 +14,36 @@
     "pages/merchant/map"
   ],
   "tabBar": {
+    "color": "#555555",
+    "selectedColor": "#d81e06",
     "list": [
       {
+        "iconPath": "image/icon_1.png",
+        "selectedIconPath": "image/icon_2.png",
         "pagePath": "pages/index/index",
         "text": "首页"
       },
       {
+        "iconPath": "image/icon_3.png",
+        "selectedIconPath": "image/icon_4.png",
         "pagePath": "pages/news/index",
         "text": "分类信息"
       },
       {
+        "iconPath": "image/icon_9.png",
+        "selectedIconPath": "image/icon_9.png",
         "pagePath": "pages/news/submit",
         "text": "发布"
       },
       {
+        "iconPath": "image/icon_5.png",
+        "selectedIconPath": "image/icon_6.png",
         "pagePath": "pages/merchant/index",
         "text": "商家"
       },
       {
+        "iconPath": "image/icon_7.png",
+        "selectedIconPath": "image/icon_8.png",
         "pagePath": "pages/user/user",
         "text": "我的"
       }
@@ -61,12 +73,11 @@
     "van-tabbar-item": "vant-weapp/dist/tabbar-item/index",
     "van-tag": "vant-weapp/dist/tag/index",
     "van-icon": "vant-weapp/dist/icon/index"
-    
   },
-    "permission": {
-      "scope.userLocation": {
-        "desc": "你的位置信息将用于小程序位置接口的效果展示"
-      }
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
     }
+  },
+  "sitemapLocation": "sitemap.json"
 }
-

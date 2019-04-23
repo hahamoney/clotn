@@ -20,24 +20,26 @@
 <van-cell-group>
   <van-cell
     value="总浏览量:123 总量:456"
+    custom-class="countcell"
   />
-
 </van-cell-group>
 
-<van-row>
-    <van-col span="6">
-    <image src="/image/home4.png" class="image_font"  mode="widthFix" />
-     <view>招聘求职</view>
+<van-row custom-class="navbar">
+    <van-col span="5" offset="1">
+      <image src="/image/home4.png" class="image_font"  mode="widthFix" />
+      <view>招聘求职</view>
     </van-col>
-    <van-col span="6">
-     <image src="/image/home3.png" class="image_font"  mode="widthFix" />
-    <view>招租求租</view></van-col>
-    <van-col span="6">
-     <image src="/image/home2.png" class="image_font"  mode="widthFix" />
-    <view>采购找版</view></van-col>
-    <van-col span="6">
-     <image src="/image/home1.png" class="image_font"  mode="widthFix" />
-    <view>产品发布</view>
+    <van-col span="5" offset="1">
+      <image src="/image/home3.png" class="image_font"  mode="widthFix" />
+      <view>招租求租</view>
+    </van-col>
+    <van-col span="5" offset="1">
+      <image src="/image/home2.png" class="image_font"  mode="widthFix" />
+      <view>采购找版</view>
+    </van-col>
+    <van-col span="5" offset="1">
+      <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+      <view>产品发布</view>
     </van-col>
 </van-row>
 

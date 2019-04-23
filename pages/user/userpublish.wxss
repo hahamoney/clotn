@@ -17,7 +17,7 @@ page{
   width: 100%;
 }
 .messageuser{
-  width: 65%;
+  width: 60%;
   float: left;
   margin: 18rpx 0 0 0;
   text-align: left;
@@ -25,8 +25,9 @@ page{
   line-height: 1.5;
 }
 .tag{
-  width:15%;
+  width:20%;
   float:right;
   font-size: 60rpx;
   line-height: 1.5;
+  text-align: right;
 }

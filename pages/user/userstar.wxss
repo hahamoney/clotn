@@ -29,6 +29,7 @@ page{
   float:right;
   font-size: 60rpx;
   line-height: 2.3;
+  text-align: right;
 }
 .news_foot{
   color: #7c7c7c;

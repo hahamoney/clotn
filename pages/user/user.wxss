@@ -75,13 +75,20 @@ page{
   top: 6rpx;
 }
 .box_container{
-  text-align: center;
+  text-align: left;
   padding: 20rpx 5%;
+}
+.box_container text{
+  font-size: 28rpx;
+  line-height: 2.5;
+  color: #333333;
+  margin-left: 20rpx;
 }
 .box_container .van-col{
   font-size: 24rpx;
-  margin: 0 2%;
+  margin: 2% 2% 2% 2%;
 }
 .box_container .van-icon{
   font-size: 60rpx;
+  float: left;
 }

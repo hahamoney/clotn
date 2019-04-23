@@ -39,12 +39,26 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
 					"name": "商户申请页",
-					"pathName": "pages/merchant/apply"
+					"pathName": "pages/merchant/apply",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/user/user",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的发布",
+					"pathName": "pages/user/userpublish",
+					"scene": null
 				}
 			]
 		}
