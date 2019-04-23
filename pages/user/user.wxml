@@ -41,7 +41,7 @@
             <van-icon name="bookmark" color='#ff8447' /><text>我的收藏</text>
           </navigator>
         </van-col>
-    </van-row>
+      </van-row>
     </view>
   </view>
 </view>

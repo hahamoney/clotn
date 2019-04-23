@@ -80,7 +80,7 @@ page{
 }
 .box_container text{
   font-size: 28rpx;
-  line-height: 2.5;
+  line-height: 2.3;
   color: #333333;
   margin-left: 20rpx;
 }
