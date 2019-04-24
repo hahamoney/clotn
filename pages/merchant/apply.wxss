@@ -1,1 +1,26 @@
 /* pages/merchant/apply.wxss */
+page{
+  background-color: rgba(241, 241, 241, 0.705);
+}
+.wbg{
+  background-color: #ffffff;
+}
+.classpicker{
+  padding: 10px 15px;
+  font-size: 14px;
+}
+.address{
+  text-align: right;
+  padding: 10px 15px;
+  font-size: 12px;
+  color: #7c7c7c;
+}
+.address .van-icon{
+  top: 3rpx;
+  margin-left: 5rpx;
+}
+.subbtn{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

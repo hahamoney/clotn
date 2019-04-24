@@ -64,11 +64,10 @@ page{
   margin: 12rpx 0;
 }
 .newscard{
-  padding: 3% 0;
 }
 .tabswitch .newscard .news{
-  width: 90%;
-  margin: 0 auto;
+  padding: 20rpx 4%;
+  margin: 0 0 12rpx 0;
 }
 .tabswitch .newscard .news .messageuser{
 }

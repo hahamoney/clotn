@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -58,6 +58,13 @@
 					"id": -1,
 					"name": "我的发布",
 					"pathName": "pages/user/userpublish",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分类信息",
+					"pathName": "pages/news/index",
 					"scene": null
 				}
 			]
