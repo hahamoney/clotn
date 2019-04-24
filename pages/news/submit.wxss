@@ -1,1 +1,51 @@
 /* pages/news/submit.wxss */
+page{
+  background-color: rgba(241, 241, 241, 0.705);
+}
+.wbg{
+  background-color: #ffffff;
+}
+.image_font{
+  width: 80rpx;
+}
+.noticecard{
+  background-color: #e5f5ff;
+  margin: 20rpx 0;
+  padding: 15rpx 20rpx;
+  font-size: 22rpx;
+  color:#a0aeb6;
+  line-height: 2;
+}
+.apply{
+  margin: 6rpx 0;
+  line-height: 1.8 !important;
+}
+.apply .van-icon{
+  top: 18rpx;
+  font-size: 45rpx;
+  margin-right: 6rpx;
+}
+.van-cell-text{
+  color: #444444;
+  font-size: 26rpx;
+}
+.van-cell-text_2{
+  color: #818181;
+  font-size: 22rpx;
+}
+.choosebar{
+  font-size: 24rpx;
+  color: #555555;
+  margin: 20rpx 0;
+  text-align: center;
+}
+.navbar{
+  margin: 8rpx 0;
+  padding: 30rpx 0;
+  text-align: center;
+}
+.navbar .bartitle{
+  margin-top: 10rpx;
+  color: #333333;
+  font-size: 28rpx;
+}

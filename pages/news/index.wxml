@@ -26,21 +26,23 @@
 </van-cell-group>
 
 <van-row custom-class="navbar wbg">
-  <van-col span="5" offset="1">
-    <image src="/image/home4.png" class="image_font"  mode="widthFix" />
-    <view class='bartitle'>招聘求职</view>
-  </van-col>
-  <van-col span="5" offset="1">
-    <image src="/image/home3.png" class="image_font"  mode="widthFix" />
-    <view class='bartitle'>招租求租</view>
-  </van-col>
-  <van-col span="5" offset="1">
-    <image src="/image/home2.png" class="image_font"  mode="widthFix" />
-    <view class='bartitle'>采购找版</view>
-  </van-col>
-  <van-col span="5" offset="1">
-    <image src="/image/home1.png" class="image_font"  mode="widthFix" />
-    <view class='bartitle'>产品发布</view>
+  <van-col span="22" offset="1">
+    <van-col span="6">
+      <image src="/image/home4.png" class="image_font"  mode="widthFix" />
+      <view class='bartitle'>招聘求职</view>
+    </van-col>
+    <van-col span="6">
+      <image src="/image/home3.png" class="image_font"  mode="widthFix" />
+      <view class='bartitle'>招租求租</view>
+    </van-col>
+    <van-col span="6">
+      <image src="/image/home2.png" class="image_font"  mode="widthFix" />
+      <view class='bartitle'>采购找版</view>
+    </van-col>
+    <van-col span="6">
+      <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+      <view class='bartitle'>产品发布</view>
+    </van-col>
   </van-col>
 </van-row>
 

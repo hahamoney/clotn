@@ -23,13 +23,15 @@
       <van-field
         value="{{ address }}"
         label="详细地址"
-        placeholder="地址"
+        placeholder="输入地址或点击图标选择"
         name="merchant_name"
+        icon="location"
+        bind:click-icon="onChangeAddress"
       />
 
-    <view class='address wbg' bindtap='onChangeAddress'>
+    <!-- <view class='address wbg' bindtap='onChangeAddress'>
         点击选位置<van-icon name="location" />
-      </view>
+      </view> -->
     </van-cell-group>
 
     <van-button size="large" type="primary" class="subbtn">提交</van-button>

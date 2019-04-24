@@ -1,0 +1,38 @@
+/* pages/news/merpublish.wxss */
+page{
+  background-color: rgba(241, 241, 241, 0.705);
+}
+.wbg{
+  background-color: #ffffff;
+}
+.title{
+  padding: 5px 15px;
+  color: #444444;
+  font-size: 28rpx;
+}
+.contentbox .van-field__input{
+  height: 100px;
+}
+.infobox{
+  margin: 12rpx 0;
+}
+.infobox .van-cell{
+  font-size: 26rpx;
+  padding: 8px 15px;
+}
+.hotbox .van-cell{
+  font-size: 26rpx;
+  color: #555555;
+  padding: 8px 15px;
+}
+.xybox{
+  margin: 20rpx 0 12rpx;
+  padding: 8px 15px;
+  font-size: 24rpx;
+  color: #666666;
+}
+.subbtn{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

@@ -1,0 +1,64 @@
+<form>
+  <van-row custom-class="wbg">
+    <van-col span="24">
+      <view class='title'>内容描述</view>
+      <van-cell-group custom-class="contentbox">
+        <van-field
+          value="{{ content }}"
+          label=""
+          type="textarea"
+          placeholder="请输入内容描述"
+          border="{{ false }}"
+        />
+    </van-cell-group>
+    </van-col>
+    <van-col span="22" offset="1">
+    </van-col>
+  </van-row>
+
+  <van-row custom-class="infobox wbg">
+    <van-cell-group>
+      <van-field
+        label="联系人："
+        placeholder="请输入用户名"
+        border="{{ false }}"
+      />
+    </van-cell-group>
+    <van-cell-group>
+      <van-field
+        label="联系方式："
+        placeholder="请输入联系方式"
+        border="{{ false }}"
+        type="number"
+      />
+    </van-cell-group>
+    <van-field
+      value="{{ username }}"
+      label="关键字"
+      placeholder="请输入关键字"
+      name="merchant_name"
+    />
+    <van-cell-group>
+      <van-field
+        value="{{ address }}"
+        label="详细地址"
+        placeholder="输入地址或点击图标选择"
+        name="merchant_name"
+        icon="location"
+        bind:click-icon="onChangeAddress"
+      />
+    </van-cell-group>
+  </van-row>
+
+  <van-row custom-class="hotbox wbg">
+    <van-cell title="是否置顶">
+      <van-switch checked="{{ checked }}" size="20px" active-color="#ffd013" bind:change="onChange" />
+    </van-cell>
+  </van-row>
+
+  <van-row custom-class="xybox">
+    <van-checkbox value="{{ xychecked }}" checked-color="#07c160" bind:change="onxyChange">我已阅读并同意《发布需知》</van-checkbox>
+  </van-row>
+
+  <van-button size="large" type="primary" class="subbtn">提交</van-button>
+</form>

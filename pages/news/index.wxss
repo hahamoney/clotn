@@ -8,33 +8,46 @@ page{
   text-align: center;
 }
 .image_font{
-  width: 100rpx;
+  width: 80rpx;
 }
 .countcell{
-  font-size: 26rpx !important;
+  font-size: 24rpx !important;
 }
 .navbar{
-  padding: 4% 0;
+  padding: 30rpx 0;
 }
 .navbar .bartitle{
   margin-top: 10rpx;
   color: #333333;
-  font-size: 30rpx;
+  font-size: 28rpx;
+}
+.title{
 }
 .noticebar{
   margin: 12rpx 0;
 }
-.scollmerchant{
-  white-space: nowrap;
-  height: 160rpx;
-  text-align:center;
-  padding: 4% 0;
+.van-hairline--bottom{
+  padding:0 25rpx;
+  line-height: 2.5;
 }
-.hot_merchant{
-  width:25%;
-  font-size: 26rpx;
-  color: #444444;
-  display:inline-block;
+.van-hairline--bottom .hairline_1{
+  font-size: 30rpx;
+  text-align: left;
+}
+.van-hairline--bottom .hairline_2{
+  font-size: 30rpx;
+  text-align: right;
+  color: #ff4444;
+}
+.van-hairline--bottom .hairline_1 .van-icon{
+  font-size: 30rpx;
+  top: 3rpx;
+  margin-right: 10rpx; 
+}
+.van-hairline--bottom .hairline_2 .van-icon{
+  font-size: 30rpx;
+  top: 5rpx;
+  margin-left: 5rpx; 
 }
 .tabswitch{
   margin: 12rpx 0;
@@ -59,7 +72,7 @@ page{
   font-size: 26rpx;
 }
 .tabswitch .newscard .news .tel .van-icon{
-  top: 6rpx;
+  top: 8rpx;
   margin-right: 6rpx;
   font-size: 35rpx;
 }
@@ -78,7 +91,7 @@ page{
   margin: 0 10rpx;
 }
 .tabswitch .newscard .news .news_foot{
-  font-size: 22rpx;
+  font-size: 24rpx;
   color: #c2c2c2;
 }
 .tabswitch .newscard .news .news_foot .date{

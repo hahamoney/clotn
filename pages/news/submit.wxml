@@ -1,2 +1,54 @@
-<!--pages/news/submit.wxml-->
-<text>pages/news/submit.wxml</text>
+<van-row custom-class="wbg">
+  <van-col span="20" offset="2" custom-class="noticecard">
+    <text>免责声明：平台发布的所有信息（收费、免费）；平台只负责发布、展示，与平台本身无关，平台不负任何责任。</text>
+  </van-col>
+</van-row>
+
+<van-cell 
+  value="" 
+  icon="shop-o" 
+  is-link
+  url="/pages/merchant/apply" 
+  link-type="navigateTo"
+  custom-class="apply"
+>
+  <view slot="title">
+    <view class="van-cell-text">我是商家，申请入驻</view>
+    <view class="van-cell-text_2">超低成本，网络宣传，简单有效，方便快捷！</view>
+  </view>
+</van-cell>
+
+<van-row custom-class="wbg">
+  <van-col span="24" custom-class="choosebar">
+    <text>—— 请选择您要发布的栏目 ——</text>
+  </van-col>
+</van-row>
+
+<van-row custom-class="navbar wbg">
+  <van-col span="22" offset="1">
+    <van-col span="6">
+      <navigator url="merpublish">
+        <image src="/image/home4.png" class="image_font"  mode="widthFix" />
+        <view class='bartitle'>招聘求职</view>
+      </navigator>
+    </van-col>
+    <van-col span="6">
+      <navigator url="merpublish">
+        <image src="/image/home3.png" class="image_font"  mode="widthFix" />
+        <view class='bartitle'>招租求租</view>
+      </navigator>
+    </van-col>
+    <van-col span="6">
+      <navigator url="merpublish">
+        <image src="/image/home2.png" class="image_font"  mode="widthFix" />
+        <view class='bartitle'>采购找版</view>
+      </navigator>
+    </van-col>
+    <van-col span="6">
+      <navigator url="merpublish">
+        <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+        <view class='bartitle'>产品发布</view>
+      </navigator>
+    </van-col>
+  </van-col>
+</van-row>
