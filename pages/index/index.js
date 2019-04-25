@@ -18,9 +18,19 @@ Page({
 
   onLoad: function () {
   },
-  postmerchant(){
+  postmerchant() {
     wx.navigateTo({
       url: '/pages/merchant/apply',
+    })
+  },
+  newsdetail(){
+    wx.navigateTo({
+      url: '/pages/news/detail',
+    })
+  },
+  newsproduct() {
+    wx.navigateTo({
+      url: '/pages/news/product',
     })
   }
 })

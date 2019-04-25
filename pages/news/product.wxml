@@ -1,0 +1,65 @@
+<van-row custom-class="news wbg">
+  <van-col span="5" custom-class="messageuser">
+    <image src="/image/home2.png" class="image_font"  mode="widthFix" />
+  </van-col>
+  <van-col span="19" custom-class="messagetitle">
+    <view>发布人</view> 
+    <view>
+      <van-tag type="primary">类型</van-tag>
+      <van-tag type="primary">类型</van-tag>
+    </view> 
+    <view class="location">
+      <van-icon name="location" color="#f5641a" /><text>详细地址</text>
+    </view> 
+  </van-col>
+
+  <van-col span="24" custom-class="content">
+    发布正文发布正文发布正文发布正文发布正文发布正文发布正文发布正文发布正文
+  </van-col>
+
+  <van-col span="24" custom-class="image">
+    <view><image src="/image/home1.png" class="image_font"  mode="widthFix" /></view>
+    <view><image src="/image/home1.png" class="image_font"  mode="widthFix" /></view>
+    <view><image src="/image/home1.png" class="image_font"  mode="widthFix" /></view>
+  </van-col>
+
+  <van-col span="24" custom-class="countcell">
+    <view><van-icon name="eye-o" />123人浏览</view>
+    <view><van-icon name="thumb-circle-o" />456人点赞</view>
+  </van-col>
+
+</van-row>
+
+<van-row custom-class="news wbg">
+  <van-cell
+    value="总浏览量:123 总量:456"
+    custom-class="countcell"
+  />
+
+</van-row>
+
+<van-goods-action>
+  <van-goods-action-icon
+    icon="wap-home"
+    text="首页"
+    bind:click="onClickHome"
+  />
+  <van-goods-action-icon
+    icon="share"
+    text="分享"
+    open-type="share"
+    send-message-path
+    send-message-img
+    bind:click="onShareAppMessage"
+  />
+  <van-goods-action-icon
+    icon="star-o"
+    text="收藏"
+    bind:click="onClickStar"
+  />
+  <van-goods-action-button
+    type="warning"
+    text="我要评论"
+    bind:click="onClickCmt"
+  />
+</van-goods-action>

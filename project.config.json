@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 7,
 			"list": [
 				{
 					"id": -1,
@@ -79,6 +79,20 @@
 					"id": -1,
 					"name": "产品发布",
 					"pathName": "pages/news/merpublish",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分类产品列表",
+					"pathName": "pages/news/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "产品详情",
+					"pathName": "pages/news/product",
 					"scene": null
 				}
 			]
