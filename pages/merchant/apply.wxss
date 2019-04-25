@@ -24,3 +24,7 @@ page{
   bottom: 0;
   width: 100%;
 }
+.checkbox{
+  text-align: center;
+  font-size: 28rpx;
+}

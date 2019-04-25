@@ -14,6 +14,8 @@ Page({
     latitude:'',
     merchant_classify:'',
     index:0,
+    facility:'',
+    logo:''
   },
 
 
@@ -21,8 +23,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options);
-
     var obj = this;
       wx.request({
         url: app.data.api+'merchant_classify',
@@ -32,6 +32,14 @@ Page({
           })
         } 
       });
+    wx.request({
+      url: app.data.api + 'merchant_facility',
+      success(res) {
+        obj.setData({
+          facility: res.data
+        })
+      }
+    });
   },
 
   /**
@@ -96,9 +104,32 @@ Page({
      });
   },
 
-  onChangeAddress: function (e) {
+  onChangeAddress(){
     wx.navigateTo({
       url: "/pages/merchant/map"
     });
-  }
+  },
+  upload_logo(){
+    var _this=this;
+    wx.chooseImage({
+      success(res) {
+        wx.uploadFile({
+          url: app.data.api + 'merchant_image',
+          filePath: res.tempFilePaths[0],
+          name: 'file',
+          formData: {
+            type: '1'
+          },
+          success(res) {
+              console.log(res.data)
+              _this.setData({
+                logo:res.data
+              })
+          }
+        })
+      }
+    })
+  },
+
+
 })

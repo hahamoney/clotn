@@ -32,7 +32,21 @@
     <!-- <view class='address wbg' bindtap='onChangeAddress'>
         点击选位置<van-icon name="location" />
       </view> -->
-    </van-cell-group>
+</van-cell-group>
+
+<checkbox-group class="checkbox"  bindchange="checkboxChange">
+<van-row>
+    <label class="radio" wx:for="{{facility}}">
+      <van-col span="8">
+      <checkbox   value="{{item.id}}" checked="{{item.checked}}" />
+      {{item.name}}
+      </van-col>
+    </label>
+
+  </van-row>
+</checkbox-group>
+<van-button size="small" bind:click="upload_logo" >小型按钮</van-button>
+
 
     <van-button size="large" type="primary" class="subbtn">提交</van-button>
   </form>

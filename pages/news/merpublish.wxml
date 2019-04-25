@@ -50,11 +50,11 @@
     </van-cell-group>
   </van-row>
 
-  <van-row custom-class="hotbox wbg">
+  <!-- <van-row custom-class="hotbox wbg">
     <van-cell title="是否置顶">
       <van-switch checked="{{ checked }}" size="20px" active-color="#ffd013" bind:change="onChange" />
     </van-cell>
-  </van-row>
+  </van-row> -->
 
   <van-row custom-class="xybox">
     <van-checkbox value="{{ xychecked }}" checked-color="#07c160" bind:change="onxyChange">我已阅读并同意《发布需知》</van-checkbox>
