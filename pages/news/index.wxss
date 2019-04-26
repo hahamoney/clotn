@@ -116,4 +116,9 @@ page{
   width: 50%;
   float: right;
   text-align: right;
+  color: #f56161;
+}
+.tabswitch .newscard .news .news_foot .more .van-icon{
+  margin-left: 5px;
+  top: 5rpx;
 }

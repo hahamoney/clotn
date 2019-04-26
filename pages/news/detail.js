@@ -7,5 +7,11 @@ Page({
   data: {
 
   },
+  
+  newsproduct() {
+    wx.navigateTo({
+      url: '/pages/news/product',
+    })
+  }
 
 })

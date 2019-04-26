@@ -27,16 +27,47 @@
     <view><van-icon name="eye-o" />123人浏览</view>
     <view><van-icon name="thumb-circle-o" />456人点赞</view>
   </van-col>
-
 </van-row>
 
-<van-row custom-class="news wbg">
-  <van-cell
-    value="总浏览量:123 总量:456"
-    custom-class="countcell"
-  />
+<van-row custom-class="news2 wbg">
+  <van-col span="22" offset="1" custom-class="title">
+    <van-col span="5">发布时间：</van-col>
+    <van-col span="19">2020-08-08 18:09</van-col>
+  </van-col>
 
+  <van-col span="22" offset="1" custom-class="title">
+    <van-col span="5">联系电话：</van-col>
+    <van-col span="14">800-820-8820</van-col>
+    <van-col span="5" custom-class="phone"><van-tag color="#ff976a"><van-icon name="phone"/>拨打电话</van-tag></van-col>
+  </van-col>
 </van-row>
+
+<van-row custom-class="news3 wbg">
+  <van-col span="22" offset="1" custom-class="title">
+    <van-col span="6">评论</van-col>
+    <van-col span="6" offset="12" custom-class="comment" bindtap="onClickCmt"><van-icon name="comment-o" color="#ff976a" />我要评论</van-col>
+  </van-col>
+  <van-col span="22" offset="1" custom-class="title">
+    暂无评论
+  </van-col>
+</van-row>
+
+<van-popup show="{{ show }}" bind:close="onClose" custom-class="comment">
+  <form>
+    <van-row custom-class="commentbox">
+      <van-col span="22" offset="1">
+        <van-cell title="发表评论" custom-class="title" />
+        <van-field
+          value="{{ comment }}"
+          type="textarea"
+          placeholder="请输入留言"
+        />
+        <van-button size="normal" class="subbtn" bindtap="onClose">取消</van-button>
+        <van-button size="normal" class="subbtn">提交</van-button>
+      </van-col>
+    </van-row>
+  </form>
+</van-popup>
 
 <van-goods-action>
   <van-goods-action-icon

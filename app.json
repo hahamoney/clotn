@@ -71,6 +71,7 @@
     "van-notice-bar": "vant-weapp/dist/notice-bar/index",
     "van-panel": "vant-weapp/dist/panel/index",
     "van-picker": "vant-weapp/dist/picker/index",
+    "van-popup": "vant-weapp/dist/popup/index",
     "van-row": "vant-weapp/dist/row/index",
     "van-checkbox": "vant-weapp/dist/checkbox/index",
     "van-search": "vant-weapp/dist/search/index",

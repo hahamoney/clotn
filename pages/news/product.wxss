@@ -11,16 +11,6 @@ page{
 .image_font{
   width: 120rpx;
 }
-.countcell{
-  font-size: 24rpx !important;
-}
-.countcell view{
-  float: left;
-  margin: 0 20rpx 0 0;
-}
-.countcell .van-icon{
-  font-size: 30rpx;
-}
 .news{
   padding: 20rpx 4%;
   margin: 0 0 12rpx 0;
@@ -40,28 +30,19 @@ page{
 .news .messagetitle .location{
   margin: 10rpx 0 0;
   font-size: 22rpx;
-  color: #c2c2c2;
+  color: #8e8ea7;
 }
 .news .messagetitle .location text{
   margin: 0 0 0 6rpx;
 }
-.news .tel{
-  line-height: 2;
-  font-size: 26rpx;
-}
-.news .tel .van-icon{
-  top: 8rpx;
-  margin-right: 6rpx;
-  font-size: 35rpx;
-}
 .news .content{
   line-height: 1.5;
-  font-size: 28rpx;
+  font-size: 30rpx;
   color: #444444;
   margin: 10px 0;
   padding: 15px 0;
   text-align: left;
-  border-top: 1px solid #d4d2d2;
+  border-top: 1px solid #e6e6e6;
 }
 .news .image{
   margin: 10rpx 0;
@@ -70,27 +51,57 @@ page{
 .news .image .image_font{
   width: 100%;
 }
-.news .news_foot{
-  font-size: 24rpx;
-  color: #c2c2c2;
+.countcell{
+  font-size: 24rpx !important;
+  color:#8e8ea7;
 }
-.news .news_foot .date{
-  width: 50%;
+.countcell view{
   float: left;
+  margin: 0 10rpx 0 0;
+}
+.countcell .van-icon{
+  top: 3rpx;
+  font-size: 30rpx;
+}
+.news2{
+  font-size: 28rpx;
   text-align: left;
+  color:#616166;
+  line-height: 2.5;
+  margin: 0 0 12rpx 0;
 }
-.news .news_foot .distance{
-  width: 50%;
-  float: right;
-  text-align: right;
+.news2 .title{
+  border-bottom: 1px solid #eeeeee;
 }
-.news .news_foot .watchnum{
-  width: 50%;
-  float: left;
+.news2 .title .van-icon{
+  top: 6rpx;
+  font-size: 25rpx;
+  margin: 0 5rpx 0 0;
+}
+.news3{
+  font-size: 28rpx;
   text-align: left;
+  color:#616166;
+  line-height: 2.5;
+  margin: 0 0 60px 0;
 }
-.news .news_foot .more{
-  width: 50%;
-  float: right;
-  text-align: right;
+.news3 .title .comment{
+  color: #ff976a;
+}
+.news3 .title .van-icon{
+  top: 8rpx;
+  font-size: 35rpx;
+  margin: 0 5rpx 0 0;
+}
+.comment{
+  width: 80%;
+}
+.comment .commentbox{
+  background-color: rgba(241, 241, 241, 0.705);
+}
+.comment .commentbox .title{
+  background-color: rgba(241, 241, 241, 0.705);
+}
+.comment .commentbox .subbtn{
+  /* width: 50%; */
 }

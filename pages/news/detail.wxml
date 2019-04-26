@@ -1,6 +1,6 @@
 <van-tabs active="0" custom-class="tabswitch" bind:change="onChange">
   <van-tab custom-class="newscard" title="全部">
-    <view class="news wbg">
+    <view class="news wbg"  bindtap="newsproduct">
       <van-row>
         <van-col span="4" custom-class="messageuser">
           <image src="/image/home1.png" class="image_font"  mode="widthFix" />
@@ -28,17 +28,17 @@
 
         <van-col span="24" custom-class="news_foot">
           <view>
-            <text class="date">2019-4-21 10:10发布</text>
-            <text class="distance">距离100KM</text>
+            <view class="date">2019-4-21 10:10发布</view>
+            <view class="distance">距离100KM</view>
           </view>
           <view>
-            <text class="watchnum">浏览100次</text>
-            <text class="more">查看详情</text>
+            <view class="watchnum">浏览100次</view>
+            <view class="more">查看详情<van-icon name="arrow" /></view>
           </view>
         </van-col>
       </van-row>
     </view>
-    <view class="news wbg">
+    <view class="news wbg"  bindtap="newsproduct">
       <van-row>
         <van-col span="4" custom-class="messageuser">
           <image src="/image/home1.png" class="image_font"  mode="widthFix" />
@@ -66,12 +66,12 @@
 
         <van-col span="24" custom-class="news_foot">
           <view>
-            <text class="date">2019-4-21 10:10发布</text>
-            <text class="distance">距离100KM</text>
+            <view class="date">2019-4-21 10:10发布</view>
+            <view class="distance">距离100KM</view>
           </view>
           <view>
-            <text class="watchnum">浏览100次</text>
-            <text class="more">查看详情</text>
+            <view class="watchnum">浏览100次</view>
+            <view class="more">查看详情<van-icon name="arrow" /></view>
           </view>
         </van-col>
       </van-row>
@@ -79,7 +79,7 @@
   </van-tab>
 
   <van-tab custom-class="newscard" title="找面料">
-    <view class="news wbg">
+    <view class="news wbg"  bindtap="newsproduct">
       <van-row>
         <van-col span="4" custom-class="messageuser">
           <image src="/image/home1.png" class="image_font"  mode="widthFix" />
@@ -107,12 +107,12 @@
 
         <van-col span="24" custom-class="news_foot">
           <view>
-            <text class="date">2019-4-21 10:10发布</text>
-            <text class="distance">距离100KM</text>
+            <view class="date">2019-4-21 10:10发布</view>
+            <view class="distance">距离100KM</view>
           </view>
           <view>
-            <text class="watchnum">浏览100次</text>
-            <text class="more">查看详情</text>
+            <view class="watchnum">浏览100次</view>
+            <view class="more">查看详情<van-icon name="arrow" /></view>
           </view>
         </van-col>
       </van-row>
@@ -120,7 +120,7 @@
   </van-tab>
 
   <van-tab custom-class="newscard" title="找辅料">
-    <view class="news wbg">
+    <view class="news wbg"  bindtap="newsproduct">
       <van-row>
         <van-col span="4" custom-class="messageuser">
           <image src="/image/home1.png" class="image_font"  mode="widthFix" />
@@ -148,12 +148,12 @@
 
         <van-col span="24" custom-class="news_foot">
           <view>
-            <text class="date">2019-4-21 10:10发布</text>
-            <text class="distance">距离100KM</text>
+            <view class="date">2019-4-21 10:10发布</view>
+            <view class="distance">距离100KM</view>
           </view>
           <view>
-            <text class="watchnum">浏览100次</text>
-            <text class="more">查看详情</text>
+            <view class="watchnum">浏览100次</view>
+            <view class="more">查看详情<van-icon name="arrow" /></view>
           </view>
         </van-col>
       </van-row>

@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    show: false
   },
 
   onClickHome() {
@@ -17,6 +17,14 @@ Page({
 
   onClickStar() {
     
+  },
+
+  onClickCmt() {
+    this.setData({ show: true });
+  },
+
+  onClose() {
+    this.setData({ show: false });
   },
 
   /**

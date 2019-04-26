@@ -12,6 +12,11 @@ Page({
     wx.navigateTo({
       url: '/pages/news/detail',
     })
+  },
+  newsproduct() {
+    wx.navigateTo({
+      url: '/pages/news/product',
+    })
   }
 
 })
