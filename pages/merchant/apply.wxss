@@ -23,8 +23,11 @@ page{
   position: fixed;
   bottom: 0;
   width: 100%;
+  display:block;
 }
 .checkbox{
   text-align: center;
   font-size: 28rpx;
 }
+.merchant_image{text-align: center;}
+.one_image{width:200rpx;height: 200rpx;}

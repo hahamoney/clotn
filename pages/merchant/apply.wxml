@@ -45,8 +45,16 @@
 
   </van-row>
 </checkbox-group>
-<van-button size="small" bind:click="upload_logo" >小型按钮</van-button>
 
-
+<view class="merchant_image" >  
+  <view>
+      <van-button size="small" bind:click="upload_logo" >上传logo</van-button>
+      <van-button size="small" bind:click="upload_wechat" >上传微信</van-button>
+  </view>
+  <view>
+      <image  src="{{logo}}"  class="one_image" mode="widthFix" />
+      <image  src="{{wechat}}" class="one_image" mode="widthFix" />
+  </view>
+</view>
     <van-button size="large" type="primary" class="subbtn">提交</van-button>
   </form>

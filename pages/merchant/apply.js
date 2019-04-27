@@ -15,7 +15,9 @@ Page({
     merchant_classify:'',
     index:0,
     facility:'',
-    logo:''
+    logo:'/image/merchant.png',
+    wechat:'/image/merchant.png',
+    image_list:[]
   },
 
 
@@ -121,9 +123,12 @@ Page({
             type: '1'
           },
           success(res) {
-              console.log(res.data)
+            var data = JSON.parse(res.data);
+              var  list=_this.data.image_list
+              list.push(data.id);
               _this.setData({
-                logo:res.data
+                logo:app.data.image+data.path,
+                image_list:list
               })
           }
         })
