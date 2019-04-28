@@ -78,6 +78,9 @@ page{
   font-size: 25rpx;
   margin: 0 5rpx 0 0;
 }
+.news2 .phone{
+  text-align: right;
+}
 .news3{
   font-size: 28rpx;
   text-align: left;
@@ -85,8 +88,9 @@ page{
   line-height: 2.5;
   margin: 0 0 60px 0;
 }
-.news3 .title .comment{
+.news3 .title .commentt{
   color: #ff976a;
+  text-align: right;
 }
 .news3 .title .van-icon{
   top: 8rpx;
@@ -102,6 +106,10 @@ page{
 .comment .commentbox .title{
   background-color: rgba(241, 241, 241, 0.705);
 }
-.comment .commentbox .subbtn{
-  /* width: 50%; */
+.comment .commentbox .subbtn .van-button--normal{
+  margin: 5px 0 0 0;
+  width: 50%;
+}
+.comment .commentbox .contentbox .van-field__input{
+  height: 150px;
 }

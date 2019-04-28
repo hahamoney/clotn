@@ -8,9 +8,10 @@
     />
 
     <picker class="classpicker wbg" bindchange="classify" range-key="name" value="{{index}}" range="{{merchant_classify}}">
-      <view class="picker">
-        行业分类：{{merchant_classify[index].name}}
-      </view>
+      <van-col span="5" custom-class="picker">
+        行业分类：
+      </van-col>
+      <van-col span="18">{{merchant_classify[index].name}}</van-col>
     </picker>
 
       <van-field
@@ -32,29 +33,37 @@
     <!-- <view class='address wbg' bindtap='onChangeAddress'>
         点击选位置<van-icon name="location" />
       </view> -->
-</van-cell-group>
+  </van-cell-group>
 
-<checkbox-group class="checkbox"  bindchange="checkboxChange">
-<van-row>
-    <label class="radio" wx:for="{{facility}}">
-      <van-col span="8">
-      <checkbox   value="{{item.id}}" checked="{{item.checked}}" />
-      {{item.name}}
+  <checkbox-group class="checkbox wbg"  bindchange="checkboxChange">
+    <van-row>
+      <label class="radio" wx:for="{{facility}}">
+        <van-col span="8">
+        <checkbox value="{{item.id}}" checked="{{item.checked}}" />
+        {{item.name}}
+        </van-col>
+      </label>
+    </van-row>
+  </checkbox-group>
+
+  <van-row cunstom-class="merchant_image">
+    <van-row custom-class="upbox">
+      <van-col span="5" offset="1" custom-class="uploadbtn">
+        <van-button size="small" bind:click="upload_logo">上传logo</van-button>
       </van-col>
-    </label>
-
+      <van-col span="18">
+        <image  src="{{logo}}"  class="one_image" mode="widthFix" />
+      </van-col>
+    </van-row>
+    <van-row custom-class="upbox">
+      <van-col span="5" offset="1" custom-class="uploadbtn">
+        <van-button size="small" bind:click="upload_wechat">上传微信</van-button>
+      </van-col>
+      <van-col span="18">
+        <image  src="{{wechat}}" class="one_image" mode="widthFix" />
+      </van-col>
+    </van-row>
   </van-row>
-</checkbox-group>
 
-<view class="merchant_image" >  
-  <view>
-      <van-button size="small" bind:click="upload_logo" >上传logo</van-button>
-      <van-button size="small" bind:click="upload_wechat" >上传微信</van-button>
-  </view>
-  <view>
-      <image  src="{{logo}}"  class="one_image" mode="widthFix" />
-      <image  src="{{wechat}}" class="one_image" mode="widthFix" />
-  </view>
-</view>
-    <van-button size="large" type="primary" class="subbtn">提交</van-button>
-  </form>
+  <van-button size="large" type="primary" class="subbtn">提交</van-button>
+</form>

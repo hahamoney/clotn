@@ -13,7 +13,8 @@
     "pages/user/userpublish",
     "pages/user/userstar",
     "pages/merchant/apply",
-    "pages/merchant/map"
+    "pages/merchant/map",
+    "pages/merchant/merchantdetail"
   ],
   "tabBar": {
     "color": "#555555",
@@ -73,6 +74,7 @@
     "van-picker": "vant-weapp/dist/picker/index",
     "van-popup": "vant-weapp/dist/popup/index",
     "van-row": "vant-weapp/dist/row/index",
+    "van-rate": "vant-weapp/dist/rate/index",
     "van-checkbox": "vant-weapp/dist/checkbox/index",
     "van-search": "vant-weapp/dist/search/index",
     "van-switch": "vant-weapp/dist/switch/index",

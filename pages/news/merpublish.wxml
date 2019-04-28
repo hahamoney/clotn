@@ -10,7 +10,7 @@
           placeholder="请输入内容描述"
           border="{{ false }}"
         />
-    </van-cell-group>
+      </van-cell-group>
     </van-col>
     <van-col span="22" offset="1">
     </van-col>

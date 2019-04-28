@@ -28,6 +28,21 @@ page{
 .checkbox{
   text-align: center;
   font-size: 28rpx;
+  margin: 10px 0;
+  padding: 10px 0;
 }
-.merchant_image{text-align: center;}
-.one_image{width:200rpx;height: 200rpx;}
+.checkbox .van-col{
+  margin: 0 0 10px 0;
+}
+.merchant_image{
+  text-align: center;
+}
+.upbox{
+  margin: 5px 0;
+}
+.uploadbtn{
+  line-height: 2;
+}
+.one_image{
+  width:200rpx;
+}

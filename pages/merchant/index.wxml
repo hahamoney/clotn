@@ -1,2 +1,87 @@
-<!--pages/merchant/index.wxml-->
-<text>pages/merchant/index.wxml</text>
+<van-search
+  value="{{ value }}"
+  placeholder="请输入搜索关键词"
+  show-action
+  bind:search="onSearch"
+  bind:cancel="onCancel"
+/>
+<swiper
+  indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}"
+  interval="{{interval}}"
+  duration="{{duration}}"
+>
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" style="width:100%" class="slide-image"  mode="widthFix" />
+    </swiper-item>
+  </block>
+</swiper>
+<van-cell-group>
+  <van-cell
+    value="总浏览量:123 总量:456"
+    custom-class="countcell"
+  />
+</van-cell-group>
+
+<van-cell-group>
+  <van-cell 
+    title="信息头条" 
+    custom-class="navcell"
+  />
+</van-cell-group>
+<van-row custom-class="navbar wbg">
+  <van-col span="22" offset="1">
+    <van-col span="6" bindtap="newsdetail">
+      <image src="/image/home4.png" class="image_font"  mode="widthFix" />
+      <view class='bartitle'>招聘求职</view>
+    </van-col>
+    <van-col span="6" bindtap="newsdetail">
+      <image src="/image/home3.png" class="image_font"  mode="widthFix" />
+      <view class='bartitle'>招租求租</view>
+    </van-col>
+    <van-col span="6" bindtap="newsdetail">
+      <image src="/image/home2.png" class="image_font"  mode="widthFix" />
+      <view class='bartitle'>采购找版</view>
+    </van-col>
+    <van-col span="6" bindtap="newsdetail">
+      <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+      <view class='bartitle'>产品发布</view>
+    </van-col>
+  </van-col>
+</van-row>
+
+<van-tabs active="0" custom-class="tabswitch" bind:change="onChange">
+  <van-tab custom-class="newscard" title="附近">
+    <view class="news wbg"  bindtap="merchantdetail">
+      <van-row>
+        <van-col span="5" custom-class="messageuser">
+          <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+        </van-col>
+        <van-col span="12" custom-class="messagetitle">
+          <view><van-tag type="danger">置顶</van-tag>发布人</view> 
+          <view class="location">
+            <van-icon name="location" color="#f5641a" /><text>详细地址</text>
+          </view> 
+        </van-col>
+        <van-col span="7" custom-class="tel">
+          <van-icon name="phone" color='#fce45a'/>拨打电话
+        </van-col>
+        <van-col span="19">
+          <view>
+            <view class="rate"><van-rate value="5" size="10" readonly /></view>
+            <view class="distance">10086km</view>
+          </view>
+        </van-col>
+      </van-row>
+    </view>
+  </van-tab>
+
+  <van-tab title="新入">
+    <view class="merchant">
+    
+    </view>
+  </van-tab>
+
+  <van-tab title="热门"> 拼车</van-tab>
+</van-tabs>
