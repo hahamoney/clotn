@@ -105,7 +105,7 @@ page{
   width: 34%;
   float: left;
   font-size: 24rpx;
-  color: #8e8ea7;
+  color: #f5641a;
   text-align: right;
 }
 .tabswitch .newscard .news .tel{

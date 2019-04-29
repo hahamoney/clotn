@@ -1,2 +1,110 @@
-<!--pages/merchant/merchantdetail.wxml-->
-<text>pages/merchant/merchantdetail.wxml</text>
+<van-row custom-class="news wbg">
+  <van-col span="5" custom-class="messageuser">
+    <image src="/image/home2.png" class="image_font"  mode="widthFix" />
+  </van-col>
+  <van-col span="19" custom-class="messagetitle">
+    <view>发布人</view> 
+    <view class="rate">
+      <van-rate value="5" size="18" readonly />
+      <view class="ratetxt">5分</view>
+    </view> 
+  </van-col>
+
+  <van-col span="24" custom-class="countcell">
+    <view>分享：123</view>
+    <view>浏览量：456人</view>
+  </van-col>
+
+  <van-col span="24" custom-class="content">
+    <view class="location">
+      <van-icon name="location" /><text>详细地址</text>
+    </view> 
+    <view class="location">
+      <van-icon name="underway" /><text>09:00-22:00</text>
+    </view>
+    <view class='phone' bindtap="onClickCall">
+      <van-icon name="phone"/>拨打电话
+    </view> 
+  </van-col>
+
+  <van-col span="24" custom-class="content2">
+    <view class="type">
+      <text>刷卡支付</text>
+    </view>
+    <view class="type">
+      <text>免费WIFI</text>
+    </view>
+    <view class="type">
+      <text>禁止吸烟</text>
+    </view>
+    <view class="type">
+      <text>提供包间</text>
+    </view>
+  </van-col>
+</van-row>
+
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="商家详情">
+    <van-row custom-class="news3 wbg">
+      <van-col span="22" offset="1" custom-class="title">
+        商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍
+      </van-col>
+      <van-col span="14" offset="5">
+        <van-button round plain hairline type="warning" size="normal" bindtap='merchantapply'  custom-class="applybtn">我是商家，我要入驻</van-button>
+      </van-col>
+    </van-row>
+  </van-tab>
+  <van-tab title="用户评论">
+    <van-row custom-class="news3 wbg">
+      <van-col span="22" offset="1" custom-class="title">
+        暂无评论
+      </van-col>
+    </van-row>
+  </van-tab>
+</van-tabs>
+
+<van-popup show="{{ show }}" bind:close="onClose" custom-class="comment">
+  <form>
+    <van-row custom-class="commentbox">
+      <van-col span="22" offset="1">
+        <van-cell title="发表评论" custom-class="title" />
+        <van-cell-group custom-class="contentbox">
+          <van-field
+            value="{{ comment }}"
+            type="textarea"
+            custom-class="commentarea"
+            placeholder="请输入留言"
+          />
+        </van-cell-group>
+      </van-col>
+      <van-button class="subbtn" bindtap="onClose">取消</van-button>
+      <van-button class="subbtn">提交</van-button>
+    </van-row>
+  </form>
+</van-popup>
+
+<van-goods-action>
+  <van-goods-action-icon
+    icon="wap-home"
+    text="首页"
+    bind:click="onClickHome"
+  />
+  <van-goods-action-icon
+    icon="share"
+    text="分享"
+    open-type="share"
+    send-message-path
+    send-message-img
+    bind:click="onShareAppMessage"
+  />
+  <van-goods-action-icon
+    icon="star-o"
+    text="收藏"
+    bind:click="onClickStar"
+  />
+  <van-goods-action-button
+    type="warning"
+    text="一键拨号：800-820-8820"
+    bind:click="onClickCall"
+  />
+</van-goods-action>
