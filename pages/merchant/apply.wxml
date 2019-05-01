@@ -7,7 +7,7 @@
       name="merchant_name"
     />
 
-    <picker class="classpicker wbg" bindchange="classify" range-key="name" value="{{index}}" range="{{merchant_classify}}">
+    <picker name="merchant_type" class="classpicker wbg" bindchange="classify" range-key="name" value="{{index}}" range="{{merchant_classify}}">
       <van-col span="5" custom-class="picker">
         行业分类：
       </van-col>
@@ -15,17 +15,16 @@
     </picker>
 
       <van-field
-        value="{{ username }}"
         label="关键字"
         placeholder="请输入关键字"
-        name="merchant_name"
+        name="merchant_keyword"
       />
     
       <van-field
+        name="merchant_city"
         value="{{ address }}"
         label="详细地址"
         placeholder="输入地址或点击图标选择"
-        name="merchant_name"
         icon="location"
         bind:click-icon="onChangeAddress"
       />
@@ -35,7 +34,7 @@
       </view> -->
   </van-cell-group>
 
-  <checkbox-group class="checkbox wbg"  bindchange="checkboxChange">
+  <checkbox-group class="checkbox wbg" name="facility">
     <van-row>
       <label class="radio" wx:for="{{facility}}">
         <van-col span="8">
@@ -63,7 +62,20 @@
         <image  src="{{wechat}}" class="one_image" mode="widthFix" />
       </van-col>
     </van-row>
-  </van-row>
 
-  <van-button size="large" type="primary" class="subbtn">提交</van-button>
+    <van-row custom-class="upbox">
+      <van-col span="5" offset="1" custom-class="uploadbtn">
+        <van-button size="small" bind:click="upload_detail">上传详情</van-button>
+      </van-col>
+      <van-col span="18">
+        <image wx:for="{{merchant_detail_image}}"  src="{{item}}" class="one_image" mode="widthFix" />
+      </van-col>
+    </van-row>
+  </van-row>
+  
+<textarea name="announcement" auto-height placeholder="商家介绍" />
+
+<button type="primary" size="default" open-type="getUserInfo"  bindgetuserinfo="bindGetUserInfo">
+  提交
+</button>
 </form>

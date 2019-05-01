@@ -6,7 +6,7 @@ page{
   background-color: #ffffff;
 }
 .classpicker{
-  padding: 10px 15px;
+  padding: 40rpx 30rpx;
   font-size: 14px;
 }
 .address{
@@ -45,4 +45,5 @@ page{
 }
 .one_image{
   width:200rpx;
+  padding: 0 5rpx;
 }
