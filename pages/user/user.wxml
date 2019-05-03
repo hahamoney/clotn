@@ -1,10 +1,12 @@
 <view class="header">
   <view class="header_card">
     <view class="headerimg">
-      <image src="/image/home1.png" mode="widthFix" />
+      <image src="{{avatarUrl}}" mode="widthFix" />
     </view>
     <view class="username">
-      <text> 用户名 </text>
+    <text bindtap='login'wx:if="{{username}}"> {{username}} </text>
+    <button wx:else size='mini' open-type="getUserInfo"  bindgetuserinfo="bindGetUserInfo">请登陆</button>
+
     </view>
     <!-- <view class="usertype">
       <navigator url="#" class='typebox'><van-icon name="friends" class='farrow'/> 加盟合伙人 < van-icon name="arrow" class='rarrow'/></navigator>

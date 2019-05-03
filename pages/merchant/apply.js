@@ -19,7 +19,7 @@ Page({
     wechat:'/image/merchant.png',
     image_list:[],
     merchant_detail_image: [],
-    merchant_detail_list:[],
+    merchant_banner_image:[]
   },
 
 
@@ -28,6 +28,7 @@ Page({
    */
   onLoad: function (options) {
     var obj = this;
+
       wx.request({
         url: app.data.api+'merchant_classify',
         success(res){
@@ -44,6 +45,8 @@ Page({
         })
       }
     });
+
+    
   },
 
   /**
@@ -121,28 +124,30 @@ Page({
   },
   upload_detail() {
     var _this = this;
-    if (_this.data.merchant_detail_list.length>6){
+    if (_this.data.merchant_detail_image.length>6){
       return false;
     }
           this.upload(3); 
   },
-
+  upload_banner(){
+    var _this = this;
+    if (_this.data.merchant_banner_image.length > 4) {
+      return false;
+    }
+    this.upload(4); 
+  },
   upload(type){
     var _this=this;
     var image,list;
-    if(type == 1){
-      image = _this.data.logo;
-    }
-
-    if(type == 2){
-      image = _this.data.wechat;
-    }
-
     list = _this.data.image_list;
+
 
     if(type == 3){
       image = _this.data.merchant_detail_image;
-      list = _this.data.merchant_detail_list;
+    }
+
+    if(type == 4){
+      image = _this.data.merchant_banner_image;
     }
 
       wx.chooseImage({
@@ -157,15 +162,6 @@ Page({
           success(res) {
            var data= JSON.parse(res.data);
             list.push(data.id);
-            if(type == 3){
-              image.push(app.data.image+data.path);
-              _this.setData({
-                merchant_detail_image:image,
-                merchant_detail_list:list
-              })
-              return false;  
-            }
-
             _this.setData({
               image_list:list
             })
@@ -184,6 +180,20 @@ Page({
               return false;
             }
 
+            if (type == 3) {
+              image.push(app.data.image + data.path);
+              _this.setData({
+                merchant_detail_image: image,
+              })
+              return false;
+            }
+            if (type == 4) {
+              image.push(app.data.image + data.path);
+              _this.setData({
+                merchant_banner_image: image,
+              })
+              return false;
+            }
           }
         })
       }
@@ -235,22 +245,5 @@ Page({
         console.log(res);
       }
     })
-  }, bindGetUserInfo(e){
-     console.log(e);
-    wx.login({
-      success(res) {
-            console.log(res);
-        var url = 'https://api.weixin.qq.com/sns/jscode2session?appid=' + app.data.appid+'&secret=' + app.data.appSecret+'&js_code='+res.code+'&grant_type=authorization_code';
-            wx.request({
-              url: url,
-              success(res){
-                console.log(res);
-              }
-            })
-      }
-    })
   }
-
-
-
 })

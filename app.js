@@ -14,5 +14,12 @@ App({
       title: title,
       icon:'none'
     })
+  },
+  check_login(){
+    var user_id = wx.getStorageSync('user_id');
+    if(user_id == ''){
+       wx.navigateBack();
+      return false;
+    }
   }
 })

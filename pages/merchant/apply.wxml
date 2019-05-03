@@ -71,11 +71,20 @@
         <image wx:for="{{merchant_detail_image}}"  src="{{item}}" class="one_image" mode="widthFix" />
       </van-col>
     </van-row>
+
+        <van-row custom-class="upbox">
+      <van-col span="5" offset="1" custom-class="uploadbtn">
+        <van-button size="small" bind:click="upload_banner">上传轮播</van-button>
+      </van-col>
+      <van-col span="18">
+        <image wx:for="{{merchant_banner_image}}"  src="{{item}}" class="one_image" mode="widthFix" />
+      </van-col>
+    </van-row>
   </van-row>
   
 <textarea name="announcement" auto-height placeholder="商家介绍" />
 
-<button type="primary" size="default" open-type="getUserInfo"  bindgetuserinfo="bindGetUserInfo">
+<button type="primary" size="default" form-type="submit">
   提交
 </button>
 </form>
