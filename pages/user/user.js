@@ -12,7 +12,7 @@ Page({
     var username = wx.getStorageSync('username');
     this.setData({
       avatarUrl:avatarUrl,
-      username:username
+      username: username
     })
   },
   bindGetUserInfo(e){

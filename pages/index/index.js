@@ -1,7 +1,8 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+var QQMapWX = require('../../maplib/qqmap-wx-jssdk.js');
+var qqmapsdk;
 Page({
   data: {
     imgUrls: [
@@ -17,6 +18,27 @@ Page({
   },
 
   onLoad: function () {
+    wx.getLocation({
+      type: 'wgs84', // 返回可以用于wx.openLocation的经纬度
+      success(res) {
+        wx.setStorageSync('latitude', res.latitude);
+        wx.setStorageSync('longitude', res.longitude);
+        qqmapsdk = new QQMapWX({
+          key: app.data.mapkey
+        });
+        qqmapsdk.reverseGeocoder({
+          location: {
+            latitude:res.latitude ,
+            longitude: res.longitude
+          },
+          success(r){
+            console.log(r);
+            wx.setStorageSync('city', r.result.ad_info.city);
+          }
+        })
+      }
+    })
+
   },
   postmerchant() {
     wx.navigateTo({
