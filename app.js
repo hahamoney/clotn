@@ -16,9 +16,17 @@ App({
     })
   },
   check_login(){
-    var user_id = wx.getStorageSync('user_id');
-    if(user_id == ''){
-       wx.navigateBack();
+
+    if (!wx.getStorageSync('user_id')){
+      wx.showToast({
+        title: '请登陆',
+        icon:'none',
+        success(res){
+          wx.switchTab({
+            url: '/pages/user/user'
+          });
+        }
+      })
       return false;
     }
   }

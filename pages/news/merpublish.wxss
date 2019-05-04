@@ -35,4 +35,7 @@ page{
   position: fixed;
   bottom: 0;
   width: 100%;
+}.one_image{
+  width:200rpx;
+  padding: 0 5rpx;
 }

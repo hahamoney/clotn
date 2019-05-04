@@ -24,8 +24,9 @@
         name="merchant_city"
         value="{{ address }}"
         label="详细地址"
-        placeholder="输入地址或点击图标选择"
+        placeholder="点击图标选择"
         icon="location"
+        disabled
         bind:click-icon="onChangeAddress"
       />
 
@@ -72,18 +73,25 @@
       </van-col>
     </van-row>
 
-        <van-row custom-class="upbox">
-      <van-col span="5" offset="1" custom-class="uploadbtn">
-        <van-button size="small" bind:click="upload_banner">上传轮播</van-button>
-      </van-col>
-      <van-col span="18">
-        <image wx:for="{{merchant_banner_image}}"  src="{{item}}" class="one_image" mode="widthFix" />
-      </van-col>
-    </van-row>
-  </van-row>
-  
-<textarea name="announcement" auto-height placeholder="商家介绍" />
 
+  </van-row>
+  <van-row custom-class="wbg">
+    <van-col span="24">
+      <view class='title'>商家介绍</view>
+      <van-cell-group custom-class="contentbox">
+        <van-field
+          value="{{ content }}"
+          label=""
+          type="textarea"
+          placeholder="请输入商家介绍"
+          border="{{ false }}"
+          name = 'announcement'
+        />
+      </van-cell-group>
+    </van-col>
+    <van-col span="22" offset="1">
+    </van-col>
+  </van-row>
 <button type="primary" size="default" form-type="submit">
   提交
 </button>

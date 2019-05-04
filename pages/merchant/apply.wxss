@@ -47,3 +47,6 @@ page{
   width:200rpx;
   padding: 0 5rpx;
 }
+.wbg{
+  background-color: #ffffff;
+}

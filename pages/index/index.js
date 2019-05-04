@@ -21,8 +21,8 @@ Page({
     wx.getLocation({
       type: 'wgs84', // 返回可以用于wx.openLocation的经纬度
       success(res) {
-        wx.setStorageSync('latitude', res.latitude);
-        wx.setStorageSync('longitude', res.longitude);
+        wx.setStorageSync('my_latitude', res.latitude);
+        wx.setStorageSync('my_longitude', res.longitude);
         qqmapsdk = new QQMapWX({
           key: app.data.mapkey
         });
@@ -34,6 +34,7 @@ Page({
           success(r){
             console.log(r);
             wx.setStorageSync('city', r.result.ad_info.city);
+            wx.setStorageSync('my_address', r.result.address);
           }
         })
       }

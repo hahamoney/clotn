@@ -200,6 +200,7 @@ Page({
     })
   },
   formSubmit(e){
+    app.check_login();
      var _this=this;
      var data=e.detail.value;;
      console.log(data);

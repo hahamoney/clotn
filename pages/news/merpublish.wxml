@@ -1,4 +1,4 @@
-<form>
+<form bindsubmit='submit'>
   <van-row custom-class="wbg">
     <van-col span="24">
       <view class='title'>内容描述</view>
@@ -9,6 +9,7 @@
           type="textarea"
           placeholder="请输入内容描述"
           border="{{ false }}"
+          name = 'content'
         />
       </van-cell-group>
     </van-col>
@@ -16,12 +17,20 @@
     </van-col>
   </van-row>
 
+<radio-group class="radio-group"  name = 'type'>
+  <label class="radio" wx:for="{{type}}">
+    <radio value="{{item.id}}" checked="{{item.checked}}" />
+    {{item.name}}
+  </label>
+</radio-group>
+
   <van-row custom-class="infobox wbg">
     <van-cell-group>
       <van-field
         label="联系人："
         placeholder="请输入用户名"
         border="{{ false }}"
+        name = 'linkman'
       />
     </van-cell-group>
     <van-cell-group>
@@ -30,6 +39,7 @@
         placeholder="请输入联系方式"
         border="{{ false }}"
         type="number"
+        name = 'link_phone'
       />
     </van-cell-group>
     <van-field
@@ -37,28 +47,34 @@
       label="关键字"
       placeholder="请输入关键字"
       name="merchant_name"
+      name = 'checkword'
     />
     <van-cell-group>
       <van-field
         value="{{ address }}"
         label="详细地址"
-        placeholder="输入地址或点击图标选择"
+        disabled
+        placeholder="点击图标选择"
         name="merchant_name"
         icon="location"
         bind:click-icon="onChangeAddress"
+        name = 'address'
       />
     </van-cell-group>
   </van-row>
 
-  <!-- <van-row custom-class="hotbox wbg">
-    <van-cell title="是否置顶">
-      <van-switch checked="{{ checked }}" size="20px" active-color="#ffd013" bind:change="onChange" />
-    </van-cell>
-  </van-row> -->
-
-  <van-row custom-class="xybox">
+  <!-- <van-row custom-class="xybox">
     <van-checkbox value="{{ xychecked }}" checked-color="#07c160" bind:change="onxyChange">我已阅读并同意《发布需知》</van-checkbox>
+  </van-row> -->
+  <van-row custom-class="upbox">
+    <van-col span="5" offset="1" custom-class="uploadbtn">
+      <van-button size="small" bind:click="upload_detail">上传图片</van-button>
+    </van-col>
+    <van-col span="18">
+      <image wx:for="{{message_image}}"  src="{{item}}" class="one_image" mode="widthFix" />
+    </van-col>
   </van-row>
-
-  <van-button size="large" type="primary" class="subbtn">提交</van-button>
+<button type="primary" size="default" form-type="submit">
+  提交
+</button>
 </form>
