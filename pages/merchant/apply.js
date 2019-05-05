@@ -160,6 +160,7 @@ Page({
             type: type
           },
           success(res) {
+            console.log(res)
            var data= JSON.parse(res.data);
             list.push(data.id);
             _this.setData({

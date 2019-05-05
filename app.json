@@ -12,6 +12,7 @@
     "pages/user/userinfo",
     "pages/user/userpublish",
     "pages/user/userstar",
+    "pages/user/userreply",
     "pages/merchant/apply",
     "pages/merchant/map",
     "pages/merchant/merchantdetail"

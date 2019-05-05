@@ -8,10 +8,10 @@
     />
 
     <picker name="merchant_type" class="classpicker wbg" bindchange="classify" range-key="name" value="{{index}}" range="{{merchant_classify}}">
-      <van-col span="5" custom-class="picker">
+      <van-col span="7" custom-class="picker">
         行业分类：
       </van-col>
-      <van-col span="18">{{merchant_classify[index].name}}</van-col>
+      <van-col span="17">{{merchant_classify[index].name}}</van-col>
     </picker>
 
       <van-field
@@ -34,6 +34,24 @@
         点击选位置<van-icon name="location" />
       </view> -->
   </van-cell-group>
+
+  <van-row custom-class="wbg">
+    <van-col span="24">
+      <view class='title'>商家介绍</view>
+      <van-cell-group custom-class="contentbox">
+        <van-field
+          value="{{ content }}"
+          label=""
+          type="textarea"
+          placeholder="请输入商家介绍"
+          border="{{ false }}"
+          name = 'announcement'
+        />
+      </van-cell-group>
+    </van-col>
+    <van-col span="22" offset="1">
+    </van-col>
+  </van-row>
 
   <checkbox-group class="checkbox wbg" name="facility">
     <van-row>
@@ -75,23 +93,7 @@
 
 
   </van-row>
-  <van-row custom-class="wbg">
-    <van-col span="24">
-      <view class='title'>商家介绍</view>
-      <van-cell-group custom-class="contentbox">
-        <van-field
-          value="{{ content }}"
-          label=""
-          type="textarea"
-          placeholder="请输入商家介绍"
-          border="{{ false }}"
-          name = 'announcement'
-        />
-      </van-cell-group>
-    </van-col>
-    <van-col span="22" offset="1">
-    </van-col>
-  </van-row>
+  
 <button type="primary" size="default" form-type="submit">
   提交
 </button>

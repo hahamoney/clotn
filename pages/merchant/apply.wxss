@@ -32,7 +32,7 @@ page{
   padding: 10px 0;
 }
 .checkbox .van-col{
-  margin: 0 0 10px 0;
+  margin: 8px 0;
 }
 .merchant_image{
   text-align: center;
@@ -47,6 +47,10 @@ page{
   width:200rpx;
   padding: 0 5rpx;
 }
-.wbg{
-  background-color: #ffffff;
+.title{
+  padding: 10px 15px;
+  font-size: 28rpx;
+}
+.contentbox{
+  height: 150px;
 }

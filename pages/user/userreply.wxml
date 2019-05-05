@@ -1,0 +1,40 @@
+<!--pages/user/userreply.wxml-->
+<view class="infocard">
+    <van-row>
+      <van-col span="22" offset="1">
+        <view class="image_font">
+            <image src="/image/home1.png"  mode="widthFix" />
+        </view>
+        <view class="messageuser">
+            <view>发布人</view> 
+            <view>发布类型</view> 
+        </view>
+      </van-col>
+    </van-row>
+  </view>
+  <view class="infocard">
+    <van-row>
+      <van-col span="22" offset="1">
+        <view class="image_font">
+            <image src="/image/home1.png"  mode="widthFix" />
+        </view>
+        <view class="messageuser">
+            <view>发布人</view> 
+            <view>发布类型</view> 
+        </view>
+      </van-col>
+    </van-row>
+  </view>
+  <view class="infocard">
+    <van-row>
+      <van-col span="22" offset="1">
+        <view class="image_font">
+            <image src="/image/home1.png"  mode="widthFix" />
+        </view>
+        <view class="messageuser">
+            <view>发布人</view> 
+            <view>发布类型</view> 
+        </view>
+      </van-col>
+    </van-row>
+  </view>
