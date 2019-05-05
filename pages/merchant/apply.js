@@ -200,6 +200,21 @@ Page({
       }
     })
   },
+  deleteimg(e) {
+    var _this = this;
+    // wx.showModal({
+    //   title: '提示',
+    //   content: '确认删除该图片？',
+    //   success: function (res) {
+
+    //   },
+    //   fail: function (err) {
+
+    //   }
+    // })
+    var index = e.currentTarget.dataset.index;
+    console.log(index)
+  },
   formSubmit(e){
     app.check_login();
      var _this=this;

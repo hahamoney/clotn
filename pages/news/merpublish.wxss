@@ -13,6 +13,14 @@ page{
 .contentbox .van-field__input{
   height: 100px;
 }
+.radio-group{
+  margin: 12rpx 0 12rpx;
+  padding: 8px 15px;
+}
+.radio{
+  font-size:26rpx;
+  margin: 0 10rpx 0 0;
+}
 .infobox{
   margin: 12rpx 0;
 }

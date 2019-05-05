@@ -74,6 +74,7 @@
     "van-panel": "vant-weapp/dist/panel/index",
     "van-picker": "vant-weapp/dist/picker/index",
     "van-popup": "vant-weapp/dist/popup/index",
+    "van-radio": "vant-weapp/dist/radio/index",
     "van-row": "vant-weapp/dist/row/index",
     "van-rate": "vant-weapp/dist/rate/index",
     "van-checkbox": "vant-weapp/dist/checkbox/index",

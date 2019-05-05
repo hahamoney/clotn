@@ -35,7 +35,7 @@ page{
   margin: 8px 0;
 }
 .merchant_image{
-  text-align: center;
+  margin: 50rpx 0 50rpx 0;
 }
 .upbox{
   margin: 5px 0;
@@ -53,4 +53,16 @@ page{
 }
 .contentbox{
   height: 150px;
+}
+.img_list{
+  width: 45%;
+  float: left;
+  margin: 0 1.5%;
+  height: 256rpx;
+}
+.multiclose{
+  position: relative;
+  z-index: 99;
+  top: 27rpx;
+  left: -10rpx;
 }

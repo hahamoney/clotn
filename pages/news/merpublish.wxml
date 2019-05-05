@@ -17,7 +17,7 @@
     </van-col>
   </van-row>
 
-<radio-group class="radio-group"  name = 'type'>
+<radio-group class="radio-group wbg"  name = 'type'>
   <label class="radio" wx:for="{{type}}">
     <radio value="{{item.id}}" checked="{{item.checked}}" />
     {{item.name}}
@@ -74,7 +74,7 @@
       <image wx:for="{{message_image}}"  src="{{item}}" class="one_image" mode="widthFix" />
     </van-col>
   </van-row>
-<button type="primary" size="default" form-type="submit">
+<button type="primary" size="default" form-type="submit" class="subbtn">
   提交
 </button>
 </form>

@@ -64,7 +64,7 @@
     </van-row>
   </checkbox-group>
 
-  <van-row cunstom-class="merchant_image">
+  <van-row custom-class="merchant_image">
     <van-row custom-class="upbox">
       <van-col span="5" offset="1" custom-class="uploadbtn">
         <van-button size="small" bind:click="upload_logo">上传logo</van-button>
@@ -87,11 +87,15 @@
         <van-button size="small" bind:click="upload_detail">上传详情</van-button>
       </van-col>
       <van-col span="18">
-        <image wx:for="{{merchant_detail_image}}"  src="{{item}}" class="one_image" mode="widthFix" />
+        <!-- <image wx:for="{{merchant_detail_image}}"  src="{{item}}" class="one_image" mode="widthFix" />
+        <cover-view data-index="{{index}}" bindtap='delFile'><van-icon name="close"/></cover-view> -->
+
+        <view wx:for="{{merchant_detail_image}}" wx:key="key"  class="img_list">
+            <view class="multiclose" bindtap="deleteimg" data-index="{{index}}"><van-icon name="clear"/></view>
+            <image src="{{item}}" class="one_image" mode="widthFix"></image>
+        </view>
       </van-col>
     </van-row>
-
-
   </van-row>
   
 <button type="primary" size="default" form-type="submit">
