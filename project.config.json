@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 10,
 			"list": [
 				{
 					"id": -1,
@@ -108,6 +108,12 @@
 					"name": "商家详情",
 					"pathName": "pages/merchant/merchantdetail",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商家详情",
+					"pathName": "pages/merchant/merchantdetail",
 					"scene": null
 				}
 			]

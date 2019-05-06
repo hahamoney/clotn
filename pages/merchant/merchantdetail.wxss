@@ -105,6 +105,15 @@ page{
 .news3 .title{
   padding: 10px 0;
 }
+.news3 .title .commentt{
+  color: #ff976a;
+  text-align: right;
+}
+.news3 .title .van-icon{
+  top: 8rpx;
+  font-size: 35rpx;
+  margin: 0 5rpx 0 0;
+}
 .news3 .applybtn{
   margin: 20px 0 10px;
   width: 100%;
@@ -118,9 +127,11 @@ page{
 .comment .commentbox .title{
   background-color: rgba(241, 241, 241, 0.705);
 }
-.comment .commentbox .subbtn .van-button--normal{
+.comment .commentbox .subbtn{
   margin: 5px 0 0 0;
   width: 50%;
+  float: left;
+  font-size: 26rpx;
 }
 .comment .commentbox .contentbox .van-field__input{
   height: 150px;

@@ -19,7 +19,8 @@ Page({
     wechat:'/image/merchant.png',
     image_list:[],
     merchant_detail_image: [],
-    merchant_banner_image:[]
+    merchant_banner_image:[],
+    disabled: false
   },
 
 
@@ -127,7 +128,7 @@ Page({
     if (_this.data.merchant_detail_image.length>6){
       return false;
     }
-          this.upload(3); 
+    this.upload(3); 
   },
   upload_banner(){
     var _this = this;
@@ -137,6 +138,8 @@ Page({
     this.upload(4); 
   },
   upload(type){
+    app.check_login();
+    var user_id = wx.getStorageSync('user_id');
     var _this=this;
     var image,list;
     list = _this.data.image_list;
@@ -157,10 +160,11 @@ Page({
           filePath: res.tempFilePaths[0],
           name: 'file',
           formData: {
-            type: type
+            type: type,
+            user_id: user_id
           },
           success(res) {
-            console.log(res)
+            //console.log(res)
            var data= JSON.parse(res.data);
             list.push(data.id);
             _this.setData({
@@ -219,17 +223,17 @@ Page({
     app.check_login();
      var _this=this;
      var data=e.detail.value;;
-     console.log(data);
+    // console.log(data.merchant_city);return false;
     if (data.merchant_name==null||data.merchant_name.replace(/\s*/g, "")==''){
       app.showMsg('名称不能为空');
       return;
      }
 
-    if (data.merchant_city == null) {
+    if (data.merchant_city == null || data.merchant_city.replace(/\s*/g, "") == '') {
       app.showMsg('地址不能为空');
       return;
     }
-    if (data.merchant_keyword == null || data.merchant_keyword.replace(/\s*/g, "") == '') {
+    if (data.merchant_keyword == null || data.merchant_keyword.replace(/\s*/g, "") == '')   {
       app.showMsg('关键字不能为空');
       return;
     }
@@ -255,11 +259,30 @@ Page({
         announcement: data.announcement,
         image_list: _this.data.image_list,
         merchant_detail_list:_this.data.merchant_detail_list,
-        user_id :1,
+        user_id : user_id,
         longitude: _this.data.longitude,
         latitude:_this.data.latitude,
-      },success(res){
-        console.log(res);
+      },
+      success(res){
+        console.log('success');
+        // var data = JSON.parse(res.data);
+        // if (data.msg == 'success') {
+        //   _this.setData({
+        //     disabled: true
+        //   })
+        //   wx.showToast({
+        //     title: data.data.msg,
+        //     icon: 'none',
+        //     duration: 1500,
+        //     success() {
+        //       setTimeout(function () {
+        //         wx.switchTab({
+        //           url: '/pages/index/index'
+        //         });
+        //       }, 1500)
+        //     }
+        //   })
+        // }
       }
     })
   }

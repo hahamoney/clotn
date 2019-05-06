@@ -98,7 +98,7 @@
     </van-row>
   </van-row>
   
-<button type="primary" size="default" form-type="submit">
+<button type="primary" size="default" form-type="submit" disabled="{{disabled}}">
   提交
 </button>
 </form>

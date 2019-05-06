@@ -15,7 +15,8 @@ Page({
     xychecked: false,
     message_image:[],
     image_list:[],
-    f_type:''
+    f_type:'',
+    disabled: false
   },
   onLoad:function(option){
     var _this = this;
@@ -105,7 +106,7 @@ Page({
     app.check_login();
     var _this = this;
     var data = e.detail.value;;
-    console.log(data);
+    //console.log(data);
     var user_id = wx.getStorageSync('user_id');
     if (data.content == null || data.content.replace(/\s*/g, "") == '') {
       app.showMsg('内容描述不能为空');
@@ -149,15 +150,22 @@ Page({
         f_type: _this.data.f_type
       },
       success(res){
+        _this.setData({
+          disabled: true
+        })
         var data =JSON.parse(res.data);
-        if(res.msg=='success'){
+        console.log(data)
+        if (data.msg=='success'){
           wx.showToast({
-            title: data.msg,
+            title: data.data.msg,
             icon:'none',
+            duration: 1500,
             success(){
-              wx.switchTab({
-                url: '/pages/index/index'
-              });
+              setTimeout(function(){
+                wx.switchTab({
+                  url: '/pages/index/index'
+                });
+              }, 1500)
             }
           })
         }

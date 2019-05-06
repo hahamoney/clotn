@@ -57,6 +57,10 @@
   <van-tab title="用户评论">
     <van-row custom-class="news3 wbg">
       <van-col span="22" offset="1" custom-class="title">
+        <van-col span="6">评论</van-col>
+        <van-col span="6" offset="12" custom-class="commentt" bindtap="onClickCmt"><van-icon name="comment-o" color="#ff976a" />我要评论</van-col>
+      </van-col>
+      <van-col span="22" offset="1" custom-class="title">
         暂无评论
       </van-col>
     </van-row>
@@ -64,21 +68,25 @@
 </van-tabs>
 
 <van-popup show="{{ show }}" bind:close="onClose" custom-class="comment">
-  <form>
+  <form bindsubmit="formSubmit">
     <van-row custom-class="commentbox">
       <van-col span="22" offset="1">
         <van-cell title="发表评论" custom-class="title" />
         <van-cell-group custom-class="contentbox">
           <van-field
+            name="content"
             value="{{ comment }}"
             type="textarea"
-            custom-class="commentarea"
             placeholder="请输入留言"
           />
         </van-cell-group>
       </van-col>
-      <van-button class="subbtn" bindtap="onClose">取消</van-button>
-      <van-button class="subbtn">提交</van-button>
+      <button class="subbtn" bindtap="onClose">
+        取消
+      </button>
+      <button class="subbtn" form-type="submit" disabled="{{disabled}}">
+        提交
+      </button>
     </van-row>
   </form>
 </van-popup>

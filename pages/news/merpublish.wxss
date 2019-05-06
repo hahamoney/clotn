@@ -21,6 +21,11 @@ page{
   font-size:26rpx;
   margin: 0 10rpx 0 0;
 }
+.radio radio{
+  transform:scale(.65);
+  vertical-align:middle;
+  margin: 0 -12rpx 6rpx 0;
+}
 .infobox{
   margin: 12rpx 0;
 }
@@ -43,7 +48,8 @@ page{
   position: fixed;
   bottom: 0;
   width: 100%;
-}.one_image{
+}
+.one_image{
   width:200rpx;
   padding: 0 5rpx;
 }

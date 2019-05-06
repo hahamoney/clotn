@@ -17,12 +17,12 @@
     </van-col>
   </van-row>
 
-<radio-group class="radio-group wbg"  name = 'type'>
-  <label class="radio" wx:for="{{type}}">
-    <radio value="{{item.id}}" checked="{{item.checked}}" />
-    {{item.name}}
-  </label>
-</radio-group>
+  <radio-group class="radio-group wbg"  name = 'type'>
+    <label class="radio" wx:for="{{type}}">
+      <radio value="{{item.id}}" checked="{{item.checked}}" />
+      {{item.name}}
+    </label>
+  </radio-group>
 
   <van-row custom-class="infobox wbg">
     <van-cell-group>
@@ -74,7 +74,7 @@
       <image wx:for="{{message_image}}"  src="{{item}}" class="one_image" mode="widthFix" />
     </van-col>
   </van-row>
-<button type="primary" size="default" form-type="submit" class="subbtn">
+<button type="primary" size="default" form-type="submit" disabled="{{disabled}}"  class="subbtn">
   提交
 </button>
 </form>
