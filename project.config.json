@@ -112,8 +112,9 @@
 				},
 				{
 					"id": -1,
-					"name": "商家详情",
-					"pathName": "pages/merchant/merchantdetail",
+					"name": "商家入驻申请",
+					"pathName": "pages/merchant/apply",
+					"query": "",
 					"scene": null
 				}
 			]

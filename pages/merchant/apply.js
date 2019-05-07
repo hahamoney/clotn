@@ -141,7 +141,7 @@ Page({
     app.check_login();
     var user_id = wx.getStorageSync('user_id');
     var _this=this;
-    var image,list;
+    var image,list,itemid;
     list = _this.data.image_list;
 
 
@@ -187,8 +187,11 @@ Page({
 
             if (type == 3) {
               image.push(app.data.image + data.path);
+              itemid = data.id;
+              console.log('itemid:'+itemid)
               _this.setData({
                 merchant_detail_image: image,
+                itemid: itemid
               })
               return false;
             }
@@ -217,12 +220,41 @@ Page({
     //   }
     // })
     var index = e.currentTarget.dataset.index;
-    console.log(index)
+    var itemid = e.currentTarget.dataset.itemid;
+    var merchant_detail_image = _this.data.merchant_detail_image;
+    console.log('index:'+index);
+    console.log('id:'+itemid);
+    // return false;
+    wx.request({
+      url: app.data.api+'merchant_image',
+      method: 'delete',
+      dataType:'Json',
+      data:{
+        id: itemid,
+      },
+      success(res) {
+        var data = JSON.parse(res.data);
+        if (data.msg == 'success') {
+          merchant_detail_image.splice(index,1)
+          _this.setData({
+            merchant_detail_image: merchant_detail_image
+          })
+        }
+      },
+      fail(err) {
+        wx.showToast({
+          title: '删除失败',
+          icon: 'none',
+          duration: 1500
+        })
+      }
+    })
   },
   formSubmit(e){
     app.check_login();
      var _this=this;
-     var data=e.detail.value;;
+     var data=e.detail.value;
+     var user_id = wx.getStorageSync('user_id');
     // console.log(data.merchant_city);return false;
     if (data.merchant_name==null||data.merchant_name.replace(/\s*/g, "")==''){
       app.showMsg('名称不能为空');

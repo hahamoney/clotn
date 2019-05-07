@@ -9,10 +9,9 @@ Page({
   },
 
   onClickHome() {
-    // console.log('GO!Pikachu!');
-    wx.navigateBack({
-      delta: 1
-    })
+    wx.switchTab({
+      url: '/pages/index/index'
+    });
   },
 
   onClickStar() {
