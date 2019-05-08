@@ -9,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    image_url :app.data.image,
     address: "",
     longitude:'',
     latitude:'',
@@ -186,12 +187,9 @@ Page({
             }
 
             if (type == 3) {
-              image.push(app.data.image + data.path);
-              itemid = data.id;
-              console.log('itemid:'+itemid)
+              image.push(data);
               _this.setData({
                 merchant_detail_image: image,
-                itemid: itemid
               })
               return false;
             }
@@ -219,25 +217,20 @@ Page({
 
     //   }
     // })
+    var id = e.currentTarget.dataset.id;
     var index = e.currentTarget.dataset.index;
-    var itemid = e.currentTarget.dataset.itemid;
-    var merchant_detail_image = _this.data.merchant_detail_image;
-    console.log('index:'+index);
-    console.log('id:'+itemid);
+    var image = _this.data.merchant_detail_image;
     // return false;
     wx.request({
-      url: app.data.api+'merchant_image',
-      method: 'delete',
-      dataType:'Json',
-      data:{
-        id: itemid,
-      },
+      url: app.data.api +'merchant_del',
+      method: 'post',
+      dataType:'json',
+      data:{id: id},
       success(res) {
-        var data = JSON.parse(res.data);
-        if (data.msg == 'success') {
-          merchant_detail_image.splice(index,1)
+        if (res.data.code == '200') {
+          image.splice(index,1)
           _this.setData({
-            merchant_detail_image: merchant_detail_image
+            merchant_detail_image: image
           })
         }
       },

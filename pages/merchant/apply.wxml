@@ -90,9 +90,9 @@
         <!-- <image wx:for="{{merchant_detail_image}}"  src="{{item}}" class="one_image" mode="widthFix" />
         <cover-view data-index="{{index}}" bindtap='delFile'><van-icon name="close"/></cover-view> -->
 
-        <view wx:for="{{merchant_detail_image}}" class="img_list" data-itemid="{{itemid}}" data-index="{{index}}" bindtap="deleteimg">
+        <view wx:for="{{merchant_detail_image}}" class="img_list" data-id="{{item.id}}" data-index="{{index}}" bindtap="deleteimg">
             <view class="multiclose" data-itemid="{{item.id}}"><van-icon name="clear"/></view>
-            <image src="{{item}}" class="one_image" mode="widthFix"></image>
+            <image src="{{image_url}}{{item.path}}" class="one_image" mode="widthFix"></image>
         </view>
       </van-col>
     </van-row>
