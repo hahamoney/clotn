@@ -5,11 +5,10 @@ var QQMapWX = require('../../maplib/qqmap-wx-jssdk.js');
 var qqmapsdk;
 Page({
   data: {
-    imgUrls: [
-      'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
-      'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
-      'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
-    ],
+    imageurl:'',
+    imgUrls: [],
+    merchant_list:[],
+    car_list:[],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
@@ -18,6 +17,20 @@ Page({
   },
 
   onLoad: function () {
+    var _this = this;
+      wx.request({
+        url: app.data.api+'home',
+        success(res){
+          _this.setData({
+            imgUrls:res.data.data.banner,
+            merchant_list:res.data.data.merchant,
+            car:res.data.data.car,
+            imageurl:app.data.image
+          })
+            console.log(res.data.data);
+        }
+      })
+
     wx.getLocation({
       type: 'wgs84', // 返回可以用于wx.openLocation的经纬度
       success(res) {
@@ -54,6 +67,14 @@ Page({
   newsproduct() {
     wx.navigateTo({
       url: '/pages/news/product',
+    })
+  },
+  phone(e){
+      app.phone_call(e.target.dataset.phone)
+  },
+  merchantdetail() {
+    wx.navigateTo({
+      url: '/pages/merchant/merchantdetail',
     })
   }
 })

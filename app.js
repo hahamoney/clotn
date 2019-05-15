@@ -16,7 +16,6 @@ App({
     })
   },
   check_login(){
-
     if (!wx.getStorageSync('user_id')){
       wx.showToast({
         title: '请登陆',
@@ -29,5 +28,14 @@ App({
       })
       return false;
     }
-  }
+  },
+    phone_call(phone){
+      if(phone==''){
+        this.showMsg('没有预留电话哦');
+        return false;
+      }
+      wx.makePhoneCall({
+        phoneNumber: phone // 仅为示例，并非真实的电话号码
+      })
+    }
 })

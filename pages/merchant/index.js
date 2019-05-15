@@ -2,11 +2,10 @@ const app = getApp()
 
 Page({
   data: {
-    imgUrls: [
-      'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
-      'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
-      'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
-    ],
+    imageurl: '',
+    imgUrls: [],
+    merchant_list: [],
+    car_list: [],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
@@ -15,6 +14,19 @@ Page({
   },
 
   onLoad: function () {
+    var _this = this;
+    wx.request({
+      url: app.data.api + 'home',
+      success(res) {
+        _this.setData({
+          imgUrls: res.data.data.banner,
+          merchant_list: res.data.data.merchant,
+          car: res.data.data.car,
+          imageurl: app.data.image
+        })
+        console.log(res.data.data);
+      }
+    })
   },
   postmerchant() {
     wx.navigateTo({

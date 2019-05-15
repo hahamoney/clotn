@@ -134,3 +134,86 @@ page{
   margin-left: 3px;
   top: 5rpx;
 }
+tabswitch .newscard .news{
+  padding: 20rpx 4%;
+  margin: 0 0 12rpx 0;
+}
+.tabswitch .newscard .news .messageuser{
+}
+.tabswitch .newscard .news .messageuser .image_font{
+  width: 120rpx;
+}
+.tabswitch .newscard .news .messagetitle{
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 1.5;
+  margin: 5rpx 0;
+  text-align: left;
+}
+.tabswitch .newscard .news .messagetitle .van-tag{
+  margin: 0 10rpx 0 0;
+}
+.tabswitch .newscard .news .messagetitle .location{
+  margin: 10rpx 0 0;
+  font-size: 22rpx;
+  color: #8e8ea7;
+}
+.tabswitch .newscard .news .messagetitle .location text{
+  margin: 0 0 0 6rpx;
+}
+.tabswitch .newscard .news .rate{
+  width: 60%;
+  float: left;
+  text-align: left;
+}
+.tabswitch .newscard .news .distance{
+  width: 34%;
+  float: left;
+  font-size: 24rpx;
+  color: #f5641a;
+  text-align: right;
+}
+.tabswitch .newscard .news .tel{
+  line-height: 2;
+  font-size: 26rpx;
+}
+.tabswitch .newscard .news .tel .van-icon{
+  top: 8rpx;
+  margin-right: 6rpx;
+  font-size: 35rpx;
+}
+.tabswitch .newscard .news .content{
+  font-size: 28rpx;
+  color: #444444;
+  margin: 10rpx 0;
+  text-align: left;
+}
+.tabswitch .newscard .news .news_foot{
+  font-size: 24rpx;
+  color: #c2c2c2;
+}
+.tabswitch .newscard .news .news_foot .date{
+  width: 50%;
+  float: left;
+  text-align: left;
+}
+.tabswitch .newscard .news .news_foot .distance{
+  width: 50%;
+  float: right;
+  text-align: right;
+}
+.tabswitch .newscard .news .news_foot .watchnum{
+  width: 50%;
+  float: left;
+  text-align: left;
+}
+.tabswitch .newscard .news .news_foot .more{
+  width: 50%;
+  float: right;
+  text-align: right;
+  color: #f56161;
+}
+.tabswitch .newscard .news .news_foot .more .van-icon{
+  margin-left: 3px;
+  top: 5rpx;
+}
