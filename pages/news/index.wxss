@@ -13,6 +13,13 @@ page{
 .countcell{
   font-size: 24rpx !important;
 }
+.navcell{
+  font-weight: 600;
+}
+.navcell2{
+  font-weight: 600;
+  margin-top:10rpx;
+}
 .navbar{
   padding: 30rpx 0;
 }
@@ -49,76 +56,103 @@ page{
   top: 5rpx;
   margin-left: 5rpx; 
 }
+.scollmerchant{
+  white-space: nowrap;
+  height: 160rpx;
+  padding: 4% 0;
+
+}
+.hot_merchant{
+  width:25%;
+  font-size: 26rpx;
+  color: #444444;
+  display:inline-block;
+  text-align:center;
+}
 .tabswitch{
   margin: 12rpx 0;
 }
-.newscard{
-}
-.tabswitch .newscard .news{
+
+.news{
   padding: 20rpx 4%;
   margin: 0 0 12rpx 0;
 }
-.tabswitch .newscard .news .messageuser{
+.news .messageuser{
 }
-.tabswitch .newscard .news .messagetitle{
+.news .messageuser .image_font{
+  width: 120rpx;
+}
+.news .messagetitle{
   color: #333333;
-  font-size: 30rpx;
+  font-size: 28rpx;
   line-height: 1.5;
   margin: 5rpx 0;
   text-align: left;
 }
-.tabswitch .newscard .news .messagetitle .van-tag{
-  margin: 0 5rpx 0 0;
+.news .messagetitle .van-tag{
+  margin: 0 10rpx 0 0;
 }
-.tabswitch .newscard .news .tel{
+.news .messagetitle .location{
+  margin: 10rpx 0 0;
+  font-size: 22rpx;
+  color: #8e8ea7;
+}
+.news .messagetitle .location text{
+  margin: 0 0 0 6rpx;
+}
+.news .rate{
+  width: 60%;
+  float: left;
+  text-align: left;
+}
+.news .distance{
+  width: 34%;
+  float: left;
+  font-size: 24rpx;
+  color: #f5641a;
+  text-align: right;
+}
+.news .tel{
   line-height: 2;
   font-size: 26rpx;
 }
-.tabswitch .newscard .news .tel .van-icon{
+.news .tel .van-icon{
   top: 8rpx;
   margin-right: 6rpx;
   font-size: 35rpx;
 }
-.tabswitch .newscard .news .content{
+.news .content{
   font-size: 28rpx;
   color: #444444;
   margin: 10rpx 0;
   text-align: left;
 }
-.tabswitch .newscard .news .image{
-  margin: 10rpx 0;
-  text-align: left;
-}
-.tabswitch .newscard .news .image .image_font{
-  width: 19%;
-  margin: 0 10rpx;
-}
-.tabswitch .newscard .news .news_foot{
+.news .news_foot{
   font-size: 24rpx;
   color: #c2c2c2;
 }
-.tabswitch .newscard .news .news_foot .date{
+.news .news_foot .date{
   width: 50%;
   float: left;
   text-align: left;
 }
-.tabswitch .newscard .news .news_foot .distance{
+.news .news_foot .distance{
   width: 50%;
   float: right;
   text-align: right;
 }
-.tabswitch .newscard .news .news_foot .watchnum{
+.news .news_foot .watchnum{
   width: 50%;
   float: left;
   text-align: left;
 }
-.tabswitch .newscard .news .news_foot .more{
+.news .news_foot .more{
   width: 50%;
   float: right;
   text-align: right;
   color: #f56161;
 }
-.tabswitch .newscard .news .news_foot .more .van-icon{
+.news .news_foot .more .van-icon{
   margin-left: 3px;
   top: 5rpx;
 }

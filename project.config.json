@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 10,
+			"current": 11,
 			"list": [
 				{
 					"id": -1,
@@ -62,8 +62,8 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "分类信息",
+					"id": 3,
+					"name": "物流信息",
 					"pathName": "pages/news/index",
 					"query": "",
 					"scene": null
@@ -114,6 +114,13 @@
 					"id": -1,
 					"name": "商家入驻申请",
 					"pathName": "pages/merchant/apply",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人物流列表",
+					"pathName": "pages/news/peoplelist",
 					"query": "",
 					"scene": null
 				}

@@ -50,5 +50,17 @@
         <view class='bartitle'>产品发布</view>
       </navigator>
     </van-col>
+    <van-col span="6">
+      <navigator url="merpublish?type=29">
+        <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+        <view class='bartitle'>个人物流</view>
+      </navigator>
+    </van-col>
+    <van-col span="6">
+      <navigator url="merpublish?type=30">
+        <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+        <view class='bartitle'>商家物流</view>
+      </navigator>
+    </van-col>
   </van-col>
 </van-row>

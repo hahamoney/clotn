@@ -1,0 +1,17 @@
+<!--pages/news/peoplelist.wxml-->
+<view>
+  <van-row>
+    <van-col span="5" custom-class="messageuser">
+      <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+    </van-col>
+    <van-col span="12" custom-class="messagetitle">
+      <view>
+        <!-- <van-tag type="danger">置顶</van-tag> -->
+        发布人
+      </view> 
+      <view class="location">
+        <van-icon name="location" color="#f5641a" /><text>详细地址</text>
+      </view> 
+    </van-col>
+  </van-row>
+</view>

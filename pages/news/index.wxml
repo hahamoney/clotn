@@ -22,81 +22,51 @@
     value="总浏览量:123 总量:456"
     custom-class="countcell"
   />
-
 </van-cell-group>
 
-<van-row custom-class="navbar wbg">
-  <van-col span="22" offset="1">
-    <van-col span="6" bindtap="newsdetail">
-      <image src="/image/home4.png" class="image_font"  mode="widthFix" />
-      <view class='bartitle'>招聘求职</view>
-    </van-col>
-    <van-col span="6" bindtap="newsdetail">
-      <image src="/image/home3.png" class="image_font"  mode="widthFix" />
-      <view class='bartitle'>招租求租</view>
-    </van-col>
-    <van-col span="6" bindtap="newsdetail">
-      <image src="/image/home2.png" class="image_font"  mode="widthFix" />
-      <view class='bartitle'>采购找版</view>
-    </van-col>
-    <van-col span="6" bindtap="newsdetail">
+<van-cell-group>
+  <van-cell 
+    title="个人物流" 
+    custom-class="navcell"
+  />
+</van-cell-group>
+  <scroll-view scroll-x="true" class="scollmerchant wbg">
+    <view class='hot_merchant' wx:for="{{ people }}">
+      <navigator url="peoplelist?type={{ people[index].id }}">
       <image src="/image/home1.png" class="image_font"  mode="widthFix" />
-      <view class='bartitle'>产品发布</view>
-    </van-col>
-  </van-col>
-</van-row>
-
-<van-notice-bar
-  mode="closeable"
-  custom-class="noticebar"
-  text="通告栏"
-/>
-<van-tabs active="0" custom-class="tabswitch" bind:change="onChange">
-  <van-tab custom-class="newscard wbg" title="最新消息">
-    <view class="news"  bindtap="newsproduct">
-      <van-row>
-        <van-col span="4" custom-class="messageuser">
-          <image src="/image/home1.png" class="image_font"  mode="widthFix" />
-        </van-col>
-        <van-col span="14" custom-class="messagetitle">
-          <view>发布人</view> 
-          <view>
-            <van-tag >类型</van-tag>
-            <van-tag type="primary">类型</van-tag>
-          </view>
-        </van-col>
-        <van-col span="6" custom-class="tel">
-          <van-icon name="phone" color='#fce45a'/>拨打电话
-        </van-col>
-
-        <van-col span="24" custom-class="content">
-          发布正文发布正文发布正文发布正文发布正文发布正文发布正文发布正文发布正文
-        </van-col>
-
-        <van-col span="24" custom-class="image">
-          <image src="/image/home1.png" class="image_font"  mode="widthFix" />
-          <image src="/image/home1.png" class="image_font"  mode="widthFix" />
-          <image src="/image/home1.png" class="image_font"  mode="widthFix" />
-        </van-col>
-
-        <van-col span="24" custom-class="news_foot">
-          <view>
-            <view class="date">2019-4-21 10:10发布</view>
-            <view class="distance">距离100KM</view>
-          </view>
-          <view>
-            <view class="watchnum">浏览100次</view>
-            <view class="more">查看详情<van-icon name="arrow" /></view>
-          </view>
-        </van-col>
-      </van-row>
+      <view>{{ people[index].name }}</view>
+      </navigator>
     </view>
-  </van-tab>
+  </scroll-view>
 
-  <van-tab title="最新消息" wx:for="{{['1','2']}}">
-    <view class="merchant">
-    
-    </view>
-  </van-tab>
-
-</van-tabs>
+  <van-cell-group>
+    <van-cell 
+      title="商家物流" 
+      custom-class="navcell2"
+    />
+  </van-cell-group>
+  <view class="news wbg"  bindtap="merchantdetail">
+    <van-row>
+      <van-col span="5" custom-class="messageuser">
+        <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+      </van-col>
+      <van-col span="12" custom-class="messagetitle">
+        <view>
+          <!-- <van-tag type="danger">置顶</van-tag> -->
+          发布人
+        </view> 
+        <view class="location">
+          <van-icon name="location" color="#f5641a" /><text>详细地址</text>
+        </view> 
+      </van-col>
+      <van-col span="7" custom-class="tel">
+        <van-icon name="phone" color='#fce45a'/>拨打电话
+      </van-col>
+      <van-col span="19">
+        <view>
+          <view class="rate"><van-rate value="5" size="10" readonly /></view>
+          <view class="distance">10086km</view>
+        </view>
+      </van-col>
+    </van-row>
+  </view>

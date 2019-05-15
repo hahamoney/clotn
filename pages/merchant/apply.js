@@ -289,25 +289,25 @@ Page({
         latitude:_this.data.latitude,
       },
       success(res){
-        console.log('success');
-        // var data = JSON.parse(res.data);
-        // if (data.msg == 'success') {
-        //   _this.setData({
-        //     disabled: true
-        //   })
-        //   wx.showToast({
-        //     title: data.data.msg,
-        //     icon: 'none',
-        //     duration: 1500,
-        //     success() {
-        //       setTimeout(function () {
-        //         wx.switchTab({
-        //           url: '/pages/index/index'
-        //         });
-        //       }, 1500)
-        //     }
-        //   })
-        // }
+        var data = JSON.parse(res.data);
+        console.log(data);
+        if (data.msg == 'success') {
+          _this.setData({
+            disabled: true
+          })
+          wx.showToast({
+            title: data.data.msg,
+            icon: 'none',
+            duration: 1500,
+            success() {
+              setTimeout(function () {
+                wx.switchTab({
+                  url: '/pages/index/index'
+                });
+              }, 1500)
+            }
+          })
+        }
       }
     })
   }

@@ -8,6 +8,7 @@
     "pages/news/submit",
     "pages/news/product",
     "pages/news/merpublish",
+    "pages/news/peoplelist",
     "pages/merchant/index",
     "pages/user/userinfo",
     "pages/user/userpublish",
@@ -31,7 +32,7 @@
         "iconPath": "image/icon_3.png",
         "selectedIconPath": "image/icon_4.png",
         "pagePath": "pages/news/index",
-        "text": "分类信息"
+        "text": "物流信息"
       },
       {
         "iconPath": "image/icon_9.png",

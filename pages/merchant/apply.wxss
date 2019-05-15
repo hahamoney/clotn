@@ -51,7 +51,10 @@ page{
   padding: 10px 15px;
   font-size: 28rpx;
 }
-.contentbox{
+/* .contentbox{
+  height: 150px;
+} */
+.contentbox .van-field__input{
   height: 150px;
 }
 .img_list{
