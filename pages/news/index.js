@@ -20,18 +20,23 @@ Page({
       url: '/pages/news/product',
     })
   },
+  cardetail() {
+    wx.navigateTo({
+      url: '/pages/news/cardetail',
+    })
+  },
 
   onLoad: function (options) {
     var obj = this;
 
-    wx.request({
-      url: app.data.api +'people_type',
-      success(res){
-        obj.setData({
-          people: res.data,
-        })
-      }
-    })
+    // wx.request({
+    //   url: app.data.api +'',
+    //   success(res){
+    //     obj.setData({
+    //       people: res.data,
+    //     })
+    //   }
+    // })
   }
 
 })

@@ -1,17 +1,35 @@
 <!--pages/news/peoplelist.wxml-->
 <view>
-  <van-row>
+  <van-col span="22" offset="1" custom-class="list wbg">
     <van-col span="5" custom-class="messageuser">
-      <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+      <image src="/image/home5.png" class="image_font"  mode="widthFix" />
     </van-col>
-    <van-col span="12" custom-class="messagetitle">
+    <van-col span="18" custom-class="messagetitle">
       <view>
         <!-- <van-tag type="danger">置顶</van-tag> -->
         发布人
       </view> 
       <view class="location">
-        <van-icon name="location" color="#f5641a" /><text>详细地址</text>
-      </view> 
+        <view bindtap="onClickCall"><van-icon name="phone" color='#fce45a'/><text>点击拨打电话：8008208820</text></view>
+        <view><van-icon name="shop" color="#ff5733" /><text>快递公司：东方速递</text></view>
+        <view><van-icon name="location" color="#f5641a" /><text>距离我：10086km</text></view>
+      </view>
     </van-col>
-  </van-row>
+  </van-col>
+  <van-col span="22" offset="1" custom-class="list wbg">
+    <van-col span="5" custom-class="messageuser">
+      <image src="/image/home5.png" class="image_font"  mode="widthFix" />
+    </van-col>
+    <van-col span="18" custom-class="messagetitle">
+      <view>
+        <!-- <van-tag type="danger">置顶</van-tag> -->
+        发布人
+      </view> 
+      <view class="location">
+        <view bindtap="onClickCall"><van-icon name="phone" color='#fce45a'/><text>点击拨打电话：8008208820</text></view>
+        <view><van-icon name="shop" color="#ff5733" /><text>快递公司：东方速递</text></view>
+        <view><van-icon name="location" color="#f5641a" /><text>距离我：10086km</text></view>
+      </view>
+    </van-col>
+  </van-col>
 </view>

@@ -1,1 +1,41 @@
 /* pages/news/peoplelist.wxss */
+page{
+  background-color: rgba(241, 241, 241, 0.705);
+}
+.wbg{
+  background-color: #ffffff;
+}
+.list{
+  margin: 10rpx 0;
+  padding: 20rpx 4%;
+  border-radius: 10rpx;
+}
+.image_font{
+  width: 140rpx;
+}
+.list .messageuser{
+  margin: 6% 4% 0 0;
+}
+.list .messageuser .image_font{
+  width: 100%;
+  text-align: center;
+}
+.list .messagetitle{
+  color: #333333;
+  font-size: 32rpx;
+  line-height: 1.5;
+  margin: 5rpx 0;
+  text-align: left;
+}
+.list .messagetitle .van-tag{
+  margin: 0 5rpx 0 0;
+}
+.list .messagetitle .location{
+  margin: 10rpx 0 0;
+  font-size: 30rpx;
+  color: #666666;
+  line-height: 1.6;
+}
+.list .messagetitle .location text{
+  margin: 0 0 0 10rpx;
+}

@@ -1,0 +1,73 @@
+<van-row custom-class="news wbg">
+  <van-col span="24" custom-class="header">
+    <van-col span="5" custom-class="messageuser">
+      <image src="/image/home2.png" class="image_font"  mode="widthFix" />
+    </van-col>
+    <van-col span="19" custom-class="messagetitle">
+      <view>东方速递</view> 
+    </van-col>
+  </van-col>
+
+  <van-col span="24" custom-class="content">
+    <view class="location">
+      <van-col span="6">联系人</van-col>
+      <van-col span="18">章鱼哥</van-col>
+    </view> 
+    <view class='phone' bindtap="onClickCall">
+      <van-icon name="phone"/>
+    </view> 
+  </van-col>
+  <van-col span="24" custom-class="content">
+    <view class="location">
+      <van-col span="6">地址</van-col>
+      <van-col span="18">宇宙第一舰队A区404分部</van-col>
+    </view> 
+    <view class='phone'>
+      <van-icon name="location"/>
+    </view> 
+  </van-col>
+  <van-col span="24" custom-class="content">
+    <view class="range">
+      <van-col span="5">发货范围</van-col>
+      <van-col span="18">太子、帝、庶子、后宫、天枢、四辅、勾陈、天皇大帝、天柱、御女、女史、柱史、尚书、天床、大理、阴德、六甲、五帝内座、华盖、杠、左枢、上宰、少宰、上弼、少弼、上卫、少卫、少丞、右枢、少尉、上辅、少辅、上丞、天乙、太乙、内厨</van-col>
+    </view> 
+  </van-col>
+</van-row>
+
+<view class='news3title'>物流介绍</view>
+<van-row custom-class="news3 wbg">
+  <van-col span="22" offset="1" custom-class="title">
+    承接全宇宙各地区快运服务。东方速递，值得信赖。营业时间：下午2：00-下午2：30。
+  </van-col>
+</van-row>
+
+<van-col span="14" offset="5">
+  <van-button round plain hairline type="warning" size="normal" bindtap='carapply'  custom-class="applybtn wbg">我是车队商家，我要入驻</van-button>
+</van-col>
+
+<van-goods-action>
+  <van-goods-action-icon
+    icon="wap-home"
+    text="首页"
+    bind:click="onClickHome"
+  />
+  <van-goods-action-icon
+    icon="share"
+    text="分享"
+    open-type="share"
+    send-message-path
+    send-message-img
+    bind:click="onShareAppMessage"
+  />
+  <van-goods-action-icon
+    icon="star-o"
+    text="收藏"
+    bind:click="onClickStar"
+  />
+  <van-goods-action-button
+    type="warning"
+    text="一键拨号：800-820-8820"
+    bind:click="onClickCall"
+  />
+</van-goods-action>
+

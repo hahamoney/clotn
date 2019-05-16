@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 11,
+			"current": 12,
 			"list": [
 				{
 					"id": -1,
@@ -122,6 +122,12 @@
 					"name": "个人物流列表",
 					"pathName": "pages/news/peoplelist",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "车队详情",
+					"pathName": "pages/news/cardetail",
 					"scene": null
 				}
 			]

@@ -1,4 +1,4 @@
-/* pages/merchant/merchantdetail.wxss */
+/* pages/news/cardetail.wxss */
 page{
   background-color: rgba(241, 241, 241, 0.705);
 }
@@ -28,14 +28,6 @@ page{
   margin: 5rpx 0 10rpx;
   text-align: left;
 }
-.news .messagetitle .rate{
-  font-size: 26rpx;
-  color: #8e8ea7;
-}
-.news .messagetitle .rate .van-rate{
-  float: left;
-  margin: 2px 5px 0 0;
-}
 .news .content{
   line-height: 1.5;
   font-size: 30rpx;
@@ -45,10 +37,10 @@ page{
   border-bottom: 1px solid #e6e6e6;
 }
 .news .content .location{
-  width: 70%;
+  width: 85%;
   float: left;
   font-size: 26rpx;
-  line-height: 2;
+  line-height: 1.5;
   color: #555555;
   overflow: hidden;
 }
@@ -68,16 +60,12 @@ page{
   top: 5rpx;
   margin: 0 10rpx 0 0;
 }
-.news .content2{
-  font-size: 28rpx;
+.news .content .range{
+  text-align: left;
+  font-size: 26rpx;
+  line-height: 1.5;
   color: #555555;
-  text-align: center;
-  padding: 10px 0;
-}
-.news .content2 .type{
-  width: 30%;
-  float: left;
-  margin: 0 1% 5px;
+  overflow: hidden;
 }
 .news .image{
   margin: 10rpx 0;
@@ -86,19 +74,11 @@ page{
 .news .image .image_font{
   width: 100%;
 }
-.countcell{
-  font-size: 24rpx !important;
-  line-height: 2;
-  color:#8e8ea7;
-  border-bottom: 1px solid #e6e6e6;
-}
-.countcell view{
-  float: left;
-  margin: 0 10rpx 0 0;
-}
-.countcell .van-icon{
-  top: 3rpx;
-  font-size: 30rpx;
+.news3title{
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333333;
+  margin: 25rpx 0 10rpx 25rpx;
 }
 .news3{
   font-size: 28rpx;

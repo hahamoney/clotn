@@ -9,6 +9,7 @@
     "pages/news/product",
     "pages/news/merpublish",
     "pages/news/peoplelist",
+    "pages/news/cardetail",
     "pages/merchant/index",
     "pages/user/userinfo",
     "pages/user/userpublish",

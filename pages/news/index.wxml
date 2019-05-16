@@ -45,7 +45,7 @@
       custom-class="navcell2"
     />
   </van-cell-group>
-  <view class="news wbg"  bindtap="merchantdetail">
+  <view class="news wbg"  bindtap="cardetail">
     <van-row>
       <van-col span="5" custom-class="messageuser">
         <image src="/image/home1.png" class="image_font"  mode="widthFix" />

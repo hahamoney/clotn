@@ -1,13 +1,15 @@
 <van-row custom-class="news wbg">
-  <van-col span="5" custom-class="messageuser">
-    <image src="/image/home2.png" class="image_font"  mode="widthFix" />
-  </van-col>
-  <van-col span="19" custom-class="messagetitle">
-    <view>发布人</view> 
-    <view class="rate">
-      <van-rate value="5" size="18" readonly />
-      <view class="ratetxt">5分</view>
-    </view> 
+  <van-col span="24" custom-class="header">
+    <van-col span="5" custom-class="messageuser">
+      <image src="/image/home2.png" class="image_font"  mode="widthFix" />
+    </van-col>
+    <van-col span="19" custom-class="messagetitle">
+      <view>发布人</view> 
+      <view class="rate">
+        <van-rate value="5" size="18" readonly />
+        <view class="ratetxt">5分</view>
+      </view> 
+    </van-col>
   </van-col>
 
   <van-col span="24" custom-class="countcell">
