@@ -24,7 +24,6 @@ Page({
           car: res.data.data.car,
           imageurl: app.data.image
         })
-        console.log(res.data.data);
       }
     })
   },

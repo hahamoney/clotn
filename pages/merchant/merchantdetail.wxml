@@ -4,7 +4,7 @@
       <image src="/image/home2.png" class="image_font"  mode="widthFix" />
     </van-col>
     <van-col span="19" custom-class="messagetitle">
-      <view>发布人</view> 
+      <view>{{name}}</view> 
       <view class="rate">
         <van-rate value="5" size="18" readonly />
         <view class="ratetxt">5分</view>
@@ -19,12 +19,12 @@
 
   <van-col span="24" custom-class="content">
     <view class="location">
-      <van-icon name="location" /><text>详细地址</text>
+      <van-icon name="location" /><text>{{merchant_city}}</text>
     </view> 
     <view class="location">
       <van-icon name="underway" /><text>09:00-22:00</text>
     </view>
-    <view class='phone' bindtap="onClickCall">
+    <view class='phone' bindtap="onClickCall" data-phone="{{phone}}">
       <van-icon name="phone"/>拨打电话
     </view> 
   </van-col>
@@ -49,7 +49,7 @@
   <van-tab title="商家详情">
     <van-row custom-class="news3 wbg">
       <van-col span="22" offset="1" custom-class="title">
-        商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍商家介绍
+        {{announcement}}
       </van-col>
       <van-col span="14" offset="5">
         <van-button round plain hairline type="warning" size="normal" bindtap='merchantapply'  custom-class="applybtn">我是商家，我要入驻</van-button>

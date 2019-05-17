@@ -207,16 +207,6 @@ Page({
   },
   deleteimg(e) {
     var _this = this;
-    // wx.showModal({
-    //   title: '提示',
-    //   content: '确认删除该图片？',
-    //   success: function (res) {
-
-    //   },
-    //   fail: function (err) {
-
-    //   }
-    // })
     var id = e.currentTarget.dataset.id;
     var index = e.currentTarget.dataset.index;
     var image = _this.data.merchant_detail_image;
@@ -243,22 +233,40 @@ Page({
       }
     })
   },
+  phonecheck(e){
+    var _this = this;
+    var phone = e.detail;
+    if (!(/^1[3456789]\d{9}$/.test(phone))){
+      _this.setData({
+        errmsg: "请检查手机号码格式"
+      })
+    } else {
+      _this.setData({
+        errmsg: ""
+      })
+    }
+  },
   formSubmit(e){
     app.check_login();
      var _this=this;
      var data=e.detail.value;
      var user_id = wx.getStorageSync('user_id');
     // console.log(data.merchant_city);return false;
-    if (data.merchant_name==null||data.merchant_name.replace(/\s*/g, "")==''){
+    if (data.name==null||data.name.replace(/\s*/g, "")==''){
       app.showMsg('名称不能为空');
       return;
      }
+
+    if (data.phone == null || data.phone.replace(/\s*/g, "") == '' || !(/^1[3456789]\d{9}$/.test(data.phone))) {
+      app.showMsg('请检查手机号码');
+      return;
+    }
 
     if (data.merchant_city == null || data.merchant_city.replace(/\s*/g, "") == '') {
       app.showMsg('地址不能为空');
       return;
     }
-    if (data.merchant_keyword == null || data.merchant_keyword.replace(/\s*/g, "") == '')   {
+    if (data.keyword == null || data.keyword.replace(/\s*/g, "") == '')   {
       app.showMsg('关键字不能为空');
       return;
     }
@@ -276,9 +284,10 @@ Page({
       method:'post',
       dataType:'Json',
       data:{
-        merchant_name: data.merchant_name,
-        merchant_type: _this.data.merchant_classify[data.merchant_type]['id'],
-        merchant_keyword: data.merchant_keyword,
+        name: data.name,
+        phone: data.phone,
+        type: _this.data.merchant_classify[data.type]['id'],
+        keyword: data.keyword,
         merchant_city: data.merchant_city,
         facility: data.facility,
         announcement: data.announcement,
@@ -290,16 +299,16 @@ Page({
       },
       success(res){
         var data = JSON.parse(res.data);
-        console.log(data);
+        // console.log(data);
+        _this.setData({
+          disabled: true
+        })
         if (data.msg == 'success') {
-          _this.setData({
-            disabled: true
-          })
           wx.showToast({
-            title: data.data.msg,
+            title: "提交成功",
             icon: 'none',
             duration: 1500,
-            success() {
+            success(res) {
               setTimeout(function () {
                 wx.switchTab({
                   url: '/pages/index/index'

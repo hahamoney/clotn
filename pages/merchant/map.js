@@ -21,7 +21,7 @@ Page({
     var that = this;
     wx.chooseLocation({
       success: function (res) {
-        console.log(res);
+        // console.log(res);
         //选择地点之后返回到原来页面
         wx.setStorageSync('latitude', res.latitude);
         wx.setStorageSync('address', res.address);

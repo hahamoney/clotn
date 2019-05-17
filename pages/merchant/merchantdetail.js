@@ -10,6 +10,29 @@ Page({
     disabled: false
   },
 
+  onLoad(options) {
+    var _this = this;
+    var id = options.id;
+    wx.request({
+      url: app.data.api +'merchant_detail',
+      method: 'get',
+      dataType: 'json',
+      data: {id: id},
+      success(res) {
+        var data = res.data;
+        console.log(data);
+        if (data.code == '200') {
+          _this.setData({
+            name: data.data.name,
+            phone: data.data.phone,
+            merchant_city: data.data.merchant_city,
+            announcement: data.data.announcement,
+          })
+        }
+      }
+    })
+  },
+
   onClickHome() {
     wx.switchTab({
       url: '/pages/index/index'
@@ -24,16 +47,8 @@ Page({
     this.setData({ show: false });
   },
 
-  onClickCall: function () {
-    wx.makePhoneCall({
-      phoneNumber: '8008208820',
-      success: function () {
-        console.log('调起拨打界面')
-      },
-      fail: function () {
-        console.log('拨打失败')
-      }
-    })
+  onClickCall(e) {
+    app.phone_call(e.currentTarget.dataset.phone)
   },
 
   merchantapply: function () {
@@ -51,8 +66,8 @@ Page({
       console.log(res.target)
     }
     return {
-      title: '产品详情',
-      path: '/page/user?id=123'
+      title: data.name,
+      path: '/pages/merchant/merchantdtail?id='+data.id,
     }
   },
 

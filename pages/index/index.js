@@ -27,7 +27,7 @@ Page({
             car:res.data.data.car,
             imageurl:app.data.image
           })
-            console.log(res.data.data);
+          // console.log(res.data.data);
         }
       })
 
@@ -45,8 +45,8 @@ Page({
             longitude: res.longitude
           },
           success(r){
-            console.log(r);
-            wx.setStorageSync('city', r.result.ad_info.city);
+            // console.log(r);
+            wx.setStorageSync('merchant_city', r.result.ad_info.city);
             wx.setStorageSync('my_address', r.result.address);
           }
         })
@@ -70,11 +70,13 @@ Page({
     })
   },
   phone(e){
-      app.phone_call(e.target.dataset.phone)
+    app.phone_call(e.currentTarget.dataset.phone);
   },
-  merchantdetail() {
+  merchantdetail(e) {
+    var _this = this;
+    var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/merchant/merchantdetail',
+      url: '/pages/merchant/merchantdetail?id='+id,
     })
   }
 })

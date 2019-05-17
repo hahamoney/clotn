@@ -35,7 +35,7 @@ App({
         return false;
       }
       wx.makePhoneCall({
-        phoneNumber: phone // 仅为示例，并非真实的电话号码
+        phoneNumber: phone
       })
     }
 })
