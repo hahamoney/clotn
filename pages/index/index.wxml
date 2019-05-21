@@ -17,12 +17,12 @@
     </swiper-item>
   </block>
 </swiper>
-<van-cell-group>
+<!-- <van-cell-group>
   <van-cell
     value="总浏览量:123 总量:456"
     custom-class="countcell"
   />
-</van-cell-group>
+</van-cell-group> -->
 
 <van-row custom-class="navbar wbg">
   <van-col span="22" offset="1">

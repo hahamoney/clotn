@@ -12,10 +12,10 @@
     </van-col>
   </van-col>
 
-  <van-col span="24" custom-class="countcell">
+  <!-- <van-col span="24" custom-class="countcell">
     <view>分享：123</view>
     <view>浏览量：456人</view>
-  </van-col>
+  </van-col> -->
 
   <van-col span="24" custom-class="content">
     <view class="location">
