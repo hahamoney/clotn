@@ -68,6 +68,7 @@ page{
   color: #444444;
   display:inline-block;
   text-align:center;
+  padding: 0 15rpx;
 }
 .tabswitch{
   margin: 12rpx 0;

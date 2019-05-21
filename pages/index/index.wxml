@@ -65,9 +65,9 @@
 </view>
 
   <scroll-view scroll-x="true" class="scollmerchant wbg">
-    <view class='hot_merchant' wx:for="{{[1, 2, 3, 4, 5]}}">
+    <view class='hot_merchant' wx:for="{{hotmerchant}}" bindtap="merchantdetail" data-id="{{item.id}}">
       <image src="/image/home1.png" class="image_font"  mode="widthFix" />
-      <view>品质商家</view>
+      <view>{{item.name}}</view>
     </view>
   </scroll-view>
 
@@ -93,74 +93,35 @@
         <van-col span="19">
           <view>
             <view class="rate"><van-rate value="5" size="10" readonly /></view>
-            <view class="distance">10086km</view>
+            <view class="distance">km</view>
           </view>
         </van-col>
       </van-row>
     </view>
-    <!-- <view class="news wbg"  bindtap="newsproduct">
-      <van-row>
-        <van-col span="4" custom-class="messageuser">
-          <image src="/image/home1.png" class="image_font"  mode="widthFix" />
-        </van-col>
-        <van-col span="14" custom-class="messagetitle">
-          <view>发布人</view> 
-          <view>
-            <van-tag type="primary">类型</van-tag>
-            <van-tag type="primary">类型</van-tag>
-          </view> 
-        </van-col>
-        <van-col span="6" custom-class="tel">
-          <van-icon name="phone" color='#fce45a'/>拨打电话
-        </van-col>
-
-        <van-col span="24" custom-class="content">
-          发布正文发布正文发布正文发布正文发布正文发布正文发布正文发布正文发布正文
-        </van-col>
-
-        <van-col span="24" custom-class="image">
-          <image src="/image/home1.png" class="image_font"  mode="widthFix" />
-          <image src="/image/home1.png" class="image_font"  mode="widthFix" />
-          <image src="/image/home1.png" class="image_font"  mode="widthFix" />
-        </van-col>
-
-        <van-col span="24" custom-class="news_foot">
-          <view>
-            <view class="date">2019-4-21 10:10发布</view>
-            <view class="distance">距离100KM</view>
-          </view>
-          <view>
-            <view class="watchnum">浏览100次</view>
-            <view class="more">查看详情<van-icon name="arrow" /></view>
-          </view>
-        </van-col>
-      </van-row>
-    </view> -->
   </van-tab>
 
   <van-tab custom-class="newscard" title="品质车队">
    
    <view class="news wbg"  wx:for="{{car}}">
       <van-row>
-        <van-col span="5" custom-class="messageuser"  bindtap="merchantdetail">
+        <van-col span="5" custom-class="messageuser">
           <image src="/image/home1.png" class="image_font"  mode="widthFix" />
         </van-col>
-        <van-col span="12" custom-class="messagetitle"  bindtap="merchantdetail">
+        <van-col span="12" custom-class="messagetitle" bindtap="cardetail" data-id="{{item.id}}">
           <view>
-            <!-- <van-tag type="danger">置顶</van-tag> -->
             {{item.name}}
           </view> 
           <view class="location">
             <van-icon name="location" color="#f5641a" /><text>{{item.address}}</text>
           </view> 
         </van-col>
-        <van-col span="7" custom-class="tel" bindtap='phone'>
-          <van-icon name="phone" color='#fce45a'data-phone='{{item.phone}}' />拨打电话
+        <van-col span="7" custom-class="tel" bindtap='phone' data-phone='{{item.phone}}'>
+          <van-icon name="phone" color='#fce45a' />拨打电话
         </van-col>
-        <van-col span="19"  bindtap="merchantdetail">
+        <van-col span="19">
           <view>
             <view class="rate"><van-rate value="5" size="10" readonly /></view>
-            <view class="distance">10086km</view>
+            <view class="distance">km</view>
           </view>
         </van-col>
       </van-row>

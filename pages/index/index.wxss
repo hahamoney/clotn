@@ -8,7 +8,7 @@ page{
   text-align: center;
 }
 .image_font{
-  width: 80rpx;
+  width: 100rpx;
 }
 .countcell{
   font-size: 24rpx !important;
@@ -52,7 +52,6 @@ page{
 .scollmerchant{
   white-space: nowrap;
   height: 160rpx;
-  text-align:center;
   padding: 4% 0;
 }
 .hot_merchant{
@@ -60,6 +59,8 @@ page{
   font-size: 26rpx;
   color: #444444;
   display:inline-block;
+  text-align:center;
+  padding: 0 15rpx;
 }
 .tabswitch{
   margin: 12rpx 0;

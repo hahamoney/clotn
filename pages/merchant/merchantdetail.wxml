@@ -105,11 +105,13 @@
     open-type="share"
     send-message-path
     send-message-img
+    data-id="{{merid}}"
     bind:click="onShareAppMessage"
   />
   <van-goods-action-icon
     icon="star-o"
     text="收藏"
+    data-id="{{merid}}"
     bind:click="onClickStar"
   />
   <van-goods-action-button

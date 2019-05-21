@@ -7,6 +7,7 @@ Page({
   data: {
     imageurl:'',
     imgUrls: [],
+    hotmerchant: [],
     merchant_list:[],
     car_list:[],
     indicatorDots: true,
@@ -23,11 +24,12 @@ Page({
         success(res){
           _this.setData({
             imgUrls:res.data.data.banner,
+            hotmerchant: res.data.data.hotmerchant,
             merchant_list:res.data.data.merchant,
             car:res.data.data.car,
             imageurl:app.data.image
           })
-          // console.log(res.data.data);
+          // console.log(res);
         }
       })
 
@@ -77,6 +79,13 @@ Page({
     var id = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: '/pages/merchant/merchantdetail?id='+id,
+    })
+  },
+  cardetail(e) {
+    var _this = this;
+    var id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/news/cardetail?id=' + id,
     })
   }
 })

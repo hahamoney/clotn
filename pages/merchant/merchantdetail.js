@@ -23,6 +23,7 @@ Page({
         console.log(data);
         if (data.code == '200') {
           _this.setData({
+            merid: data.data.id,
             name: data.data.name,
             phone: data.data.phone,
             merchant_city: data.data.merchant_city,
@@ -57,17 +58,36 @@ Page({
     })
   },
 
-  /**
-   * 用户点击右上角分享
-   */
+  onClickStar(e) {
+    var user_id = wx.getStorageSync('user_id');
+    var collect_id = e.currentTarget.dataset.id;
+    wx.request({
+      url: app.data.api + 'collect',
+      method: 'post',
+      data: {
+        user_id: user_id,
+        collect_id: collect_id,
+        type: 4,
+      },
+      dataType: 'json',
+      success(res) {
+        var data = res.data;
+        if (data.code == '200') {
+          wx.showToast({
+            title: '操作成功',
+            icon: 'none',
+            duration: 1500,
+          })
+        }
+      }
+    })
+  },
+
   onShareAppMessage: function (res) {
-    if (res.from === 'button') {
-      // 来自页面内转发按钮
-      console.log(res.target)
-    }
+    var id = res.target.id;
     return {
-      title: data.name,
-      path: '/pages/merchant/merchantdtail?id='+data.id,
+      title: '商家详情',
+      path: '/pages/merchant/merchantdtail?id='+id,
     }
   },
 
