@@ -93,7 +93,7 @@
         <van-col span="19">
           <view>
             <view class="rate"><van-rate value="5" size="10" readonly /></view>
-            <view class="distance">km</view>
+            <view class="distance">{{item.distance}}km</view>
           </view>
         </van-col>
       </van-row>
@@ -121,7 +121,7 @@
         <van-col span="19">
           <view>
             <view class="rate"><van-rate value="5" size="10" readonly /></view>
-            <view class="distance">km</view>
+            <view class="distance">{{item.distance}}km</view>
           </view>
         </van-col>
       </van-row>
