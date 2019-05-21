@@ -74,7 +74,7 @@ Page({
         var data = res.data;
         if (data.code == '200') {
           wx.showToast({
-            title: '操作成功',
+            title: data.data.msg,
             icon: 'none',
             duration: 1500,
           })
