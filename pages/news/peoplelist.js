@@ -35,6 +35,7 @@ Page({
         console.log(data);
         if (data.code == '200') {
           _this.setData({
+            peoplelist: data.data,
           })
         }
       },
