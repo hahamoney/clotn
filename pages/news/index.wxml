@@ -13,16 +13,16 @@
 >
   <block wx:for="{{imgUrls}}">
     <swiper-item>
-      <image src="{{item}}" style="width:100%" class="slide-image"  mode="widthFix" />
+      <image src="{{imageurl}}{{item.path}}" style="width:100%" class="slide-image"  mode="widthFix" />
     </swiper-item>
   </block>
 </swiper>
-<van-cell-group>
+<!-- <van-cell-group>
   <van-cell
     value="总浏览量:123 总量:456"
     custom-class="countcell"
   />
-</van-cell-group>
+</van-cell-group> -->
 
 <van-cell-group>
   <van-cell 
@@ -31,11 +31,9 @@
   />
 </van-cell-group>
   <scroll-view scroll-x="true" class="scollmerchant wbg">
-    <view class='hot_merchant' wx:for="{{ people }}">
-      <navigator url="peoplelist?type={{ people[index].id }}">
+    <view class='hot_merchant' wx:for="{{ people_type }}" bindtap="peoplelist" data-type="{{item.id}}">
       <image src="/image/home1.png" class="image_font"  mode="widthFix" />
-      <view>{{ people[index].name }}</view>
-      </navigator>
+      <view>{{ item.name }}</view>
     </view>
   </scroll-view>
 
@@ -45,27 +43,27 @@
       custom-class="navcell2"
     />
   </van-cell-group>
-  <view class="news wbg"  bindtap="cardetail">
+  <view class="news wbg" wx:for="{{car}}">
     <van-row>
       <van-col span="5" custom-class="messageuser">
         <image src="/image/home1.png" class="image_font"  mode="widthFix" />
       </van-col>
-      <van-col span="12" custom-class="messagetitle">
+      <van-col span="12" custom-class="messagetitle" bindtap="cardetail" data-id="{{item.id}}">
         <view>
           <!-- <van-tag type="danger">置顶</van-tag> -->
-          发布人
+          {{item.name}}
         </view> 
         <view class="location">
-          <van-icon name="location" color="#f5641a" /><text>详细地址</text>
+          <van-icon name="location" color="#f5641a" /><text>{{item.address}}</text>
         </view> 
       </van-col>
-      <van-col span="7" custom-class="tel">
+      <van-col span="7" custom-class="tel" bindtap='phone' data-phone='{{item.phone}}'>
         <van-icon name="phone" color='#fce45a'/>拨打电话
       </van-col>
       <van-col span="19">
         <view>
           <view class="rate"><van-rate value="5" size="10" readonly /></view>
-          <view class="distance">10086km</view>
+          <view class="distance">{{item.distance}}km</view>
         </view>
       </van-col>
     </van-row>

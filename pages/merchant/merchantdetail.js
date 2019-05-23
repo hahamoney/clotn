@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    facility: [],
     show: false,
     disabled: false
   },
@@ -13,23 +14,57 @@ Page({
   onLoad(options) {
     var _this = this;
     var id = options.id;
+    _this.getMerchant(id);
+    _this.getCommentlist(id);
+  },
+
+  getMerchant(id) {
+    var _this = this;
+    wx.showLoading({
+      title: '加载中',
+    });
     wx.request({
-      url: app.data.api +'merchant_detail',
+      url: app.data.api + 'merchant_detail',
       method: 'get',
       dataType: 'json',
-      data: {id: id},
+      data: { id: id },
       success(res) {
+        wx.hideLoading();
         var data = res.data;
-        console.log(data);
+        // console.log(data.data.facility);
         if (data.code == '200') {
           _this.setData({
-            merid: data.data.id,
-            name: data.data.name,
-            phone: data.data.phone,
-            merchant_city: data.data.merchant_city,
-            announcement: data.data.announcement,
+            merid: data.data.res.id,
+            name: data.data.res.name,
+            phone: data.data.res.phone,
+            facility: data.data.facility,
+            merchant_city: data.data.res.merchant_city,
+            announcement: data.data.res.announcement,
+            merchant_time: data.data.res.merchant_time,
           })
         }
+      },
+      fail(res) {
+        wx.showLoading({
+          title: '网络错误'
+        })
+      }
+    })
+  },
+
+  getCommentlist(id) {
+    var _this = this;
+    wx.request({
+      url: app.data.api + 'merchant_comments',
+      method: 'get',
+      data: { message_id: id },
+      dataType: 'json',
+      success(res) {
+        var data = res.data;
+        // console.log(data);return false;
+        _this.setData({
+          commentlist: data.data.commentlist,
+        })
       }
     })
   },
@@ -48,8 +83,9 @@ Page({
     this.setData({ show: false });
   },
 
-  onClickCall(e) {
-    app.phone_call(e.currentTarget.dataset.phone)
+  onClickCall() {
+    var _this = this;
+    app.phone_call(_this.data.phone);
   },
 
   merchantapply: function () {
@@ -58,9 +94,10 @@ Page({
     })
   },
 
-  onClickStar(e) {
+  onClickStar() {
+    var _this = this;
     var user_id = wx.getStorageSync('user_id');
-    var collect_id = e.currentTarget.dataset.id;
+    var collect_id = _this.data.merid;
     wx.request({
       url: app.data.api + 'collect',
       method: 'post',
@@ -72,6 +109,7 @@ Page({
       dataType: 'json',
       success(res) {
         var data = res.data;
+        // console.log(data);
         if (data.code == '200') {
           wx.showToast({
             title: data.data.msg,
@@ -84,7 +122,8 @@ Page({
   },
 
   onShareAppMessage: function (res) {
-    var id = res.target.id;
+    var _this = this;
+    var id = _this.data.merid;
     return {
       title: '商家详情',
       path: '/pages/merchant/merchantdtail?id='+id,
@@ -93,9 +132,9 @@ Page({
 
   formSubmit(e) {
     app.check_login();
-    var user_id = wx.getStorageSync('user_id');
     var _this = this;
-    //console.log(e.detail);return false;
+    var user_id = wx.getStorageSync('user_id');
+    var id = _this.data.merid;
     var data = e.detail.value;
     if (data.content == null || data.content.replace(/\s*/g, "") == '') {
       app.showMsg('评论内容不能为空');
@@ -108,7 +147,7 @@ Page({
       dataType: 'Json',
       data: {
         user_id: user_id,
-        message_id: 1,
+        message_id: id,
         content: data.content,
       },
       success(res) {
@@ -124,6 +163,7 @@ Page({
                 disabled: true
               })
               setTimeout(function () {
+                _this.getCommentlist(id);
                 _this.setData({ show: false });
               }, 1500)
             }

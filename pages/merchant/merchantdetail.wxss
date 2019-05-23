@@ -77,7 +77,7 @@ page{
 .news .content2 .type{
   width: 30%;
   float: left;
-  margin: 0 1% 5px;
+  margin: 5px 1%;
 }
 .news .image{
   margin: 10rpx 0;
@@ -110,6 +110,9 @@ page{
 .news3 .title{
   padding: 10px 0;
 }
+.news3 .contentbox{
+  border-bottom: 1px solid #e6e6e6;
+}
 .news3 .title .commentt{
   color: #ff976a;
   text-align: right;
@@ -140,4 +143,7 @@ page{
 }
 .comment .commentbox .contentbox .van-field__input{
   height: 150px;
+}
+.phone{
+  font-size: 14px !important;
 }

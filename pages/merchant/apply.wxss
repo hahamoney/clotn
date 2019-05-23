@@ -6,8 +6,10 @@ page{
   background-color: #ffffff;
 }
 .classpicker{
-  padding: 40rpx 30rpx;
+  padding: 0rpx 30rpx;
   font-size: 14px;
+  line-height: 3;
+  height: 44px;
 }
 .address{
   text-align: right;

@@ -22,25 +22,16 @@
       <van-icon name="location" /><text>{{merchant_city}}</text>
     </view> 
     <view class="location">
-      <van-icon name="underway" /><text>09:00-22:00</text>
+      <van-icon name="underway" /><text>{{merchant_time}}</text>
     </view>
-    <view class='phone' bindtap="onClickCall" data-phone="{{phone}}">
+    <view class='phone' bindtap="onClickCall">
       <van-icon name="phone"/>拨打电话
     </view> 
   </van-col>
 
   <van-col span="24" custom-class="content2">
-    <view class="type">
-      <text>刷卡支付</text>
-    </view>
-    <view class="type">
-      <text>免费WIFI</text>
-    </view>
-    <view class="type">
-      <text>禁止吸烟</text>
-    </view>
-    <view class="type">
-      <text>提供包间</text>
+    <view class="type" wx:for="{{facility}}">
+      <text>{{item}}</text>
     </view>
   </van-col>
 </van-row>
@@ -62,8 +53,13 @@
         <van-col span="6">评论</van-col>
         <van-col span="6" offset="12" custom-class="commentt" bindtap="onClickCmt"><van-icon name="comment-o" color="#ff976a" />我要评论</van-col>
       </van-col>
-      <van-col span="22" offset="1" custom-class="title">
-        暂无评论
+      <van-col span="22" offset="1" custom-class="title contentbox" wx:for="{{commentlist}}">
+        <van-col span="22" offset="1" custom-title="ctitle">
+          {{item.user.name}}
+        </van-col>
+        <van-col span="22" offset="1" custom-class="ccontent">
+          {{item.content}}
+        </van-col>
       </van-col>
     </van-row>
   </van-tab>
@@ -105,18 +101,17 @@
     open-type="share"
     send-message-path
     send-message-img
-    data-id="{{merid}}"
     bind:click="onShareAppMessage"
   />
   <van-goods-action-icon
     icon="star-o"
     text="收藏"
-    data-id="{{merid}}"
     bind:click="onClickStar"
   />
   <van-goods-action-button
     type="warning"
-    text="一键拨号：800-820-8820"
+    text="一键拨号：{{phone}}"
+    custom-class="phone"
     bind:click="onClickCall"
   />
 </van-goods-action>

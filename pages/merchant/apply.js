@@ -285,10 +285,11 @@ Page({
       dataType:'Json',
       data:{
         name: data.name,
-        phone: data.phone,
         type: _this.data.merchant_classify[data.type]['id'],
         keyword: data.keyword,
         merchant_city: data.merchant_city,
+        phone: data.phone,
+        merchant_time: data.merchant_time,
         facility: data.facility,
         announcement: data.announcement,
         image_list: _this.data.image_list,

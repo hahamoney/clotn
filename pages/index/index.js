@@ -19,19 +19,19 @@ Page({
 
   onLoad: function () {
     var _this = this;
-      wx.request({
-        url: app.data.api+'home',
-        success(res){
-          _this.setData({
-            imgUrls:res.data.data.banner,
-            hotmerchant: res.data.data.hotmerchant,
-            merchant_list:res.data.data.merchant,
-            car:res.data.data.car,
-            imageurl:app.data.image
-          })
-          // console.log(res);
-        }
-      })
+    wx.request({
+      url: app.data.api+'home',
+      success(res){
+        _this.setData({
+          imgUrls:res.data.data.banner,
+          hotmerchant: res.data.data.hotmerchant,
+          merchant_list:res.data.data.merchant,
+          car:res.data.data.car,
+          imageurl:app.data.image
+        })
+        // console.log(res);
+      }
+    })
 
     wx.getLocation({
       type: 'wgs84', // 返回可以用于wx.openLocation的经纬度

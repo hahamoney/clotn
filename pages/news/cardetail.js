@@ -11,12 +11,21 @@ Page({
   onLoad(options) {
     var _this = this;
     var id = options.id;
+    _this.getCar(id);
+  },
+
+  getCar(id) {
+    var _this = this;
+    wx.showLoading({
+      title: '加载中',
+    });
     wx.request({
       url: app.data.api + 'car_detail',
       method: 'get',
-      data: {id: id},
+      data: { id: id },
       dataType: 'json',
       success(res) {
+        wx.hideLoading();
         var data = res.data;
         if (data.code == '200') {
           _this.setData({
@@ -29,6 +38,11 @@ Page({
             introduce: data.data.introduce
           })
         }
+      },
+      fail(res) {
+        wx.showLoading({
+          title: '网络错误'
+        })
       }
     })
   },
@@ -39,8 +53,9 @@ Page({
     });
   },
 
-  onClickCall(e) {
-    app.phone_call(e.currentTarget.dataset.phone)
+  onClickCall() {
+    var _this = this;
+    app.phone_call(_this.data.phone);
   },
 
   carapply() {
@@ -50,8 +65,10 @@ Page({
   },
 
   onClickStar(e) {
+    var _this = this;
     var user_id = wx.getStorageSync('user_id');
-    var collect_id = e.currentTarget.dataset.id;
+    var collect_id = _this.data.carid;
+    // console.log(collect_id);return false;
     wx.request({
       url: app.data.api + 'collect',
       method: 'post',
@@ -74,8 +91,9 @@ Page({
     })
   },
 
-  onShareAppMessage(e) {
-    var id = e.target.dataset.id;
+  onShareAppMessage() {
+    var _this = this;
+    var id = _this.data.carid;
     return {
       title: '车队详情',
       path: '/pages/news/cardetail?id='+id

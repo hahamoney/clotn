@@ -41,9 +41,9 @@
   </van-col>
 </van-row>
 
-<van-col span="14" offset="5">
+<!-- <van-col span="14" offset="5">
   <van-button round plain hairline type="warning" size="normal" bindtap='carapply'  custom-class="applybtn wbg">我是车队商家，我要入驻</van-button>
-</van-col>
+</van-col> -->
 
 <van-goods-action>
   <van-goods-action-icon
@@ -57,19 +57,16 @@
     open-type="share"
     send-message-path
     send-message-img
-    data-id="{{carid}}"
     bind:click="onShareAppMessage"
   />
   <van-goods-action-icon
     icon="star-o"
     text="收藏"
-    data-id="{{carid}}"
     bind:click="onClickStar"
   />
   <van-goods-action-button
     type="warning"
     text="一键拨号：{{phone}}"
-    data-phone="{{phone}}"
     bind:click="onClickCall"
   />
 </van-goods-action>

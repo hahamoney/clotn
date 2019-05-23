@@ -1,42 +1,77 @@
 // pages/news/index.js
-const app = getApp();
+const app = getApp()
+var QQMapWX = require('../../maplib/qqmap-wx-jssdk.js');
+var qqmapsdk;
 
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-    people: '',
+    imageurl: '',
+    imgUrls: [],
+    indicatorDots: true,
+    autoplay: true,
+    interval: 5000,
+    duration: 1000,
+    scrollTop: 100
   },
 
-  newsdetail() {
+  cardetail(e) {
+    var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/news/detail',
+      url: '/pages/news/cardetail?id='+id,
     })
   },
-  newsproduct() {
-    wx.navigateTo({
-      url: '/pages/news/product',
-    })
+  phone(e) {
+    app.phone_call(e.currentTarget.dataset.phone);
   },
-  cardetail() {
+  peoplelist(e) {
+    var type = e.currentTarget.dataset.type;
     wx.navigateTo({
-      url: '/pages/news/cardetail',
+      url: '/pages/news/peoplelist?type=' + type,
     })
   },
 
-  onLoad: function (options) {
-    var obj = this;
+  onLoad(options) {
+    var _this = this;
+    _this.getlogistics();
+  },
 
-    // wx.request({
-    //   url: app.data.api +'',
-    //   success(res){
-    //     obj.setData({
-    //       people: res.data,
-    //     })
-    //   }
-    // })
-  }
+  getlogistics() {
+    var _this = this;
+    wx.request({
+      url: app.data.api + 'logistics',
+      success(res) {
+        // console.log(res);
+        _this.setData({
+          imgUrls: res.data.data.banner,
+          imageurl: app.data.image,
+          car: res.data.data.car,
+          people_type: res.data.data.people_type,
+        })
+      }
+    });
+
+    wx.getLocation({
+      type: 'wgs84', // 返回可以用于wx.openLocation的经纬度
+      success(res) {
+        wx.setStorageSync('my_latitude', res.latitude);
+        wx.setStorageSync('my_longitude', res.longitude);
+        qqmapsdk = new QQMapWX({
+          key: app.data.mapkey
+        });
+        qqmapsdk.reverseGeocoder({
+          location: {
+            latitude: res.latitude,
+            longitude: res.longitude
+          },
+          success(r) {
+            // console.log(r);
+            wx.setStorageSync('merchant_city', r.result.ad_info.city);
+            wx.setStorageSync('my_address', r.result.address);
+          }
+        })
+      }
+    })
+  },
 
 })
