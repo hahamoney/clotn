@@ -23,7 +23,7 @@ Page({
   
     if(!wx.getStorageSync('msg_type'+option.type)){
       wx.request({
-        url: app.data.api + 'msg_type?type=' + option.type,
+        url: app.data.api + 'msg_type?fid=' + option.type,
         dataType: 'json',
         success(res) {
           _this.setData({

@@ -31,7 +31,7 @@
 
   <van-col span="24" custom-class="content2">
     <view class="type" wx:for="{{facility}}">
-      <text>{{item}}</text>
+      <text>{{item.name}}</text>
     </view>
   </van-col>
 </van-row>
