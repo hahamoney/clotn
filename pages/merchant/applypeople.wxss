@@ -1,0 +1,73 @@
+/* pages/merchant/applypeople.wxss */
+page{
+  background-color: rgba(241, 241, 241, 0.705);
+}
+.wbg{
+  background-color: #ffffff;
+}
+.classpicker{
+  padding: 0rpx 30rpx;
+  font-size: 14px;
+  line-height: 3;
+  height: 44px;
+}
+.address{
+  text-align: right;
+  padding: 10px 15px;
+  font-size: 12px;
+  color: #7c7c7c;
+}
+.address .van-icon{
+  top: 3rpx;
+  margin-left: 5rpx;
+}
+.subbtn{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display:block;
+}
+.checkbox{
+  text-align: center;
+  font-size: 28rpx;
+  margin: 10px 0;
+  padding: 10px 0;
+}
+.checkbox .van-col{
+  margin: 8px 0;
+}
+.merchant_image{
+  margin: 50rpx 0 50rpx 0;
+}
+.upbox{
+  margin: 5px 0;
+}
+.uploadbtn{
+  line-height: 2;
+}
+.one_image{
+  width:200rpx;
+  padding: 0 5rpx;
+}
+.title{
+  padding: 10px 15px;
+  font-size: 28rpx;
+}
+/* .contentbox{
+  height: 150px;
+} */
+.contentbox .van-field__input{
+  height: 150px;
+}
+.img_list{
+  width: 45%;
+  float: left;
+  margin: 0 1.5%;
+  height: 256rpx;
+}
+.multiclose{
+  position: relative;
+  z-index: 99;
+  top: 27rpx;
+  left: -10rpx;
+}

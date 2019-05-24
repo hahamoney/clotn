@@ -1,44 +1,41 @@
 <van-row custom-class="news wbg">
   <van-col span="5" custom-class="messageuser">
-    <image src="/image/home2.png" class="image_font"  mode="widthFix" />
+    <image src="{{img}}" class="image_font"  mode="widthFix" />
   </van-col>
   <van-col span="19" custom-class="messagetitle">
-    <view>发布人</view> 
+    <view>{{name}}</view> 
     <view>
-      <van-tag type="primary">类型</van-tag>
-      <van-tag type="primary">类型</van-tag>
+      <van-tag type="primary">{{type}}</van-tag>
     </view> 
     <view class="location">
-      <van-icon name="location" color="#f5641a" /><text>详细地址</text>
+      <van-icon name="location" color="#f5641a" /><text>{{city}}</text>
     </view> 
   </van-col>
 
   <van-col span="24" custom-class="content">
-    发布正文发布正文发布正文发布正文发布正文发布正文发布正文发布正文发布正文
+    {{content}}
   </van-col>
 
-  <van-col span="24" custom-class="image">
-    <view><image src="/image/home1.png" class="image_font"  mode="widthFix" /></view>
-    <view><image src="/image/home1.png" class="image_font"  mode="widthFix" /></view>
-    <view><image src="/image/home1.png" class="image_font"  mode="widthFix" /></view>
+  <van-col span="24" custom-class="image" wx:for="{{proimg}}">
+    <view><image src="{{item.image_path}}" class="image_font"  mode="widthFix" /></view>
   </van-col>
 
-  <van-col span="24" custom-class="countcell">
+  <!-- <van-col span="24" custom-class="countcell">
     <view><van-icon name="eye-o" />123人浏览</view>
     <view><van-icon name="thumb-circle-o" />456人点赞</view>
-  </van-col>
+  </van-col> -->
 </van-row>
 
 <van-row custom-class="news2 wbg">
   <van-col span="22" offset="1" custom-class="title">
     <van-col span="5">发布时间：</van-col>
-    <van-col span="19">2020-08-08 18:09</van-col>
+    <van-col span="19">{{created_at}}</van-col>
   </van-col>
 
   <van-col span="22" offset="1" custom-class="title">
     <van-col span="5">联系电话：</van-col>
-    <van-col span="14">800-820-8820</van-col>
-    <van-col span="5" custom-class="phone"><van-tag color="#ff976a"><van-icon name="phone"/>拨打电话</van-tag></van-col>
+    <van-col span="14">{{phone}}</van-col>
+    <van-col span="5" custom-class="phone"><van-tag color="#ff976a" bindtap="onClickCall"><van-icon name="phone"/>拨打电话</van-tag></van-col>
   </van-col>
 </van-row>
 
@@ -47,9 +44,14 @@
     <van-col span="6">评论</van-col>
     <van-col span="6" offset="12" custom-class="commentt" bindtap="onClickCmt"><van-icon name="comment-o" color="#ff976a" />我要评论</van-col>
   </van-col>
-  <van-col span="22" offset="1" custom-class="title">
-    暂无评论
-  </van-col>
+  <van-col span="22" offset="1" custom-class="title contentbox" wx:for="{{commentlist}}">
+        <van-col span="22" offset="1" custom-title="ctitle">
+          {{item.user.name}}
+        </van-col>
+        <van-col span="22" offset="1" custom-class="ccontent">
+          {{item.content}}
+        </van-col>
+      </van-col>
 </van-row>
 
 <van-popup show="{{ show }}" bind:close="onClose" custom-class="comment">

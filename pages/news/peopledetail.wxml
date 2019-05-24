@@ -1,0 +1,74 @@
+<van-row custom-class="news wbg">
+  <van-col span="24" custom-class="header">
+    <van-col span="5" custom-class="messageuser">
+      <image src="/image/home2.png" class="image_font"  mode="widthFix" />
+    </van-col>
+    <van-col span="19" custom-class="messagetitle">
+      <view>{{name}}</view>
+      <view>{{name}}</view> 
+    </van-col>
+  </van-col>
+
+  <!-- <van-col span="24" custom-class="content">
+    <view class="location">
+      <van-col span="6">联系人</van-col>
+      <van-col span="18">{{contact}}</van-col>
+    </view> 
+    <view class='phone' bindtap="onClickCall" data-phone="{{phone}}">
+      <van-icon name="phone"/>
+    </view> 
+  </van-col> -->
+  <van-col span="24" custom-class="content">
+    <view class="location">
+      <van-col span="6">地址</van-col>
+      <van-col span="18">{{address}}</van-col>
+    </view> 
+    <view class='phone'>
+      <van-icon name="location"/>
+    </view> 
+  </van-col>
+  <van-col span="24" custom-class="content">
+    <view class="range">
+      <van-col span="5">发货范围</van-col>
+      <van-col span="18">{{scope}}</van-col>
+    </view> 
+  </van-col>
+</van-row>
+
+<view class='news3title'>物流介绍</view>
+<van-row custom-class="news3 wbg">
+  <van-col span="22" offset="1" custom-class="title">
+    {{introduce}}
+  </van-col>
+</van-row>
+
+<!-- <van-col span="14" offset="5">
+  <van-button round plain hairline type="warning" size="normal" bindtap='carapply'  custom-class="applybtn wbg">我是车队商家，我要入驻</van-button>
+</van-col> -->
+
+<van-goods-action>
+  <van-goods-action-icon
+    icon="wap-home"
+    text="首页"
+    bind:click="onClickHome"
+  />
+  <van-goods-action-icon
+    icon="share"
+    text="分享"
+    open-type="share"
+    send-message-path
+    send-message-img
+    bind:click="onShareAppMessage"
+  />
+  <van-goods-action-icon
+    icon="star-o"
+    text="收藏"
+    bind:click="onClickStar"
+  />
+  <van-goods-action-button
+    type="warning"
+    text="一键拨号：{{phone}}"
+    bind:click="onClickCall"
+  />
+</van-goods-action>
+

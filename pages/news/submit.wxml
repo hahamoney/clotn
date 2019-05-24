@@ -18,6 +18,20 @@
   </view>
 </van-cell>
 
+<van-cell 
+  value="" 
+  icon="manager-o" 
+  is-link
+  url="/pages/merchant/applypeople" 
+  link-type="navigateTo"
+  custom-class="apply"
+>
+  <view slot="title">
+    <view class="van-cell-text">我是个人物流，申请入驻</view>
+    <view class="van-cell-text_2">超低成本，网络宣传，简单有效，方便快捷！</view>
+  </view>
+</van-cell>
+
 <van-row custom-class="wbg">
   <van-col span="24" custom-class="choosebar">
     <text>—— 请选择您要发布的栏目 ——</text>

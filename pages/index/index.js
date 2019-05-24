@@ -9,7 +9,6 @@ Page({
     imgUrls: [],
     hotmerchant: [],
     merchant_list:[],
-    car_list:[],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
@@ -24,12 +23,12 @@ Page({
       success(res){
         _this.setData({
           imgUrls:res.data.data.banner,
-          hotmerchant: res.data.data.hotmerchant,
-          merchant_list:res.data.data.merchant,
-          car:res.data.data.car,
-          imageurl:app.data.image
+          imageurl:app.data.image,
+          new_message: res.data.data.new_message.data,
+          nearby_message: res.data.data.nearby_message.data,
+          hot_message: res.data.data.hot_message.data,
         })
-        // console.log(res);
+        // console.log(res.data.data.new_message);
       }
     })
 
@@ -66,9 +65,10 @@ Page({
       url: '/pages/news/detail',
     })
   },
-  newsproduct() {
+  newsproduct(e) {
+    var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/news/product',
+      url: '/pages/news/product?id='+id,
     })
   },
   phone(e){

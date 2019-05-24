@@ -1,63 +1,4 @@
-<!-- <van-search
-  value="{{ value }}"
-  placeholder="请输入搜索关键词"
-  show-action
-  bind:search="onSearch"
-  bind:cancel="onCancel"
-/> -->
-<swiper
-  indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}"
-  interval="{{interval}}"
-  duration="{{duration}}"
->
-  <block wx:for="{{imgUrls}}">
-    <swiper-item>
-      <image src="{{imageurl}}{{item.path}}" style="width:100%" class="slide-image"  mode="widthFix" />
-    </swiper-item>
-  </block>
-</swiper>
-
-<!-- <van-cell-group>
-  <van-cell
-    value="总浏览量:123 总量:456"
-    custom-class="countcell"
-  />
-</van-cell-group> -->
-
-<!-- <van-cell-group>
-  <van-cell 
-    title="个人物流" 
-    custom-class="navcell"
-  />
-</van-cell-group>
-  <scroll-view scroll-x="true" class="scollmerchant wbg">
-    <view class='hot_merchant' wx:for="{{ people_type }}" bindtap="peoplelist" data-type="{{item.id}}">
-      <image src="/image/home1.png" class="image_font"  mode="widthFix" />
-      <view>{{ item.name }}</view>
-    </view>
-  </scroll-view> -->
-
-<van-cell 
-  value="" 
-  icon="logistics" 
-  is-link
-  link-type="navigateTo"
-  url="/pages/news/carlist"
-  custom-class="apply"
->
-  <view slot="title">
-    <view class="van-cell-text">浏览车队物流</view>
-  </view>
-</van-cell>
-
-  <van-cell-group>
-    <van-cell 
-      title="个人物流" 
-      custom-class="navcell2"
-    />
-  </van-cell-group>
-
+<!--pages/news/carlist.wxml-->
 <van-tabs active="0" custom-class="tabswitch" bind:change="onChange">
   <van-tab custom-class="newscard" title="附近">
     <view class="news wbg"  wx:for="{{car}}">
@@ -65,13 +6,13 @@
         <van-col span="5" custom-class="messageuser" >
           <image src="/image/home1.png" class="image_font"  mode="widthFix" />
         </van-col>
-        <van-col span="12" custom-class="messagetitle" bindtap="peopledetail" data-id="{{item.id}}">
+        <van-col span="12" custom-class="messagetitle" bindtap="cardetail" data-id="{{item.id}}">
           <view>
             <!-- <van-tag type="danger">置顶</van-tag> -->
             {{item.name}}
           </view> 
           <view class="location">
-            <text>快递公司：{{item.company}}</text>
+            <van-icon name="location" color="#f5641a" /><text>{{item.address}}</text>
           </view> 
         </van-col>
         <van-col span="7" custom-class="tel" bindtap='phone' data-phone='{{item.phone}}'>
@@ -93,13 +34,13 @@
         <van-col span="5" custom-class="messageuser" >
           <image src="/image/home1.png" class="image_font"  mode="widthFix" />
         </van-col>
-        <van-col span="12" custom-class="messagetitle" bindtap="peopledetail" data-id="{{item.id}}">
+        <van-col span="12" custom-class="messagetitle" bindtap="cardetail" data-id="{{item.id}}">
           <view>
             <!-- <van-tag type="danger">置顶</van-tag> -->
             {{item.name}}
           </view> 
           <view class="location">
-            <text>快递公司：{{item.company}}</text>
+            <van-icon name="location" color="#f5641a" /><text>{{item.address}}</text>
           </view> 
         </van-col>
         <van-col span="7" custom-class="tel" bindtap='phone' data-phone='{{item.phone}}'>
@@ -121,13 +62,13 @@
         <van-col span="5" custom-class="messageuser" >
           <image src="/image/home1.png" class="image_font"  mode="widthFix" />
         </van-col>
-        <van-col span="12" custom-class="messagetitle" bindtap="peopledetail" data-id="{{item.id}}">
+        <van-col span="12" custom-class="messagetitle" bindtap="cardetail" data-id="{{item.id}}">
           <view>
             <!-- <van-tag type="danger">置顶</van-tag> -->
             {{item.name}}
           </view> 
           <view class="location">
-            <text>快递公司：{{item.company}}</text>
+            <van-icon name="location" color="#f5641a" /><text>{{item.address}}</text>
           </view> 
         </van-col>
         <van-col span="7" custom-class="tel" bindtap='phone' data-phone='{{item.phone}}'>

@@ -1,25 +1,25 @@
 <form bindsubmit="formSubmit" >
   <van-cell-group>
     <van-field
-      value="{{ username }}"
-      label="商家名称"
-      placeholder="请输入商家名称"
+      value="{{ name }}"
+      label="名称"
+      placeholder="请输入名称"
       name="name"
+    />
+    <van-field
+      value="{{ company }}"
+      label="快递公司"
+      placeholder="请输入快递公司"
+      name="company"
     />
 
     <picker name="type" class="classpicker wbg" bindchange="classify" range-key="name" value="{{index}}" range="{{merchant_classify}}">
       <van-col span="7" custom-class="picker">
-        行业分类：
+        物流分类：
       </van-col>
       <van-col span="17">{{merchant_classify[index].name}}</van-col>
     </picker>
 
-      <van-field
-        label="关键字"
-        placeholder="请输入关键字"
-        name="keyword"
-      />
-    
       <van-field
         name="merchant_city"
         value="{{ address }}"
@@ -39,27 +39,17 @@
         bind:change="phonecheck"
       />
 
-      <van-field
-        value="{{ merchant_time }}"
-        label="营业时间"
-        placeholder="请输入营业时间"
-        name="merchant_time"
-      />
-
-    <!-- <view class='address wbg' bindtap='onChangeAddress'>
-        点击选位置<van-icon name="location" />
-      </view> -->
   </van-cell-group>
 
   <van-row custom-class="wbg">
     <van-col span="24">
-      <view class='title'>商家介绍</view>
+      <view class='title'>物流介绍</view>
       <van-cell-group custom-class="contentbox">
         <van-field
           value="{{ content }}"
           label=""
           type="textarea"
-          placeholder="请输入商家介绍"
+          placeholder="请输入物流介绍"
           border="{{ false }}"
           name = 'announcement'
         />
@@ -69,26 +59,15 @@
     </van-col>
   </van-row>
 
-  <!-- <checkbox-group class="checkbox wbg" name="facility">
-    <van-row>
-      <label class="radio" wx:for="{{facility}}">
-        <van-col span="8">
-        <checkbox value="{{item.id}}" checked="{{item.checked}}" />
-        {{item.name}}
-        </van-col>
-      </label>
-    </van-row>
-  </checkbox-group> -->
-
   <van-row custom-class="merchant_image">
-    <!-- <van-row custom-class="upbox">
+    <van-row custom-class="upbox">
       <van-col span="5" offset="1" custom-class="uploadbtn">
         <van-button size="small" bind:click="upload_logo">上传logo</van-button>
       </van-col>
       <van-col span="18">
         <image  src="{{logo}}"  class="one_image" mode="widthFix" />
       </van-col>
-    </van-row> -->
+    </van-row>
     <!-- <van-row custom-class="upbox">
       <van-col span="5" offset="1" custom-class="uploadbtn">
         <van-button size="small" bind:click="upload_wechat">上传微信</van-button>
@@ -98,20 +77,17 @@
       </van-col>
     </van-row> -->
 
-    <van-row custom-class="upbox">
+    <!-- <van-row custom-class="upbox">
       <van-col span="5" offset="1" custom-class="uploadbtn">
         <van-button size="small" bind:click="upload_detail">上传详情</van-button>
       </van-col>
       <van-col span="18">
-        <!-- <image wx:for="{{merchant_detail_image}}"  src="{{item}}" class="one_image" mode="widthFix" />
-        <cover-view data-index="{{index}}" bindtap='delFile'><van-icon name="close"/></cover-view> -->
-
         <view wx:for="{{merchant_detail_image}}" class="img_list" data-id="{{item.id}}" data-index="{{index}}" bindtap="deleteimg">
             <view class="multiclose" data-itemid="{{item.id}}"><van-icon name="clear"/></view>
             <image src="{{image_url}}{{item.path}}" class="one_image" mode="widthFix"></image>
         </view>
       </van-col>
-    </van-row>
+    </van-row> -->
   </van-row>
   
 <button type="primary" size="default" form-type="submit" disabled="{{disabled}}">

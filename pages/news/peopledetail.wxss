@@ -1,0 +1,123 @@
+/* pages/news/peopledetail.wxss */
+page{
+  background-color: rgba(241, 241, 241, 0.705);
+}
+.wbg{
+  background-color: #ffffff;
+}
+.van-row{
+  text-align: center;
+}
+.image_font{
+  width: 120rpx;
+}
+.news{
+  padding: 20rpx 4%;
+  margin: 0 0 12rpx 0;
+}
+.news .header{
+  padding: 10px 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+.news .messageuser{
+}
+.news .messagetitle{
+  color: #333333;
+  font-size: 30rpx;
+  line-height: 2;
+  margin: 5rpx 0 10rpx;
+  text-align: left;
+}
+.news .content{
+  line-height: 1.5;
+  font-size: 30rpx;
+  color: #444444;
+  padding: 10px 0;
+  text-align: left;
+  border-bottom: 1px solid #e6e6e6;
+}
+.news .content .location{
+  width: 85%;
+  float: left;
+  font-size: 26rpx;
+  line-height: 1.5;
+  color: #555555;
+  overflow: hidden;
+}
+.news .content .location .van-icon{
+  font-size: 32rpx;
+  top: 5rpx;
+  margin: 0 10rpx 0 0;
+}
+.news .content .phone{
+  font-size: 30rpx;
+  line-height: 1.5;
+  color: #f56161;
+  text-align: right;
+}
+.news .content .phone .van-icon{
+  font-size: 32rpx;
+  top: 5rpx;
+  margin: 0 10rpx 0 0;
+}
+.news .content .range{
+  text-align: left;
+  font-size: 26rpx;
+  line-height: 1.5;
+  color: #555555;
+  overflow: hidden;
+}
+.news .image{
+  margin: 10rpx 0;
+  text-align: left;
+}
+.news .image .image_font{
+  width: 100%;
+}
+.news3title{
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333333;
+  margin: 25rpx 0 10rpx 25rpx;
+}
+.news3{
+  font-size: 28rpx;
+  text-align: left;
+  color:#616166;
+  line-height: 2;
+  margin: 0 0 60px 0;
+}
+.news3 .title{
+  padding: 10px 0;
+}
+.news3 .title .commentt{
+  color: #ff976a;
+  text-align: right;
+}
+.news3 .title .van-icon{
+  top: 8rpx;
+  font-size: 35rpx;
+  margin: 0 5rpx 0 0;
+}
+.news3 .applybtn{
+  margin: 20px 0 10px;
+  width: 100%;
+}
+.comment{
+  width: 80%;
+}
+.comment .commentbox{
+  background-color: rgba(241, 241, 241, 0.705);
+}
+.comment .commentbox .title{
+  background-color: rgba(241, 241, 241, 0.705);
+}
+.comment .commentbox .subbtn{
+  margin: 5px 0 0 0;
+  width: 50%;
+  float: left;
+  font-size: 26rpx;
+}
+.comment .commentbox .contentbox .van-field__input{
+  height: 150px;
+}

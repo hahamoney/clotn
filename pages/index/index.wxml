@@ -53,7 +53,7 @@
 />
 
 
-<view class="van-hairline--bottom wbg">
+<!-- <view class="van-hairline--bottom wbg">
   <van-row>
     <van-col span="12" custom-class="hairline_1">
       <van-icon name="diamond" color='#ffd013' />品质商家
@@ -69,64 +69,129 @@
       <image src="/image/home1.png" class="image_font"  mode="widthFix" />
       <view>{{item.name}}</view>
     </view>
-  </scroll-view>
+  </scroll-view> -->
 
 <van-tabs active="0" custom-class="tabswitch" bind:change="onChange">
-  <van-tab custom-class="newscard" title="热门商家">
-      <view class="news wbg"  wx:for="{{merchant_list}}">
+  <van-tab custom-class="newscard" title="附近">
+    <view class="news wbg" wx:for="{{nearby_message}}">
       <van-row>
-        <van-col span="5" custom-class="messageuser" >
+        <van-col span="4" custom-class="messageuser">
+          <image src="{{item.user.avatarUrl}}" class="image_font"  mode="widthFix" />
+        </van-col>
+        <van-col span="12" custom-class="messagetitle" bindtap="newsproduct" data-id="{{item.id}}">
+          <view>{{item.user.name}}</view> 
+          <view>
+            <van-tag type="primary">{{item.type}}</van-tag>
+          </view>  
+        </van-col>
+        <van-col span="6" custom-class="tel" bindtap='phone' data-phone='{{item.link_phone}}'>
+          <van-icon name="phone" color='#fce45a'/>拨打电话
+        </van-col>
+
+        <van-col span="24" custom-class="content">
+          {{item.content}}
+        </van-col>
+
+        <!-- <van-col span="24" custom-class="image">
           <image src="/image/home1.png" class="image_font"  mode="widthFix" />
-        </van-col>
-        <van-col span="12" custom-class="messagetitle" bindtap="merchantdetail" data-id="{{item.id}}">
+          <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+          <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+        </van-col> -->
+
+        <van-col span="24" custom-class="news_foot">
           <view>
-            <!-- <van-tag type="danger">置顶</van-tag> -->
-            {{item.name}}
-          </view> 
-          <view class="location">
-            <van-icon name="location" color="#f5641a" /><text>{{item.merchant_city}}</text>
-          </view> 
-        </van-col>
-        <van-col span="7" custom-class="tel" bindtap='phone' data-phone='{{item.phone}}'>
-          <van-icon name="phone" color='#fce45a' />拨打电话
-        </van-col>
-        <van-col span="19">
-          <view>
-            <view class="rate"><van-rate value="5" size="10" readonly /></view>
+            <view class="watchnum"><van-icon name="location" color="#f5641a" /><text>{{item.city}}</text></view>
             <view class="distance">{{item.distance}}km</view>
+          </view>
+          <view>
+            <view class="date">{{item.created_at}}发布</view>
+            
+            <view class="more" bindtap="newsproduct" data-id="{{item.id}}">查看详情<van-icon name="arrow" /></view>
           </view>
         </van-col>
       </van-row>
     </view>
   </van-tab>
 
-  <van-tab custom-class="newscard" title="品质车队">
-   
-   <view class="news wbg"  wx:for="{{car}}">
+  <van-tab custom-class="newscard" title="新入">
+    <view class="news wbg" wx:for="{{new_message}}">
       <van-row>
-        <van-col span="5" custom-class="messageuser">
+        <van-col span="4" custom-class="messageuser">
+          <image src="{{item.user.avatarUrl}}" class="image_font"  mode="widthFix" />
+        </van-col>
+        <van-col span="12" custom-class="messagetitle" bindtap="newsproduct" data-id="{{item.id}}">
+          <view>{{item.user.name}}</view> 
+          <view>
+            <van-tag type="primary">{{item.type}}</van-tag>
+          </view>  
+        </van-col>
+        <van-col span="6" custom-class="tel" bindtap='phone' data-phone='{{item.link_phone}}'>
+          <van-icon name="phone" color='#fce45a'/>拨打电话
+        </van-col>
+
+        <van-col span="24" custom-class="content">
+          {{item.content}}
+        </van-col>
+
+        <!-- <van-col span="24" custom-class="image">
           <image src="/image/home1.png" class="image_font"  mode="widthFix" />
-        </van-col>
-        <van-col span="12" custom-class="messagetitle" bindtap="cardetail" data-id="{{item.id}}">
+          <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+          <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+        </van-col> -->
+
+        <van-col span="24" custom-class="news_foot">
           <view>
-            {{item.name}}
-          </view> 
-          <view class="location">
-            <van-icon name="location" color="#f5641a" /><text>{{item.address}}</text>
-          </view> 
-        </van-col>
-        <van-col span="7" custom-class="tel" bindtap='phone' data-phone='{{item.phone}}'>
-          <van-icon name="phone" color='#fce45a' />拨打电话
-        </van-col>
-        <van-col span="19">
-          <view>
-            <view class="rate"><van-rate value="5" size="10" readonly /></view>
+            <view class="watchnum"><van-icon name="location" color="#f5641a" /><text>{{item.city}}</text></view>
             <view class="distance">{{item.distance}}km</view>
+          </view>
+          <view>
+            <view class="date">{{item.created_at}}发布</view>
+            
+            <view class="more" bindtap="newsproduct" data-id="{{item.id}}">查看详情<van-icon name="arrow" /></view>
           </view>
         </van-col>
       </van-row>
     </view>
-
   </van-tab>
 
+  <van-tab custom-class="newscard" title="热门">
+    <view class="news wbg" wx:for="{{hot_message}}">
+      <van-row>
+        <van-col span="4" custom-class="messageuser">
+          <image src="{{item.user.avatarUrl}}" class="image_font"  mode="widthFix" />
+        </van-col>
+        <van-col span="12" custom-class="messagetitle" bindtap="newsproduct" data-id="{{item.id}}">
+          <view>{{item.user.name}}</view> 
+          <view>
+            <van-tag type="primary">{{item.type}}</van-tag>
+          </view>  
+        </van-col>
+        <van-col span="6" custom-class="tel" bindtap='phone' data-phone='{{item.link_phone}}'>
+          <van-icon name="phone" color='#fce45a'/>拨打电话
+        </van-col>
+
+        <van-col span="24" custom-class="content">
+          {{item.content}}
+        </van-col>
+
+        <!-- <van-col span="24" custom-class="image">
+          <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+          <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+          <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+        </van-col> -->
+
+        <van-col span="24" custom-class="news_foot">
+          <view>
+            <view class="watchnum"><van-icon name="location" color="#f5641a" /><text>{{item.city}}</text></view>
+            <view class="distance">{{item.distance}}km</view>
+          </view>
+          <view>
+            <view class="date">{{item.created_at}}发布</view>
+            
+            <view class="more" bindtap="newsproduct" data-id="{{item.id}}">查看详情<van-icon name="arrow" /></view>
+          </view>
+        </van-col>
+      </van-row>
+    </view>
+  </van-tab>
 </van-tabs>

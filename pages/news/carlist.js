@@ -1,4 +1,4 @@
-// pages/news/index.js
+// pages/news/carlist.js
 const app = getApp()
 var QQMapWX = require('../../maplib/qqmap-wx-jssdk.js');
 var qqmapsdk;
@@ -15,7 +15,7 @@ Page({
     scrollTop: 100
   },
 
-  carlist(e){
+  carlist(e) {
     wx.switchTab({
       url: '/pages/news/carlist',
     })
@@ -23,7 +23,7 @@ Page({
   cardetail(e) {
     var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/news/cardetail?id='+id,
+      url: '/pages/news/cardetail?id=' + id,
     })
   },
   peopledetail(e) {
