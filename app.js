@@ -37,5 +37,37 @@ App({
       wx.makePhoneCall({
         phoneNumber: phone
       })
+    },
+    user_Loction(){
+      var latitude = wx.getStorageSync('my_latitude');
+      var longitude = wx.getStorageSync('my_longitude');
+      if (latitude == '' || longitude==''){
+        wx.getLocation({
+          type: 'wgs84', // 返回可以用于wx.openLocation的经纬度
+          success(res) {
+            wx.setStorageSync('my_latitude', res.latitude);
+            wx.setStorageSync('my_longitude', res.longitude);
+            qqmapsdk = new QQMapWX({
+              key: app.data.mapkey
+            });
+            qqmapsdk.reverseGeocoder({
+              location: {
+                latitude: res.latitude,
+                longitude: res.longitude
+              },
+              success(r) {
+                // console.log(r);
+                wx.setStorageSync('merchant_city', r.result.ad_info.city);
+                wx.setStorageSync('my_address', r.result.address);
+              }
+            })
+          }
+        })
+      }
+       latitude = wx.getStorageSync('my_latitude');
+       longitude = wx.getStorageSync('my_longitude');
+      return 'latitude=' + latitude + '&longitude=' + longitude;
     }
+    
+
 })

@@ -16,44 +16,22 @@ Page({
     scrollTop: 100
   },
 
-  onLoad: function () {
+  onLoad: function () {    
     var _this = this;
+    var user_location = app.user_Loction();
     wx.request({
-      url: app.data.api+'home',
+      url: app.data.api + 'home?' + user_location,
       success(res){
         _this.setData({
           imgUrls:res.data.data.banner,
           imageurl:app.data.image,
-          new_message: res.data.data.new_message.data,
-          nearby_message: res.data.data.nearby_message.data,
-          hot_message: res.data.data.hot_message.data,
+          _new: res.data.data.new,
+          nearby: res.data.data.nearby,
+          hot: res.data.data.hot,
         })
         // console.log(res.data.data.new_message);
       }
     })
-
-    wx.getLocation({
-      type: 'wgs84', // 返回可以用于wx.openLocation的经纬度
-      success(res) {
-        wx.setStorageSync('my_latitude', res.latitude);
-        wx.setStorageSync('my_longitude', res.longitude);
-        qqmapsdk = new QQMapWX({
-          key: app.data.mapkey
-        });
-        qqmapsdk.reverseGeocoder({
-          location: {
-            latitude:res.latitude ,
-            longitude: res.longitude
-          },
-          success(r){
-            // console.log(r);
-            wx.setStorageSync('merchant_city', r.result.ad_info.city);
-            wx.setStorageSync('my_address', r.result.address);
-          }
-        })
-      }
-    })
-
   },
   postmerchant() {
     wx.navigateTo({

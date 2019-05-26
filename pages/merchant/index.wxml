@@ -50,7 +50,8 @@
 
 <van-tabs active="0" custom-class="tabswitch" bind:change="onChange">
   <van-tab custom-class="newscard" title="附近">
-    <view class="news wbg"  bindtap="merchantdetail">
+
+    <view wx:for="{{nearby}}" class="news wbg"  bindtap="merchantdetail">
       <van-row>
         <van-col span="5" custom-class="messageuser">
           <image src="/image/home1.png" class="image_font"  mode="widthFix" />
@@ -58,10 +59,11 @@
         <van-col span="12" custom-class="messagetitle">
           <view>
             <!-- <van-tag type="danger">置顶</van-tag> -->
-            发布人
+            {{item.name}}
           </view> 
           <view class="location">
-            <van-icon name="location" color="#f5641a" /><text>详细地址</text>
+            <van-icon name="location" color="#f5641a" /><text>
+            {{item.merchant_city}}</text>
           </view> 
         </van-col>
         <van-col span="7" custom-class="tel">
@@ -70,18 +72,71 @@
         <van-col span="19">
           <view>
             <view class="rate"><van-rate value="5" size="10" readonly /></view>
-            <view class="distance">10086km</view>
+            <view class="distance">{{item.distance}}km</view>
           </view>
         </van-col>
+
       </van-row>
     </view>
   </van-tab>
 
-  <van-tab title="新入">
-    <view class="merchant">
-    
+  <van-tab title="新入" custom-class="newscard" >
+    <view wx:for="{{_new}}" class="news wbg"  bindtap="merchantdetail">
+      <van-row>
+        <van-col span="5" custom-class="messageuser">
+          <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+        </van-col>
+        <van-col span="12" custom-class="messagetitle">
+          <view>
+            <!-- <van-tag type="danger">置顶</van-tag> -->
+            {{item.name}}
+          </view> 
+          <view class="location">
+            <van-icon name="location" color="#f5641a" /><text>
+            {{item.merchant_city}}</text>
+          </view> 
+        </van-col>
+        <van-col span="7" custom-class="tel">
+          <van-icon name="phone" color='#fce45a'/>拨打电话
+        </van-col>
+        <van-col span="19">
+          <view>
+            <view class="rate"><van-rate value="5" size="10" readonly /></view>
+            <view class="distance">{{item.distance}}km</view>
+          </view>
+        </van-col>
+
+      </van-row>
     </view>
   </van-tab>
 
-  <van-tab title="热门"> 拼车</van-tab>
+  <van-tab title="热门" custom-class="newscard" >
+      <view wx:for="{{hot}}" class="news wbg"  bindtap="merchantdetail">
+      <van-row>
+        <van-col span="5" custom-class="messageuser">
+          <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+        </van-col>
+        <van-col span="12" custom-class="messagetitle">
+          <view>
+            <!-- <van-tag type="danger">置顶</van-tag> -->
+            {{item.name}}
+          </view> 
+          <view class="location">
+            <van-icon name="location" color="#f5641a" /><text>
+            {{item.merchant_city}}</text>
+          </view> 
+        </van-col>
+        <van-col span="7" custom-class="tel">
+          <van-icon name="phone" color='#fce45a'/>拨打电话
+        </van-col>
+        <van-col span="19">
+          <view>
+            <view class="rate"><van-rate value="5" size="10" readonly /></view>
+            <view class="distance">{{item.distance}}km</view>
+          </view>
+        </van-col>
+
+      </van-row>
+    </view>
+  </van-tab>
 </van-tabs>

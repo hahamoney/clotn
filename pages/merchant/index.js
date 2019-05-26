@@ -4,8 +4,6 @@ Page({
   data: {
     imageurl: '',
     imgUrls: [],
-    merchant_list: [],
-    car_list: [],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
@@ -15,14 +13,19 @@ Page({
 
   onLoad: function () {
     var _this = this;
+    var user_location = app.user_Loction();
+    _this.setData({
+      imageurl: app.data.image
+    })
     wx.request({
-      url: app.data.api + 'home',
+      
+      url: app.data.api + 'merchant?'+user_location,
       success(res) {
         _this.setData({
           imgUrls: res.data.data.banner,
-          merchant_list: res.data.data.merchant,
-          car: res.data.data.car,
-          imageurl: app.data.image
+          hot:res.data.data.hot,
+          _new:res.data.data.new,
+          nearby: res.data.data.nearby
         })
       }
     })

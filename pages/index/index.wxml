@@ -73,7 +73,7 @@
 
 <van-tabs active="0" custom-class="tabswitch" bind:change="onChange">
   <van-tab custom-class="newscard" title="附近">
-    <view class="news wbg" wx:for="{{nearby_message}}">
+    <view class="news wbg" wx:for="{{nearby}}">
       <van-row>
         <van-col span="4" custom-class="messageuser">
           <image src="{{item.user.avatarUrl}}" class="image_font"  mode="widthFix" />
@@ -114,7 +114,7 @@
   </van-tab>
 
   <van-tab custom-class="newscard" title="新入">
-    <view class="news wbg" wx:for="{{new_message}}">
+    <view class="news wbg" wx:for="{{_new}}">
       <van-row>
         <van-col span="4" custom-class="messageuser">
           <image src="{{item.user.avatarUrl}}" class="image_font"  mode="widthFix" />
@@ -155,7 +155,7 @@
   </van-tab>
 
   <van-tab custom-class="newscard" title="热门">
-    <view class="news wbg" wx:for="{{hot_message}}">
+    <view class="news wbg" wx:for="{{hot}}">
       <van-row>
         <van-col span="4" custom-class="messageuser">
           <image src="{{item.user.avatarUrl}}" class="image_font"  mode="widthFix" />

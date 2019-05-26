@@ -49,15 +49,16 @@ Page({
 
   getlogistics() {
     var _this = this;
+    var user_location = app.user_Loction();
     wx.request({
-      url: app.data.api + 'logistics',
+      url: app.data.api + 'logistics?'+user_location,
       success(res) {
         // console.log(res);
         _this.setData({
           imgUrls: res.data.data.banner,
-          imageurl: app.data.image,
-          car: res.data.data.car,
-          people_type: res.data.data.people_type,
+          hot: res.data.data.hot,
+          _new: res.data.data.new,
+          nearby: res.data.data.nearby
         })
       }
     });
