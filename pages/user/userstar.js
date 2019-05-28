@@ -1,67 +1,76 @@
 // pages/user/userstar.js
 const app = getApp();
+var QQMapWX = require('../../maplib/qqmap-wx-jssdk.js');
+var qqmapsdk;
+
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
 
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  onLoad(options) {
+    var _this = this;
     app.check_login();
+    _this.tabSwitch();
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  tabSwitch(e) {
+    // wx.showToast({
+    //   title: `点击类型 ${e.detail.index + 1}`,
+    //   icon: 'none'
+    // });
+    var _this = this;
+    var index = e.detail.index + 1;
+    var type = '';
+    if (index == '1') {
+      type = '3';
+    } else if (index == '2') {
+      type = '2';
+    } else if (index == '3') {
+      type = '1';
+    } else if (index == '4') {
+      type = '4';
+    }
+    var user_id = wx.getStorageSync('user_id');
+    wx.request({
+      url: app.data.api + 'mycollect',
+      method: 'get',
+      data: {user_id: user_id, type: type},
+      dataType: 'json',
+      success(res) {
+        _this.setData({
+          message: res.data
+        })
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  phone(e) {
+    app.phone_call(e.currentTarget.dataset.phone);
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  cardetail(e) {
+    var id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/news/cardetail?id=' + id,
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  peopledetail(e) {
+    var id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/news/peopledetail?id=' + id,
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  merchantdetail(e) {
+    var id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/merchant/merchantdetail?id=' + id,
+    })
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  newsproduct(e) {
+    var id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/news/product?id=' + id,
+    })
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

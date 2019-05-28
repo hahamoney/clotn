@@ -5,7 +5,9 @@
     </van-col>
     <van-col span="19" custom-class="messagetitle">
       <view>{{name}}</view>
-      <view>{{name}}</view> 
+      <view>
+      <van-tag type="primary">{{type}}</van-tag>
+    </view>
     </van-col>
   </van-col>
 
@@ -27,18 +29,18 @@
       <van-icon name="location"/>
     </view> 
   </van-col>
-  <van-col span="24" custom-class="content">
+  <!-- <van-col span="24" custom-class="content">
     <view class="range">
       <van-col span="5">发货范围</van-col>
       <van-col span="18">{{scope}}</van-col>
     </view> 
-  </van-col>
+  </van-col> -->
 </van-row>
 
 <view class='news3title'>物流介绍</view>
 <van-row custom-class="news3 wbg">
   <van-col span="22" offset="1" custom-class="title">
-    {{introduce}}
+    {{announcement}}
   </van-col>
 </van-row>
 

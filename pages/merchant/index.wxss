@@ -88,13 +88,14 @@ page{
 .tabswitch .newscard .news .messagetitle .van-tag{
   margin: 0 10rpx 0 0;
 }
-.tabswitch .newscard .news .messagetitle .location{
+.tabswitch .newscard .news .location{
   margin: 10rpx 0 0;
   font-size: 22rpx;
   color: #8e8ea7;
+  text-align: left;
 }
-.tabswitch .newscard .news .messagetitle .location text{
-  margin: 0 0 0 6rpx;
+.tabswitch .newscard .news .location .van-icon{
+  text-align: left;
 }
 .tabswitch .newscard .news .rate{
   width: 60%;
@@ -102,8 +103,8 @@ page{
   text-align: left;
 }
 .tabswitch .newscard .news .distance{
-  width: 34%;
-  float: left;
+  width: 40%;
+  float: right;
   font-size: 24rpx;
   color: #f5641a;
   text-align: right;

@@ -63,7 +63,7 @@ Page({
         var data = res.data;
         // console.log(data);return false;
         _this.setData({
-          commentlist: data.data.commentlist,
+          commentlist: data.data.comment_list,
         })
       }
     })

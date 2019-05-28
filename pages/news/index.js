@@ -15,33 +15,6 @@ Page({
     scrollTop: 100
   },
 
-  carlist(e){
-    wx.switchTab({
-      url: '/pages/news/carlist',
-    })
-  },
-  cardetail(e) {
-    var id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '/pages/news/cardetail?id='+id,
-    })
-  },
-  peopledetail(e) {
-    var id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '/pages/news/peopledetail?id=' + id,
-    })
-  },
-  phone(e) {
-    app.phone_call(e.currentTarget.dataset.phone);
-  },
-  peoplelist(e) {
-    var type = e.currentTarget.dataset.type;
-    wx.navigateTo({
-      url: '/pages/news/peoplelist?type=' + type,
-    })
-  },
-
   onLoad(options) {
     var _this = this;
     _this.getlogistics();
@@ -56,9 +29,10 @@ Page({
         // console.log(res);
         _this.setData({
           imgUrls: res.data.data.banner,
-          hot: res.data.data.hot,
-          _new: res.data.data.new,
-          nearby: res.data.data.nearby
+          imageurl: app.data.image,
+          hot: res.data.data.hot.data,
+          _new: res.data.data.new.data,
+          nearby: res.data.data.nearby.data,
         })
       }
     });
@@ -85,5 +59,33 @@ Page({
       }
     })
   },
+
+  carlist(e) {
+    wx.switchTab({
+      url: '/pages/news/carlist',
+    })
+  },
+  cardetail(e) {
+    var id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/news/cardetail?id=' + id,
+    })
+  },
+  peopledetail(e) {
+    var id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/news/peopledetail?id=' + id,
+    })
+  },
+  phone(e) {
+    app.phone_call(e.currentTarget.dataset.phone);
+  },
+  peoplelist(e) {
+    var type = e.currentTarget.dataset.type;
+    wx.navigateTo({
+      url: '/pages/news/peoplelist?type=' + type,
+    })
+  },
+
 
 })

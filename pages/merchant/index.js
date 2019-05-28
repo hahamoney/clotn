@@ -40,9 +40,13 @@ Page({
       url: '/pages/news/detail',
     })
   },
-  merchantdetail() {
+  phone(e) {
+    app.phone_call(e.currentTarget.dataset.phone);
+  },
+  merchantdetail(e) {
+    var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/merchant/merchantdetail',
+      url: '/pages/merchant/merchantdetail?id='+id,
     })
   }
 })

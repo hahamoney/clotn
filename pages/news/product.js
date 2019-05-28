@@ -78,8 +78,31 @@ Page({
     app.phone_call(_this.data.phone);
   },
 
-  onClickStar() {
-    
+  onClickStar(e) {
+    var _this = this;
+    var user_id = wx.getStorageSync('user_id');
+    var collect_id = _this.data.productid;
+    // console.log(collect_id);return false;
+    wx.request({
+      url: app.data.api + 'collect',
+      method: 'post',
+      data: {
+        user_id: user_id,
+        collect_id: collect_id,
+        type: 3,
+      },
+      dataType: 'json',
+      success(res) {
+        var data = res.data;
+        if (data.code == '200') {
+          wx.showToast({
+            title: data.data.msg,
+            icon: 'none',
+            duration: 1500,
+          })
+        }
+      }
+    })
   },
 
   onClickCmt() {

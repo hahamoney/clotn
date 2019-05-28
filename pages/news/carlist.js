@@ -6,13 +6,6 @@ var qqmapsdk;
 Page({
 
   data: {
-    imageurl: '',
-    imgUrls: [],
-    indicatorDots: true,
-    autoplay: true,
-    interval: 5000,
-    duration: 1000,
-    scrollTop: 100
   },
 
   carlist(e) {
@@ -44,20 +37,19 @@ Page({
 
   onLoad(options) {
     var _this = this;
-    _this.getlogistics();
+    _this.getcarlist();
   },
 
-  getlogistics() {
+  getcarlist() {
     var _this = this;
     wx.request({
-      url: app.data.api + 'logistics',
+      url: app.data.api + 'car_list',
       success(res) {
         // console.log(res);
         _this.setData({
-          imgUrls: res.data.data.banner,
-          imageurl: app.data.image,
-          car: res.data.data.car,
-          people_type: res.data.data.people_type,
+          hot: res.data.data.hot.data,
+          _new: res.data.data.new.data,
+          nearby: res.data.data.nearby.data,
         })
       }
     });
