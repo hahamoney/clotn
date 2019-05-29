@@ -35,9 +35,10 @@ Page({
       url: '/pages/merchant/apply',
     })
   },
-  newsdetail() {
+  newsdetail(e) {
+    var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/news/detail',
+      url: '/pages/news/detail?id='+id,
     })
   },
   phone(e) {

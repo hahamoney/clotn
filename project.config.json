@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 9,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -83,10 +83,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 6,
 					"name": "分类产品列表",
 					"pathName": "pages/news/detail",
-					"query": "",
+					"query": "id=13",
 					"scene": null
 				},
 				{
