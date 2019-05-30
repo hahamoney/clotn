@@ -6,29 +6,13 @@
       placeholder="请输入名称"
       name="name"
     />
-    <van-field
-      value="{{ company }}"
-      label="快递公司"
-      placeholder="请输入快递公司"
-      name="company"
-    />
 
-    <picker name="type" class="classpicker wbg" bindchange="classify" range-key="name" value="{{index}}" range="{{merchant_classify}}">
+    <picker name="type" class="classpicker wbg" bindchange="classify" range-key="name" value="{{index}}" range="{{classify}}">
       <van-col span="7" custom-class="picker">
-        物流分类：
+        所属类别：
       </van-col>
-      <van-col span="17">{{merchant_classify[index].name}}</van-col>
+      <van-col span="17">{{classify[index].name}}</van-col>
     </picker>
-
-      <van-field
-        name="merchant_city"
-        value="{{ address }}"
-        label="详细地址"
-        placeholder="点击图标选择"
-        icon="location"
-        disabled
-        bind:click-icon="onChangeAddress"
-      />
 
       <van-field
         value="{{ phone }}"
@@ -57,37 +41,6 @@
     </van-col>
     <van-col span="22" offset="1">
     </van-col>
-  </van-row>
-
-  <van-row custom-class="merchant_image">
-    <van-row custom-class="upbox">
-      <van-col span="5" offset="1" custom-class="uploadbtn">
-        <van-button size="small" bind:click="upload_logo">上传logo</van-button>
-      </van-col>
-      <van-col span="18">
-        <image  src="{{logo}}"  class="one_image" mode="widthFix" />
-      </van-col>
-    </van-row>
-    <!-- <van-row custom-class="upbox">
-      <van-col span="5" offset="1" custom-class="uploadbtn">
-        <van-button size="small" bind:click="upload_wechat">上传微信</van-button>
-      </van-col>
-      <van-col span="18">
-        <image  src="{{wechat}}" class="one_image" mode="widthFix" />
-      </van-col>
-    </van-row> -->
-
-    <!-- <van-row custom-class="upbox">
-      <van-col span="5" offset="1" custom-class="uploadbtn">
-        <van-button size="small" bind:click="upload_detail">上传详情</van-button>
-      </van-col>
-      <van-col span="18">
-        <view wx:for="{{merchant_detail_image}}" class="img_list" data-id="{{item.id}}" data-index="{{index}}" bindtap="deleteimg">
-            <view class="multiclose" data-itemid="{{item.id}}"><van-icon name="clear"/></view>
-            <image src="{{image_url}}{{item.path}}" class="one_image" mode="widthFix"></image>
-        </view>
-      </van-col>
-    </van-row> -->
   </van-row>
   
 <button type="primary" size="default" form-type="submit" disabled="{{disabled}}">
