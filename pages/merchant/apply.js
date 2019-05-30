@@ -32,21 +32,14 @@ Page({
     var obj = this;
 
       wx.request({
-        url: app.data.api+'merchant_classify',
+        url: app.data.api+'classify?config_id=1',
         success(res){
           obj.setData({
             merchant_classify:res.data
           })
         } 
       });
-    wx.request({
-      url: app.data.api + 'merchant_facility',
-      success(res) {
-        obj.setData({
-          facility: res.data
-        })
-      }
-    });
+
 
     
   },
