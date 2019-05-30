@@ -12,7 +12,20 @@ Page({
   onLoad(options) {
     var _this = this;
     app.check_login();
-    _this.tabSwitch();
+    var _this = this;
+    var user_id = wx.getStorageSync('user_id');
+    wx.request({
+      url: app.data.api + 'mycollect',
+      method: 'get',
+      data: { user_id: user_id, type: 3 },
+      dataType: 'json',
+      success(res) {
+        console.log(res);
+        _this.setData({
+          message: res.data.data
+        })
+      }
+    })
   },
 
   tabSwitch(e) {
@@ -40,7 +53,7 @@ Page({
       dataType: 'json',
       success(res) {
         _this.setData({
-          message: res.data
+          message: res.data.data
         })
       }
     })

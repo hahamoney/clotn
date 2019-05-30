@@ -31,7 +31,7 @@
   </van-tab>
 
   <van-tab custom-class="newscard" title="个人物流">
-    <view class="news wbg" wx:for="{{_new}}">
+    <view class="news wbg" wx:for="{{message}}">
       <van-row>
         <van-col span="4" custom-class="messageuser">
           <image src="/image/home1.png" class="image_font"  mode="widthFix" />
@@ -42,7 +42,7 @@
             <van-tag type="primary">{{item.type}}</van-tag>
           </view>  
         </van-col>
-        <van-col span="6" custom-class="tel" bindtap='phone' data-phone='{{item.link_phone}}'>
+        <van-col span="6" custom-class="tel" bindtap='phone' data-phone='{{item.phone}}'>
           <van-icon name="phone" color='#fce45a'/>拨打电话
         </van-col>
 
@@ -62,7 +62,7 @@
   </van-tab>
 
   <van-tab custom-class="newscard" title="车队物流">
-    <view class="news wbg" wx:for="{{hot}}">
+    <view class="news wbg" wx:for="{{message}}">
       <van-row>
         <van-col span="4" custom-class="messageuser">
           <image src="/image/home1.png" class="image_font"  mode="widthFix" />
@@ -73,7 +73,7 @@
             <van-tag type="primary">{{item.type}}</van-tag>
           </view>  
         </van-col>
-        <van-col span="6" custom-class="tel" bindtap='phone' data-phone='{{item.link_phone}}'>
+        <van-col span="6" custom-class="tel" bindtap='phone' data-phone='{{item.phone}}'>
           <van-icon name="phone" color='#fce45a'/>拨打电话
         </van-col>
 

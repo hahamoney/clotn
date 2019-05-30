@@ -47,11 +47,16 @@ Page({
 
 
   },
-  newsproduct() {
+  newsproduct(e) {
+    var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/news/product',
+      url: '/pages/news/product?id=' + id,
     })
-  }, get_message(e){
+  },
+  phone(e) {
+    app.phone_call(e.currentTarget.dataset.phone);
+  },
+  get_message(e){
     var _this = this;
     var index = e.detail.index;
     if(index==null){

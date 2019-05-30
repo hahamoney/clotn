@@ -1,40 +1,42 @@
 <van-tabs active="0" custom-class="tabswitch" bind:change="get_message" >
   <van-tab wx:for="{{top_list}}" custom-class="newscard" wx:for-index="idx" title="{{item.name}}" >
-    <view wx:for="{{message[idx]}}" wx:for-item="msg"  class="news wbg"  bindtap="newsproduct">
+    <view wx:for="{{message[idx]}}" wx:for-item="msg"  class="news wbg">
       <van-row>
         <van-col span="4" custom-class="messageuser">
           <image src="{{msg.user.avatarUrl}}" class="image_font"  mode="widthFix" />
         </van-col>
-        <van-col span="14" custom-class="messagetitle">
+        <van-col span="14" custom-class="messagetitle" bindtap="newsproduct" data-id="{{msg.id}}">
           <view>{{msg.user.name}}</view> 
           <view>
             <van-tag type="primary">{{msg.type}}</van-tag>
           </view>  
         </van-col>
-        <van-col span="6" custom-class="tel">
+        <van-col span="6" custom-class="tel" bindtap='phone' data-phone='{{msg.link_phone}}'>
           <van-icon name="phone" color='#fce45a'/>拨打电话
         </van-col>
 
-        <van-col span="24" custom-class="content">
-          {{msg.content}}
-        </van-col>
+        <view bindtap="newsproduct" data-id="{{msg.id}}">
+          <van-col span="24" custom-class="content">
+            {{msg.content}}
+          </van-col>
 
-        <!-- <van-col span="24" custom-class="image">
-          <image src="/image/home1.png" class="image_font"  mode="widthFix" />
-          <image src="/image/home1.png" class="image_font"  mode="widthFix" />
-          <image src="/image/home1.png" class="image_font"  mode="widthFix" />
-        </van-col> -->
+          <!-- <van-col span="24" custom-class="image">
+            <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+            <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+            <image src="/image/home1.png" class="image_font"  mode="widthFix" />
+          </van-col> -->
 
-        <van-col span="24" custom-class="news_foot">
-          <view>
-            <view class="date">{{msg.created_at}}发布</view>
-            <view class="distance">距离{{msg.distance}}KM</view>
-          </view>
-          <view>
-            <!-- <view class="watchnum">浏览100次</view> -->
-            <view class="more">查看详情<van-icon name="arrow" /></view>
-          </view>
-        </van-col>
+          <van-col span="24" custom-class="news_foot">
+            <view>
+              <view class="date">{{msg.created_at}}发布</view>
+              <view class="distance">距离{{msg.distance}}KM</view>
+            </view>
+            <view>
+              <!-- <view class="watchnum">浏览100次</view> -->
+              <view class="more">查看详情<van-icon name="arrow" /></view>
+            </view>
+          </van-col>
+        </view>
       </van-row>
     </view>
   </van-tab>
