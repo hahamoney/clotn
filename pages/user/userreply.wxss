@@ -17,12 +17,25 @@ page{
   width: 100%;
 }
 .messageuser{
-  width: 65%;
-  float: left;
+  width: 100%;
   margin: 18rpx 0 0 0;
   text-align: left;
-  font-size: 28rpx;
+  font-size: 30rpx;
   line-height: 1.5;
+}
+.message{
+  background-color: #f5f1f1;
+  font-size: 26rpx;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+  border-radius: 10rpx;
+  padding: 15rpx 12rpx;
+  color: #444444;
+}
+.messagetime{
+  text-align: right;
+  font-size: 24rpx;
+  color: #c2c2c2;
 }
 .news_foot{
   color: #7c7c7c;

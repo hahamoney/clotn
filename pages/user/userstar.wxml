@@ -93,7 +93,7 @@
   </van-tab>
 
   <van-tab custom-class="newscard" title="商家">
-    <view class="news wbg" wx:for="{{hot}}">
+    <view class="news wbg" wx:for="{{message}}">
       <van-row>
         <van-col span="4" custom-class="messageuser">
           <image src="/image/home1.png" class="image_font"  mode="widthFix" />

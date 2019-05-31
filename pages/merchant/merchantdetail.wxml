@@ -36,8 +36,9 @@
   </van-col>
 </van-row>
 
-<van-tabs active="{{ active }}" bind:change="onChange">
-  <van-tab title="商家详情">
+<!-- <van-tabs active="{{ active }}" bind:change="onChange"> -->
+  <!-- <van-tab title="商家详情"> -->
+    <view class='news3title'>商家详情</view>
     <van-row custom-class="news3 wbg">
       <van-col span="22" offset="1" custom-class="title">
         {{announcement}}
@@ -46,8 +47,8 @@
         <van-button round plain hairline type="warning" size="normal" bindtap='merchantapply'  custom-class="applybtn">我是商家，我要入驻</van-button>
       </van-col>
     </van-row>
-  </van-tab>
-  <van-tab title="用户评论">
+  <!-- </van-tab> -->
+  <!-- <van-tab title="用户评论">
     <van-row custom-class="news3 wbg">
       <van-col span="22" offset="1" custom-class="title">
         <van-col span="6">评论</van-col>
@@ -62,8 +63,8 @@
         </van-col>
       </van-col>
     </van-row>
-  </van-tab>
-</van-tabs>
+  </van-tab> -->
+<!-- </van-tabs> -->
 
 <van-popup show="{{ show }}" bind:close="onClose" custom-class="comment">
   <form bindsubmit="formSubmit">

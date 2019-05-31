@@ -1,40 +1,16 @@
 <!--pages/user/userreply.wxml-->
-<view class="infocard">
-    <van-row>
-      <van-col span="22" offset="1">
-        <view class="image_font">
-            <image src="/image/home1.png"  mode="widthFix" />
-        </view>
-        <view class="messageuser">
-            <view>发布人</view> 
-            <view>发布类型</view> 
-        </view>
+<view class="infocard" wx:for="{{commentlist}}" bindtap="newsproduct" data-id="{{item.message_id}}">
+  <van-row>
+    <van-col span="22" offset="1">
+      <van-col span="24" custom-class="messageuser">
+          <view>“{{item.content}}”</view>
       </van-col>
-    </van-row>
-  </view>
-  <view class="infocard">
-    <van-row>
-      <van-col span="22" offset="1">
-        <view class="image_font">
-            <image src="/image/home1.png"  mode="widthFix" />
-        </view>
-        <view class="messageuser">
-            <view>发布人</view> 
-            <view>发布类型</view> 
-        </view>
+      <van-col span="24" custom-class="message">
+          评论产品：{{item.message.linkman}}-{{item.message.type}}
       </van-col>
-    </van-row>
-  </view>
-  <view class="infocard">
-    <van-row>
-      <van-col span="22" offset="1">
-        <view class="image_font">
-            <image src="/image/home1.png"  mode="widthFix" />
-        </view>
-        <view class="messageuser">
-            <view>发布人</view> 
-            <view>发布类型</view> 
-        </view>
+      <van-col span="24" custom-class="messagetime">
+          评论时间：{{item.created_at}}
       </van-col>
-    </van-row>
-  </view>
+    </van-col>
+  </van-row>
+</view>

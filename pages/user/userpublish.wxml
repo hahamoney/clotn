@@ -7,11 +7,11 @@
              <image src="/image/home1.png"  mode="widthFix" />
           </view>
           <view class="messageuser">
-              <view>发布人</view> 
-              <view>发布类型</view> 
+              <view>发布类型</view>
+              <view>发布内容</view> 
           </view>
           <view class="tag">
-              <van-tag>审核中</van-tag>
+              <van-tag type="default">审核中</van-tag>
           </view>
         </van-col>
       </van-row>

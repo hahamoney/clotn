@@ -122,8 +122,14 @@ page{
   font-size: 35rpx;
   margin: 0 5rpx 0 0;
 }
+.news3title{
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333333;
+  margin: 25rpx 0 10rpx 25rpx;
+}
 .news3 .applybtn{
-  margin: 20px 0 10px;
+  margin: 100px 0 20px;
   width: 100%;
 }
 .comment{

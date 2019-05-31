@@ -35,7 +35,7 @@
         </van-col>
         <van-col span="24">
           <navigator url="userreply">
-            <van-icon name="smile-comment" color='#1edb9b' /><text>我的回复</text>
+            <van-icon name="smile-comment" color='#1edb9b' /><text>我的评论</text>
           </navigator>
         </van-col>
         <van-col span="24">
