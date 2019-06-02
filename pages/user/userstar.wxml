@@ -7,7 +7,7 @@
         <van-col span="4" custom-class="messageuser">
           <image src="/image/home1.png" class="image_font"  mode="widthFix" />
         </van-col>
-        <van-col span="12" custom-class="messagetitle" bindtap="peopledetail" data-id="{{collect.id}}">
+        <van-col span="12" custom-class="messagetitle" bindtap="{{collect.url}}" data-id="{{collect.id}}">
           <view>{{collect.name}}</view> 
           <view>
             <van-tag type="primary">{{collect.type}}</van-tag>
@@ -25,7 +25,7 @@
           <view>
             <view class="date">发布</view>
             
-            <view class="more" bindtap="peopledetail" data-id="{{collect.id}}">查看详情<van-icon name="arrow" /></view>
+            <view class="more" bindtap="{{collect.url}}" data-id="{{collect.id}}">查看详情<van-icon name="arrow" /></view>
           </view>
         </van-col>
       </van-row>
