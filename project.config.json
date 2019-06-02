@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 13,
+			"current": 15,
 			"list": [
 				{
 					"id": -1,
@@ -135,6 +135,20 @@
 					"id": -1,
 					"name": "个人物流申请",
 					"pathName": "pages/merchant/applypeople",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的搜藏",
+					"pathName": "pages/user/userstar",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "我的收藏",
+					"pathName": "pages/user/userstar",
 					"scene": null
 				}
 			]

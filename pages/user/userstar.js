@@ -2,61 +2,79 @@
 const app = getApp();
 var QQMapWX = require('../../maplib/qqmap-wx-jssdk.js');
 var qqmapsdk;
+const user_id = wx.getStorageSync('user_id');
 
 Page({
-
   data: {
-
+    star_list:[
+      { type: 1, name: '车队' },
+      { type: 2, name: '个人' },
+      { type: 3, name: '发帖' },
+      { type: 4, name: '商家' },
+      ],
+      message:[],
+      message_page:[0,0,0,0],
+      message_url:[],
+      index:0
   },
 
   onLoad(options) {
-    var _this = this;
     app.check_login();
     var _this = this;
-    var user_id = wx.getStorageSync('user_id');
+  
+    var message = _this.data.message
     wx.request({
       url: app.data.api + 'mycollect',
       method: 'get',
-      data: { user_id: user_id, type: 3 },
+      data: { user_id: user_id, type: 1 },
       dataType: 'json',
       success(res) {
-        console.log(res);
-        _this.setData({
-          message: res.data.data
-        })
+        message[0]=res.data.data
+        if(res.data.code==200){
+          _this.setData({
+            message: message
+          })
+        }else{
+          app.showMsg('查询有误');
+          wx.navigateBack();
+          return false;
+        }
       }
     })
   },
 
   tabSwitch(e) {
-    // wx.showToast({
-    //   title: `点击类型 ${e.detail.index + 1}`,
-    //   icon: 'none'
-    // });
-    var _this = this;
-    var index = e.detail.index + 1;
-    var type = '';
-    if (index == '1') {
-      type = '3';
-    } else if (index == '2') {
-      type = '2';
-    } else if (index == '3') {
-      type = '1';
-    } else if (index == '4') {
-      type = '4';
-    }
-    var user_id = wx.getStorageSync('user_id');
-    wx.request({
-      url: app.data.api + 'mycollect',
-      method: 'get',
-      data: {user_id: user_id, type: type},
-      dataType: 'json',
-      success(res) {
-        _this.setData({
-          message: res.data.data
+      if(e.detail.index==null){
+        app.showMsg('参数错误');
+        wx.navigateBack();
+        return false;
+      }
+      var _this = this;
+      var star_list = _this.data.star_list;
+      var index = e.detail.index;
+      var message = _this.data.message;
+      _this.setData({
+        index:index 
+      })
+      if(!message[index]){
+        wx.request({
+          url: app.data.api + 'mycollect',
+          method: 'get',
+          data: { user_id: user_id, type: star_list[index]['type'] },
+          dataType: 'json',
+          success(res) {
+            message[index] = res.data.data
+            if (res.data.code == 200) {
+              _this.setData({
+                message: message
+              })
+            } else {
+              app.showMsg('查询有误');
+              return false;
+            }
+          }
         })
       }
-    })
   },
 
   phone(e) {
