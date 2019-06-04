@@ -128,6 +128,9 @@ Page({
         phone: data.phone,
         announcement: data.announcement,
         user_id: user_id,
+        address:wx.getStorageSync('my_address'),
+        latitude: wx.getStorageSync('my_latitude'),
+        longitude: wx.getStorageSync('my_longitude'),
       },
       success(res) {
         var data = JSON.parse(res.data);

@@ -33,6 +33,27 @@ Page({
       }
     })
   },
+  /**
+ * 生命周期函数--监听页面显示
+ */
+  onShow: function () {
+    var user_id = wx.getStorageSync('user_id');
+    if(user_id){
+      var address = wx.getStorageSync('my_address');
+      var longitude = wx.getStorageSync('my_longitude');
+      var latitude = wx.getStorageSync('my_latitude');
+      wx.request({
+        url: app.data.api +'update_location',
+        method:'post',
+        dataType:'json',
+        data:{user_id:user_id,address:address,longitude:longitude,
+        latitude:latitude},
+        success(res){
+
+        }
+      })
+    }
+  },
   postmerchant() {
     wx.navigateTo({
       url: '/pages/merchant/apply',
