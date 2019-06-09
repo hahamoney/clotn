@@ -2,8 +2,10 @@
 App({
   data:{
     mapkey:'IHTBZ-7V5CR-4WZWT-WNDFX-7B2V5-ZEFYY',
-    api:'http://cloth.com/api/',
-    image:'http://cloth.com/',
+   // api:'http://cloth.com/api/',
+    //image:'http://cloth.com/',
+    api:'https://cloth.fumos.club/api/',
+    image:'https://cloth.fumos.club/',
     appid:'wx716a760549d1ba15',
     appSecret:'c02165caa149933c3687cf4d33e09e68'
     },

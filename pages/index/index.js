@@ -29,9 +29,19 @@ Page({
           nearby: res.data.data.nearby,
           hot: res.data.data.hot,
         })
-        // console.log(res.data.data.new_message);
+      }
+    });
+
+    wx.request({
+      url: app.data.api +'edge_ball',
+      success(res){
+          wx.setStorageSync('ball', res.data.code);
+          _this.setData({
+            ball:res.data.code
+          })
       }
     })
+
   },
   /**
  * 生命周期函数--监听页面显示

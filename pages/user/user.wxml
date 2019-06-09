@@ -8,9 +8,7 @@
     <button wx:else size='mini' open-type="getUserInfo"  bindgetuserinfo="bindGetUserInfo">请登陆</button>
 
     </view>
-    <!-- <view class="usertype">
-      <navigator url="#" class='typebox'><van-icon name="friends" class='farrow'/> 加盟合伙人 < van-icon name="arrow" class='rarrow'/></navigator>
-    </view> -->
+
     <view class='clear'></view>
   </view>
 </view>
@@ -22,12 +20,7 @@
     </view>
     <view class="box_container">
       <van-row>
-        <!-- <van-col span="5">
-          <navigator url="userinfo">
-            <view><van-icon name="manager" color='#6696f3' /></view>
-            <view> 个人资料 </view>
-          </navigator>
-        </van-col> -->
+
         <van-col span="24">
           <navigator url="userpublish">
             <van-icon name="card" color='#ff5d6d' /><text>我的发布</text>
@@ -38,7 +31,7 @@
             <van-icon name="smile-comment" color='#1edb9b' /><text>我的评论</text>
           </navigator>
         </van-col>
-        <van-col span="24">
+        <van-col span="24" wx:if="{{ball==200}}">
           <navigator url="userstar">
             <van-icon name="bookmark" color='#ff8447' /><text>我的收藏</text>
           </navigator>

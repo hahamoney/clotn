@@ -1,10 +1,10 @@
-<van-search
+<!-- <van-search
   value="{{ value }}"
   placeholder="请输入搜索关键词"
   show-action
   bind:search="onSearch"
   bind:cancel="onCancel"
-/>
+/> -->
 <swiper
   indicator-dots="{{indicatorDots}}"
   autoplay="{{autoplay}}"
@@ -21,13 +21,13 @@
 
 </van-cell-group>
 
-<van-cell-group>
+<van-cell-group wx:if="{{ball==200}}"> 
   <van-cell 
     title="信息头条" 
     custom-class="navcell"
   />
 </van-cell-group>
-<van-row custom-class="navbar wbg">
+<van-row custom-class="navbar wbg" wx:if="{{ball==200}}">
   <van-col span="22" offset="1">
     <van-col span="6" bindtap="newsdetail" data-id='12'>
       <image src="/image/home4.png" class="image_font"  mode="widthFix" />

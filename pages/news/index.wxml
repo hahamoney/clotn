@@ -18,27 +18,9 @@
   </block>
 </swiper>
 
-<!-- <van-cell-group>
-  <van-cell
-    value="总浏览量:123 总量:456"
-    custom-class="countcell"
-  />
-</van-cell-group> -->
-
-<!-- <van-cell-group>
-  <van-cell 
-    title="个人物流" 
-    custom-class="navcell"
-  />
-</van-cell-group>
-  <scroll-view scroll-x="true" class="scollmerchant wbg">
-    <view class='hot_merchant' wx:for="{{ people_type }}" bindtap="peoplelist" data-type="{{item.id}}">
-      <image src="/image/home1.png" class="image_font"  mode="widthFix" />
-      <view>{{ item.name }}</view>
-    </view>
-  </scroll-view> -->
 
 <van-cell 
+wx:if="{{ball==200}}"
   value="" 
   icon="logistics" 
   is-link
@@ -46,12 +28,13 @@
   url="/pages/news/carlist"
   custom-class="apply"
 >
-  <view slot="title">
+  <view slot="title" > 
     <view class="van-cell-text">浏览车队物流</view>
   </view>
 </van-cell>
 
-  <van-cell-group>
+  <van-cell-group wx:if="{{ball==200}}">
+  
     <van-cell 
       title="个人物流" 
       custom-class="navcell2"

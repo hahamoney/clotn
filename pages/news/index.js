@@ -18,6 +18,10 @@ Page({
   onLoad(options) {
     var _this = this;
     _this.getlogistics();
+    var ball = wx.getStorageSync('ball');
+    _this.setData({
+      ball:ball
+    })
   },
 
   getlogistics() {

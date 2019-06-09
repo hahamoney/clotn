@@ -14,8 +14,10 @@ Page({
   onLoad: function () {
     var _this = this;
     var user_location = app.user_Loction();
+    var ball = wx.getStorageSync('ball');
     _this.setData({
-      imageurl: app.data.image
+      imageurl: app.data.image,
+      ball:ball
     })
     wx.request({
       

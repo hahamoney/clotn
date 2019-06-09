@@ -10,9 +10,11 @@ Page({
   onLoad: function () {
     var avatarUrl = wx.getStorageSync('avatarUrl');
     var username = wx.getStorageSync('username');
+    var ball =wx.getStorageSync('ball');
     this.setData({
       avatarUrl:avatarUrl,
-      username: username
+      username: username,
+      ball:ball
     })
   },
   bindGetUserInfo(e){
