@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    imageurl: '',
     facility: [],
     show: false,
     disabled: false
@@ -15,7 +16,10 @@ Page({
     var _this = this;
     var id = options.id;
     _this.getMerchant(id);
-    _this.getCommentlist(id);
+    _this.setData({
+      imageurl: app.data.image,
+    })
+    //_this.getCommentlist(id);
   },
 
   getMerchant(id) {
@@ -41,6 +45,8 @@ Page({
             merchant_city: data.data.res.merchant_city,
             announcement: data.data.res.announcement,
             merchant_time: data.data.res.merchant_time,
+            detail_image:data.data.detail_image,
+            handsome:data.data.res.image[0].path
           })
         }
       },

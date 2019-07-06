@@ -31,7 +31,7 @@
             <van-icon name="smile-comment" color='#1edb9b' /><text>我的评论</text>
           </navigator>
         </van-col>
-        <van-col span="24" wx:if="{{ball==200}}">
+        <van-col span="24">
           <navigator url="userstar">
             <van-icon name="bookmark" color='#ff8447' /><text>我的收藏</text>
           </navigator>

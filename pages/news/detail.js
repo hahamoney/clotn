@@ -8,9 +8,11 @@ Page({
    */
   data: {
       top_list:[],
+      id:'',
       index:0,
-      message:[],
-      message_page:[1,1,1]
+      message_list:[[],[],[]],
+      page_list:[1,1,1],
+      top_list:['最近','新入','热门']
 
   },
   onLoad(options) {
@@ -18,32 +20,10 @@ Page({
         app.showMsg('请求有误');
         wx.navigateBack();
       }
-      var _this = this;
-      var list = _this.data.message;
-    wx.request({
-      url: app.data.api +'msg_type?fid='+options.id,
-      dataType:'json',
-      success(res){
-        _this.setData({
-          top_list:res.data.data
-        })
-
-        wx.request({
-          url: app.data.api + 'msg?' + user_location + '&type=' + _this.data.top_list[0]['id'],
-          dataType: 'json',
-          success(res) {
-            if (res.data.code == 200) {
-              list[0] = res.data.data;
-              _this.setData({
-                message: list
-              })
-            }
-          }
-        })
-
-      }
+    this.setData({
+      id:options.id
     })
-
+    this.getmessage(0);
 
 
   },
@@ -56,59 +36,50 @@ Page({
   phone(e) {
     app.phone_call(e.currentTarget.dataset.phone);
   },
-  get_message(e){
+  getmessage(index, page = 1) {
     var _this = this;
-    var index = e.detail.index;
-    if(index==null){
-      app.showMsg('参数错误');
+    var idx = index;
+    var page = page;
+    var list = _this.data.message_list
+    var id = _this.data.id;
+    if(id==''){
+      app.showMsg('请求有误');
       return false;
     }
-    var type = _this.data.top_list[index]['id'];
-    var list = _this.data.message;
-    _this.setData({
-      index:index
-    })
-    if (!_this.data.message[index]){
-        wx.request({
-          url: app.data.api +'msg?'+user_location+'&type='+type,
-          dataType:'json',
-          success(res){
-            if(res.data.code==200){
-              list[index] = res.data.data;
-              _this.setData({
-                  message:list,
-              })
-            }
-          }
-        })
-    }
-  },  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-      app.showMsg('加载中');
-      var _this = this;
-      var index = _this.data.index;
-      var type = _this.data.top_list[index]['id'];
-      var list = _this.data.message;
-      var message_page = _this.data.message_page;
-      var page = message_page[index];
-       ++page;
-      message_page[index]=page;
     wx.request({
-      url: app.data.api + 'msg?' + user_location + '&type=' + type+'&page='+page,
-      dataType: 'json',
+      url: app.data.api + 'msg?' + user_location,
+      data: { type: index, page: page ,id:id},
       success(res) {
-        if (res.data.code == 200) {
-          list[index].push(res.data.data);
+        if (list[0] == false) {
           _this.setData({
-            message: list,
-            message_page:message_page
+            imageurl: app.data.image,
           })
         }
+        res.data.data.forEach(function (elem) {
+          list[idx].push(elem);
+        });
+        _this.setData({
+          message_list: list,
+        })
       }
     })
-
   },
-
+  onChange(e) {
+    if (this.data.message_list[e.detail.index] == false) {
+      this.getmessage(e.detail.index);
+    }
+    this.setData({
+      index: e.detail.index
+    })
+  },
+  onReachBottom() {
+    var _this = this;
+    var index = _this.data.index;
+    var page_list = _this.data.page_list;
+    page_list[index]++;
+    _this.getmessage(index, page_list[index]);
+    _this.setData({
+      page_list: page_list
+    })
+  }
 })

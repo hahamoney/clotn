@@ -1,6 +1,6 @@
-<van-tabs active="0" custom-class="tabswitch" bind:change="get_message" >
-  <van-tab wx:for="{{top_list}}" custom-class="newscard" wx:for-index="idx" title="{{item.name}}" >
-    <view wx:for="{{message[idx]}}" wx:for-item="msg"  class="news wbg">
+<van-tabs active="0" custom-class="tabswitch" bind:change="onChange" >
+  <van-tab wx:for="{{top_list}}" custom-class="newscard" wx:for-index="idx" title="{{item}}" >
+    <view wx:for="{{message_list[idx]}}" wx:for-item="msg"  class="news wbg">
       <van-row>
         <van-col span="4" custom-class="messageuser">
           <image src="{{msg.user.avatarUrl}}" class="image_font"  mode="widthFix" />

@@ -17,7 +17,7 @@
   </van-col>
 
   <van-col span="24" custom-class="image" wx:for="{{proimg}}">
-    <view><image src="{{item.image_path}}" class="image_font"  mode="widthFix" /></view>
+    <view><image src="{{imageurl}}{{item.image_path}}" class="image_font"  mode="widthFix" /></view>
   </van-col>
 
   <!-- <van-col span="24" custom-class="countcell">

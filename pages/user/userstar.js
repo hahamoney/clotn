@@ -7,13 +7,13 @@ const user_id = wx.getStorageSync('user_id');
 Page({
   data: {
     star_list:[
-      { type: 1, name: '车队' },
+      // { type: 1, name: '车队' },
       { type: 2, name: '个人' },
       { type: 3, name: '发帖' },
       { type: 4, name: '商家' },
       ],
       message:[],
-      message_page:[0,0,0,0],
+      message_page:[0,0,0],
       message_url:[],
       index:0
   },
@@ -26,7 +26,7 @@ Page({
     wx.request({
       url: app.data.api + 'mycollect',
       method: 'get',
-      data: { user_id: user_id, type: 1 },
+      data: { user_id: user_id, type: 2 },
       dataType: 'json',
       success(res) {
         message[0]=res.data.data
@@ -36,7 +36,7 @@ Page({
           })
         }else{
           app.showMsg('查询有误');
-          wx.navigateBack();
+    
           return false;
         }
       }

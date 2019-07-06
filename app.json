@@ -12,6 +12,7 @@
     "pages/news/peoplelist",
     "pages/news/cardetail",
     "pages/news/peopledetail",
+    "pages/news/branch",
     "pages/merchant/index",
     "pages/user/userinfo",
     "pages/user/userpublish",
@@ -59,10 +60,12 @@
     ]
   },
   "window": {
-    "backgroundTextStyle": "light",
+   "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "纺织秘书",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+    
   },
   "usingComponents": {
     "van-button": "vant-weapp/dist/button/index",

@@ -27,7 +27,7 @@ Page({
       success(res) {
         wx.hideLoading();
         var data = res.data;
-        // console.log(data.name);
+     
         if (data.code == '200') {
           _this.setData({
             peopleid: id,
@@ -36,6 +36,8 @@ Page({
             announcement: data.data.announcement,
             address: data.data.address,
             type: data.data.type,
+            handsome: data.data.handsome,
+            imageurl: app.data.image,
           })
         }
       },

@@ -106,7 +106,6 @@ page{
   width: 60%;
   float: left;
   text-align: left;
-  font-size: 22rpx;
 }
 .news .distance{
   width: 34%;
@@ -168,9 +167,4 @@ page{
 .apply .van-icon{
   font-size: 40rpx;
   margin-right: 6rpx;
-}
-.j_name{
-  color: #ffffff;
-  position: relative;
-  top:-88rpx;
 }

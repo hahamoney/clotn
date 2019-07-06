@@ -19,7 +19,6 @@
 </van-cell>
 
 <van-cell 
-wx:if="{{ball==200}}"
   value="" 
   icon="manager-o" 
   is-link
@@ -33,13 +32,13 @@ wx:if="{{ball==200}}"
   </view>
 </van-cell>
 
-<van-row custom-class="wbg" wx:if="{{ball==200}}">
+<van-row custom-class="wbg" >
   <van-col span="24" custom-class="choosebar">
     <text>—— 请选择您要发布的栏目 ——</text>
   </van-col>
 </van-row>
 
-<van-row custom-class="navbar wbg" wx:if="{{ball==200}}">
+<van-row custom-class="navbar wbg" >
   <van-col span="22" offset="1">
     <van-col span="6">
       <navigator url="merpublish?type=12">

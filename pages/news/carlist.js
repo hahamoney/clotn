@@ -1,11 +1,10 @@
 // pages/news/carlist.js
 const app = getApp()
-var QQMapWX = require('../../maplib/qqmap-wx-jssdk.js');
-var qqmapsdk;
-
 Page({
 
   data: {
+    index:1,
+    res:[]
   },
 
   carlist(e) {
@@ -13,31 +12,43 @@ Page({
       url: '/pages/news/carlist',
     })
   },
-  cardetail(e) {
+  branch(e) {
     var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/news/cardetail?id=' + id,
-    })
-  },
-  peopledetail(e) {
-    var id = e.currentTarget.dataset.id;
-    wx.navigateTo({
-      url: '/pages/news/peopledetail?id=' + id,
-    })
-  },
-  phone(e) {
-    app.phone_call(e.currentTarget.dataset.phone);
-  },
-  peoplelist(e) {
-    var type = e.currentTarget.dataset.type;
-    wx.navigateTo({
-      url: '/pages/news/peoplelist?type=' + type,
+      url: '/pages/news/branch?id=' + id,
     })
   },
 
   onLoad(options) {
     var _this = this;
     _this.getcarlist();
+  },
+  onReachBottom: function () {
+      return false;
+      var _this = this;
+      var index = _this.data.index;
+      var list = _this.data.res;
+      index++
+      wx.showToast({
+        title: '加载中',
+        icon:'loading'
+      })
+     wx.request({
+      url: app.data.api + 'car_list?page='+index,
+      success(res) {
+        if(res.data.data){
+          res.data.data.forEach(function (elem) {
+            list.push(elem);
+          });
+          _this.setData({
+            res: list,
+            index:index
+          })
+        }else{
+          app.showMsg('无更多数据');
+        }
+      }
+    });
   },
 
   getcarlist() {
@@ -47,34 +58,31 @@ Page({
       success(res) {
         // console.log(res);
         _this.setData({
-          hot: res.data.data.hot.data,
-          _new: res.data.data.new.data,
-          nearby: res.data.data.nearby.data,
+          res: res.data.data,
         })
       }
     });
-
-    wx.getLocation({
-      type: 'wgs84', // 返回可以用于wx.openLocation的经纬度
-      success(res) {
-        wx.setStorageSync('my_latitude', res.latitude);
-        wx.setStorageSync('my_longitude', res.longitude);
-        qqmapsdk = new QQMapWX({
-          key: app.data.mapkey
-        });
-        qqmapsdk.reverseGeocoder({
-          location: {
-            latitude: res.latitude,
-            longitude: res.longitude
-          },
-          success(r) {
-            // console.log(r);
-            wx.setStorageSync('merchant_city', r.result.ad_info.city);
-            wx.setStorageSync('my_address', r.result.address);
-          }
+  },
+  onSearch(e){
+    if(e.detail==''||e.detail==null){
+      app.showMsg('输入不能为空');
+      return false;
+    }
+    var _this = this;
+    wx.request({
+      url: app.data.api+'car_search?search='+e.detail,
+      success(res){
+        if(res.data.code=='500'){
+          app.showMsg('查询有误');
+          return false;
+        }
+        _this.setData({
+          res:res.data.data
         })
       }
     })
-  },
+  }
+
+
 
 })

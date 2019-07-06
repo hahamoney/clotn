@@ -27,13 +27,13 @@
 
   <van-row custom-class="wbg">
     <van-col span="24">
-      <view class='title'>物流介绍</view>
+      <view class='title'>服务介绍</view>
       <van-cell-group custom-class="contentbox">
         <van-field
           value="{{ content }}"
           label=""
           type="textarea"
-          placeholder="请输入物流介绍"
+          placeholder="请输入服务介绍"
           border="{{ false }}"
           name = 'announcement'
         />

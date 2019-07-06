@@ -15,6 +15,9 @@ Page({
     var id = options.id;
     _this.getDetail(id);
     _this.getCommentlist(id);
+    _this.setData({
+      imageurl: app.data.image,
+    })
   },
 
   getDetail(id) {

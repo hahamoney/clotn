@@ -1,14 +1,11 @@
 <van-row custom-class="news wbg">
   <van-col span="24" custom-class="header">
     <van-col span="5" custom-class="messageuser">
-      <image src="/image/home2.png" class="image_font"  mode="widthFix" />
+      <image src="{{imageurl}}{{handsome}}" class="image_font"  mode="widthFix" />
     </van-col>
     <van-col span="19" custom-class="messagetitle">
       <view>{{name}}</view> 
-      <view class="rate">
-        <van-rate value="5" size="18" readonly />
-        <view class="ratetxt">5分</view>
-      </view> 
+
     </van-col>
   </van-col>
 
@@ -29,11 +26,11 @@
     </view> 
   </van-col>
 
-  <van-col span="24" custom-class="content2">
+  <!-- <van-col span="24" custom-class="content2">
     <view class="type" wx:for="{{facility}}">
       <text>{{item.name}}</text>
     </view>
-  </van-col>
+  </van-col> -->
 </van-row>
 
 <!-- <van-tabs active="{{ active }}" bind:change="onChange"> -->
@@ -42,10 +39,12 @@
     <van-row custom-class="news3 wbg">
       <van-col span="22" offset="1" custom-class="title">
         {{announcement}}
-      </van-col>
-      <van-col span="14" offset="5">
+            <image wx:for="{{detail_image}}" src="{{imageurl}}{{item.path}}"  mode="widthFix" style="width:100%" />
+    </van-col>
+
+      <!-- <van-col span="14" offset="5">
         <van-button round plain hairline type="warning" size="normal" bindtap='merchantapply'  custom-class="applybtn">我是商家，我要入驻</van-button>
-      </van-col>
+      </van-col> -->
     </van-row>
   <!-- </van-tab> -->
   <!-- <van-tab title="用户评论">
