@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 9,
+			"current": 16,
 			"list": [
 				{
 					"id": -1,
@@ -107,7 +107,7 @@
 					"id": 9,
 					"name": "商家详情",
 					"pathName": "pages/merchant/merchantdetail",
-					"query": "id=1",
+					"query": "",
 					"scene": null
 				},
 				{
@@ -154,16 +154,9 @@
 				},
 				{
 					"id": -1,
-					"name": "车队",
+					"name": "车队详情",
 					"pathName": "pages/news/carlist",
 					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "网点",
-					"pathName": "pages/news/branch",
-					"query": "id=1",
 					"scene": null
 				}
 			]

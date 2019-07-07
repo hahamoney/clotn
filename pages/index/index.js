@@ -28,25 +28,43 @@ Page({
     var _this = this;
     var idx = index;
     var page = page;
-    var list = _this.data.message_list
-    wx.request({
-      url: app.data.api + 'home?' + user_location,
-      data: { type: index, page: page },
-      success(res) {
-        if (list[0] == false) {
-          _this.setData({
-            imgUrls: res.data.data.banner,
-            imageurl: app.data.image,
-          })
-        }
-        res.data.data.res.forEach(function (elem) {
-          list[idx].push(elem);
-        });
+    var list = _this.data.message_list;
+    var res = wx.getStorageSync('indexdata');
+    if (res) {
+      if (list[0] == false) {
         _this.setData({
-          message_list: list,
+          imgUrls: res.data.data.banner,
+          imageurl: app.data.image,
         })
       }
-    })
+      res.data.data.res.forEach(function (elem) {
+        list[idx].push(elem);
+      });
+      _this.setData({
+        message_list: list,
+      })
+    } else {
+      wx.request({
+        url: app.data.api + 'home?' + user_location,
+        data: { type: index, page: page },
+        success(res) {
+          wx.setStorageSync('indexdata', res);
+          console.log(res)
+          if (list[0] == false) {
+            _this.setData({
+              imgUrls: res.data.data.banner,
+              imageurl: app.data.image,
+            })
+          }
+          res.data.data.res.forEach(function (elem) {
+            list[idx].push(elem);
+          });
+          _this.setData({
+            message_list: list,
+          })
+        }
+      })
+    }
   },
 
 

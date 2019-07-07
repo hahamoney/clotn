@@ -31,4 +31,11 @@ Page({
   phone(e) {
     app.phone_call(e.currentTarget.dataset.phone);
   },
+  share(e) {
+    var id = e.currentTarget.dataset.id;
+    return {
+      title: '车队列表',
+      path: '/pages/news/branch?id=' + id,
+    }
+  }
 })

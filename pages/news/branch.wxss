@@ -76,6 +76,7 @@ page{
 }
 
 .news{
+  background-color: #3260b4;
   padding: 20rpx 4%;
   margin: 0 0 12rpx 0;
 }
@@ -85,7 +86,7 @@ page{
   width: 120rpx;
 }
 .news .messagetitle{
-  color: #333333;
+  color: #ffffff;
   font-size: 28rpx;
   line-height: 1.5;
   margin: 5rpx 0;
@@ -115,8 +116,14 @@ page{
   text-align: right;
   margin-right: 5%;
 }
+.news .share{
+  font-size: 24rpx;
+  color: #e3e6ec;
+  padding: 14rpx 0;
+}
 .news .tel{
-  line-height: 2;
+  text-align: right;
+  line-height: 5;
   font-size: 26rpx;
 }
 .news .tel .van-icon{

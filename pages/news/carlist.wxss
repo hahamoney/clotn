@@ -80,6 +80,7 @@ page{
   margin: 0 0 12rpx 0;
 }
 .news .messageuser{
+  line-height: 0;
 }
 .news .messageuser .image_font{
   width: 120rpx;
@@ -172,5 +173,5 @@ page{
 .j_name{
   color: #ffffff;
   position: relative;
-  top:-88rpx;
+  top:-58rpx;
 }
