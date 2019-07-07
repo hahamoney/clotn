@@ -4,10 +4,10 @@ var qqmapsdk;
 App({
   data:{
     mapkey:'IHTBZ-7V5CR-4WZWT-WNDFX-7B2V5-ZEFYY',
-   // api:'http://cloth.com/api/',
-  //  image:'http://cloth.com/',
-    api:'https://cloth.fumos.club/api/',
-    image:'https://cloth.fumos.club/',
+   api:'http://cloth.fangzhimishu.top/api/',
+   image:'http://cloth.fangzhimishu.top/',
+    // api:'https://cloth.fumos.club/api/',
+    // image:'https://cloth.fumos.club/',
    // appid:'wx48604553431a5ec2',
     appSecret:'c02165caa149933c3687cf4d33e09e68'
     },

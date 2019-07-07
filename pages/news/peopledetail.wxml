@@ -48,6 +48,13 @@
   <van-button round plain hairline type="warning" size="normal" bindtap='carapply'  custom-class="applybtn wbg">我是车队商家，我要入驻</van-button>
 </van-col> -->
 
+<view class="qrcode wbg">
+  <image src="{{qrcode}}" class="qrimg" mode="widthFix" bindtouchstart='timestart' bindtouchend='timeend' bindtap='saveimg' />
+  <!-- <view>长按保存图片</view> -->
+</view>
+
+<view class='phoneball' bindtap="onClickCall"><text>拨 打\n电 话</text></view>
+
 <van-goods-action>
   <van-goods-action-icon
     icon="wap-home"

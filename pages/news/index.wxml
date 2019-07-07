@@ -11,9 +11,15 @@
   interval="{{interval}}"
   duration="{{duration}}"
 >
-  <block wx:for="{{imgUrls}}">
+  <block>
     <swiper-item>
-      <image src="{{imageurl}}{{item.path}}" style="width:100%" class="slide-image"  mode="widthFix" />
+      <image src="/image/banner1.jpeg" style="width:100%" class="slide-image"  mode="widthFix" />
+    </swiper-item>
+    <swiper-item>
+      <image src="/image/banner4.png" style="width:100%" class="slide-image"  mode="widthFix" />
+    </swiper-item>
+    <swiper-item>
+      <image src="/image/banner5.png" style="width:100%" class="slide-image"  mode="widthFix" />
     </swiper-item>
   </block>
 </swiper>

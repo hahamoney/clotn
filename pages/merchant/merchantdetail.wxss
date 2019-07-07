@@ -11,9 +11,31 @@ page{
 .image_font{
   width: 120rpx;
 }
+.qrcode{
+  width: 100%;
+  margin: 10px auto 80px;
+  padding: 10rpx 0;
+  text-align: center;
+  color: #8e8ea7;
+  font-size: 24rpx;
+}
+.qrcode .qrimg{
+  width: 50%;
+  margin: 10rpx 0;
+}
 .news{
   padding: 20rpx 4%;
   margin: 0 0 12rpx 0;
+}
+.phoneball{
+  border-radius: 40px;
+  padding: 12px;
+  font-size: 26rpx;
+  background-color: #ff976a;
+  color: #ffffff;
+  position: fixed;
+  top: 40%;
+  right: 2%;
 }
 .news .header{
   padding: 10px 0;

@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 16,
+			"current": 18,
 			"list": [
 				{
 					"id": -1,
@@ -157,6 +157,20 @@
 					"name": "车队详情",
 					"pathName": "pages/news/carlist",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "车队详情",
+					"pathName": "pages/news/product",
+					"query": "id=101",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商家详情",
+					"pathName": "pages/merchant/merchantdetail",
+					"query": "id=140",
 					"scene": null
 				}
 			]

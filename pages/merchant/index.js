@@ -2,8 +2,11 @@ const app = getApp()
 const user_location = app.user_Loction();
 Page({
   data: {
-    imageurl: '',
-    imgUrls: [],
+    imageurl: '/image/',
+    imgUrls: [
+      // { path: "banner1.jpeg" },
+      // { path: "banner6.png" }
+    ],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
@@ -32,7 +35,7 @@ Page({
       success(res) {
         if (list[0] == false) {
           _this.setData({
-            imgUrls: res.data.data.banner,
+            // imgUrls: res.data.data.banner,
             imageurl: app.data.image,
           })
         }

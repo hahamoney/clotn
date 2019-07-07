@@ -46,7 +46,8 @@ Page({
             announcement: data.data.res.announcement,
             merchant_time: data.data.res.merchant_time,
             detail_image:data.data.detail_image,
-            handsome:data.data.res.image[0].path
+            handsome:data.data.res.image[0].path,
+            qrcode: data.data.qrcode,
           })
         }
       },
@@ -74,6 +75,51 @@ Page({
       }
     })
   },
+
+  //点击开始的时间  
+  timestart: function (e) {
+    var _this = this;
+    _this.setData({ timestart: e.timeStamp });
+  },
+  //点击结束的时间
+  timeend: function (e) {
+    var _this = this;
+    _this.setData({ timeend: e.timeStamp });
+  },
+
+  // saveimg(e) {
+  //   var _this = this;
+  //   var times = _this.data.timeend - _this.data.timestart;
+  //   if (times > 300) {
+  //     console.log("长按");
+  //     wx.getSetting({
+  //       success: function (res) {
+  //         wx.authorize({
+  //           scope: 'scope.writePhotosAlbum',
+  //           success: function (res) {
+  //             console.log("授权成功");
+  //             var imgUrl = _this.data.imageurl+'qrcode.png';
+  //             wx.downloadFile({
+  //               url: imgUrl,
+  //               success: function (res) {
+  //                 wx.saveImageToPhotosAlbum({
+  //                   filePath: res.tempFilePath,
+  //                   success: function (res) {
+  //                     wx.showToast({
+  //                       title: '保存成功',
+  //                       icon: 'success'
+  //                     })
+  //                   }
+  //                 })
+  //               }
+  //             })
+  //           }
+  //         })
+  //       }
+  //     })
+  //   }
+
+  // },
 
   onClickHome() {
     wx.switchTab({
