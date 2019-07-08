@@ -20,8 +20,8 @@
         <!-- <van-col span="6" custom-class="tel" bindtap='phone' data-phone='{{item.phone}}'>
           <van-icon name="phone" color='#fce45a'/>拨打电话
         </van-col> -->
-        <van-col span="5" offset="19" custom-class="share" bindtap='share' data-id='{{item.id}}'>
-          分享名片
+        <van-col span="5" offset="19" custom-class="share">
+          <van-button type="default" open-type="share" bindtap='share' class="sharebtn" data-id='{{item.id}}'>分享名片</van-button>
         </van-col>
     
         <van-col span="24" custom-class="news_foot">
