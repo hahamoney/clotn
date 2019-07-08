@@ -41,13 +41,13 @@ Page({
       success(res) {
         wx.hideLoading();
         var data = res.data.data;
-        var qrcode = data.qrcode;
-        base64src(qrcode, res => {
-          // console.log(res) // 返回图片地址，直接赋值到image标签即可
-          _this.setData({
-            qrcode: res
-          })
-        });
+        // var qrcode = data.qrcode;
+        // base64src(qrcode, res => {
+        //   // console.log(res) // 返回图片地址，直接赋值到image标签即可
+        //   _this.setData({
+        //     qrcode: res
+        //   })
+        // });
         // console.log(data);
         _this.setData({
           productid: id,
@@ -59,6 +59,7 @@ Page({
           created_at: data.res[0].created_at,
           phone: data.res[0].link_phone,
           proimg: data.proimg,
+          qrcode: data.qrcode,
         })
       },
       fail(res) {
@@ -107,7 +108,7 @@ Page({
             scope: 'scope.writePhotosAlbum',
             success: function (res) {
               console.log("授权成功");
-              var imgUrl = _this.data.qrcode;
+              var imgUrl = _this.data.imageurl+_this.data.qrcode;
               wx.downloadFile({
                 url: imgUrl,
                 success: function (res) {

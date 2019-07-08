@@ -49,7 +49,7 @@
 </van-col> -->
 
 <view class="qrcode wbg">
-  <image src="{{qrcode}}" class="qrimg" mode="widthFix" bindtouchstart='timestart' bindtouchend='timeend' bindtap='saveimg' />
+  <image src="{{imageurl}}{{qrcode}}" class="qrimg" mode="widthFix" bindtouchstart='timestart' bindtouchend='timeend' bindtap='saveimg' />
   <view>长按保存图片</view>
 </view>
 
