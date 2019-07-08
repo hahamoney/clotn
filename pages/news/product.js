@@ -13,7 +13,14 @@ Page({
 
   onLoad(options) {
     var _this = this;
-    var id = options.id;
+    var scene = options.scene;
+    if (scene)
+    {
+      var id = scene;
+    } else {
+      var id = options.id;
+    }
+    
     _this.getDetail(id);
     _this.getCommentlist(id);
     _this.setData({
@@ -41,7 +48,7 @@ Page({
             qrcode: res
           })
         });
-        console.log(data);
+        // console.log(data);
         _this.setData({
           productid: id,
           name: data.res[0].user.name,

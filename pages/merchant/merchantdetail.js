@@ -15,7 +15,12 @@ Page({
 
   onLoad(options) {
     var _this = this;
-    var id = options.id;
+    var scene = options.scene;
+    if (scene) {
+      var id = scene;
+    } else {
+      var id = options.id;
+    }
     _this.getMerchant(id);
     _this.setData({
       imageurl: app.data.image,
