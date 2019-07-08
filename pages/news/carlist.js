@@ -3,6 +3,17 @@ const app = getApp()
 Page({
 
   data: {
+    imageurl: '/image/',
+    imgUrls: [
+      // { path: "banner1.jpeg" },
+      // { path: "banner4.png" },
+      // { path: "banner5.png" }
+    ],
+    indicatorDots: true,
+    autoplay: true,
+    interval: 5000,
+    duration: 1000,
+    scrollTop: 100,
     index:1,
     res:[]
   },

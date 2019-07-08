@@ -1,8 +1,28 @@
 <!--pages/news/carlist.wxml-->
+
+<swiper
+  indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}"
+  interval="{{interval}}"
+  duration="{{duration}}"
+>
+  <block>
+    <swiper-item>
+      <image src="/image/banner1.jpeg" style="width:100%" class="slide-image"  mode="widthFix" />
+    </swiper-item>
+    <swiper-item>
+      <image src="/image/banner4.png" style="width:100%" class="slide-image"  mode="widthFix" />
+    </swiper-item>
+    <swiper-item>
+      <image src="/image/banner5.png" style="width:100%" class="slide-image"  mode="widthFix" />
+    </swiper-item>
+  </block>
+</swiper>
 <van-search
   placeholder="请输入搜索关键词"
   bind:search="onSearch"
 />
+
     <view class="news wbg"  wx:for="{{res}}"
      bindtap="branch" data-id="{{item.id}}">
       <van-row>
