@@ -1,4 +1,5 @@
 // pages/news/product.js
+import { base64src } from '../../utils/base64src.js';
 const app = getApp();
 
 Page({
@@ -33,7 +34,14 @@ Page({
       success(res) {
         wx.hideLoading();
         var data = res.data.data;
-        // console.log(data);
+        var qrcode = data.qrcode;
+        base64src(qrcode, res => {
+          // console.log(res) // 返回图片地址，直接赋值到image标签即可
+          _this.setData({
+            qrcode: res
+          })
+        });
+        console.log(data);
         _this.setData({
           productid: id,
           name: data.res[0].user.name,
@@ -44,7 +52,6 @@ Page({
           created_at: data.res[0].created_at,
           phone: data.res[0].link_phone,
           proimg: data.proimg,
-          qrcode: data.qrcode,
         })
       },
       fail(res) {
@@ -82,74 +89,39 @@ Page({
     _this.setData({ timeend: e.timeStamp });
   },
 
-  // saveimg(e) {
-  //   var _this = this;
-  //   var times = _this.data.timeend - _this.data.timestart;
-  //   if (times > 300) {
-  //     console.log("长按");
-  //     wx.getSetting({
-  //       success: function (res) {
-  //         wx.authorize({
-  //           scope: 'scope.writePhotosAlbum',
-  //           success: function (res) {
-  //             console.log("授权成功");
-  //             var qrcode = _this.data.qrcode;
-  //             var timestamp = new Date().getTime();
-
-  //             _this.FileSystemManager.writeFile({
-  //               filePath: `${wx.env.USER_DATA_PATH}/resource/${_this.data.productid}product.png`,
-  //               data: qrcode,
-  //               encoding: 'base64',
-  //               success(res) {
-  //                 console.log('res: \n:', res)
-  //                 wx.saveImageToPhotosAlbum({
-  //                   filePath: `${wx.env.USER_DATA_PATH}/qrcode_${timestamp}.png`,
-  //                   success(res) {
-  //                     wx.showToast({
-  //                       title: '保存成功'
-  //                     })
-  //                   },
-  //                   fail(err) {
-  //                     console.log(err)
-  //                     if (!err.errMsg.includes('cancel')) {
-  //                       wepy.showToast({
-  //                         title: err.errMsg,
-  //                         icon: 'none'
-  //                       })
-  //                     }
-  //                   },
-  //                   complete: () => {
-  //                     wepy.hideLoading()
-  //                   }
-  //                 })
-  //               },
-  //               fail: res => {
-  //                 wepy.hideLoading()
-  //                 console.log(res)
-  //               }
-  //             })
-  //             // var imgUrl = _this.data.imageurl+'qrcode.png';
-  //             // wx.downloadFile({
-  //             //   url: imgUrl,
-  //             //   success: function (res) {
-  //             //     wx.saveImageToPhotosAlbum({
-  //             //       filePath: res.tempFilePath,
-  //             //       success: function (res) {
-  //             //         wx.showToast({
-  //             //           title: '保存成功',
-  //             //           icon: 'success'
-  //             //         })
-  //             //       }
-  //             //     })
-  //             //   }
-  //             // })
-  //           }
-  //         })
-  //       }
-  //     })
-  //   }
+  saveimg(e) {
+    var _this = this;
+    var times = _this.data.timeend - _this.data.timestart;
+    if (times > 300) {
+      console.log("长按");
+      wx.getSetting({
+        success: function (res) {
+          wx.authorize({
+            scope: 'scope.writePhotosAlbum',
+            success: function (res) {
+              console.log("授权成功");
+              var imgUrl = _this.data.qrcode;
+              wx.downloadFile({
+                url: imgUrl,
+                success: function (res) {
+                  wx.saveImageToPhotosAlbum({
+                    filePath: res.tempFilePath,
+                    success: function (res) {
+                      wx.showToast({
+                        title: '保存成功',
+                        icon: 'success'
+                      })
+                    }
+                  })
+                }
+              })
+            }
+          })
+        }
+      })
+    }
     
-  // },
+  },
 
   onClickHome() {
     wx.switchTab({

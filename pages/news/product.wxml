@@ -76,7 +76,7 @@
 
 <view class="qrcode wbg">
   <image src="{{qrcode}}" class="qrimg" mode="widthFix" bindtouchstart='timestart' bindtouchend='timeend' bindtap='saveimg' />
-  <!-- <view>长按保存图片</view> -->
+  <view>长按保存图片</view>
 </view>
 
 <view class='phoneball' bindtap="onClickCall"><text>拨 打\n电 话</text></view>

@@ -1,4 +1,5 @@
 // pages/merchant/merchantdetail.js
+import { base64src } from '../../utils/base64src.js';
 const app = getApp();
 Page({
 
@@ -35,6 +36,13 @@ Page({
       success(res) {
         wx.hideLoading();
         var data = res.data;
+        var qrcode = data.data.qrcode;
+        base64src(qrcode, res => {
+          // console.log(res) // 返回图片地址，直接赋值到image标签即可
+          _this.setData({
+            qrcode: res
+          })
+        });
         // console.log(data.data.facility);
         if (data.code == '200') {
           _this.setData({
@@ -47,7 +55,6 @@ Page({
             merchant_time: data.data.res.merchant_time,
             detail_image:data.data.detail_image,
             handsome:data.data.res.image[0].path,
-            qrcode: data.data.qrcode,
           })
         }
       },
@@ -87,39 +94,39 @@ Page({
     _this.setData({ timeend: e.timeStamp });
   },
 
-  // saveimg(e) {
-  //   var _this = this;
-  //   var times = _this.data.timeend - _this.data.timestart;
-  //   if (times > 300) {
-  //     console.log("长按");
-  //     wx.getSetting({
-  //       success: function (res) {
-  //         wx.authorize({
-  //           scope: 'scope.writePhotosAlbum',
-  //           success: function (res) {
-  //             console.log("授权成功");
-  //             var imgUrl = _this.data.imageurl+'qrcode.png';
-  //             wx.downloadFile({
-  //               url: imgUrl,
-  //               success: function (res) {
-  //                 wx.saveImageToPhotosAlbum({
-  //                   filePath: res.tempFilePath,
-  //                   success: function (res) {
-  //                     wx.showToast({
-  //                       title: '保存成功',
-  //                       icon: 'success'
-  //                     })
-  //                   }
-  //                 })
-  //               }
-  //             })
-  //           }
-  //         })
-  //       }
-  //     })
-  //   }
+  saveimg(e) {
+    var _this = this;
+    var times = _this.data.timeend - _this.data.timestart;
+    if (times > 300) {
+      console.log("长按");
+      wx.getSetting({
+        success: function (res) {
+          wx.authorize({
+            scope: 'scope.writePhotosAlbum',
+            success: function (res) {
+              console.log("授权成功");
+              var imgUrl = _this.data.qrcode;
+              wx.downloadFile({
+                url: imgUrl,
+                success: function (res) {
+                  wx.saveImageToPhotosAlbum({
+                    filePath: res.tempFilePath,
+                    success: function (res) {
+                      wx.showToast({
+                        title: '保存成功',
+                        icon: 'success'
+                      })
+                    }
+                  })
+                }
+              })
+            }
+          })
+        }
+      })
+    }
 
-  // },
+  },
 
   onClickHome() {
     wx.switchTab({

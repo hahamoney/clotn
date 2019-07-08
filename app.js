@@ -4,8 +4,8 @@ var qqmapsdk;
 App({
   data:{
     mapkey:'IHTBZ-7V5CR-4WZWT-WNDFX-7B2V5-ZEFYY',
-   api:'http://cloth.fangzhimishu.top/api/',
-   image:'http://cloth.fangzhimishu.top/',
+   api:'http://cloth.com/api/',
+   image:'http://cloth.com/',
     // api:'https://cloth.fumos.club/api/',
     // image:'https://cloth.fumos.club/',
    // appid:'wx48604553431a5ec2',
