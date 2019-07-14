@@ -23,25 +23,38 @@
   bind:search="onSearch"
 />
 
-    <view class="news wbg"  wx:for="{{res}}"
-     bindtap="branch" data-id="{{item.id}}">
-      <van-row>
-        <van-col span="5" custom-class="messageuser" >
-          <image src="/image/cars.png" class="image_font"  mode="widthFix" />
-          <text class='j_name'>{{item.j_name}}</text>
-        </van-col>
-        <van-col span="12" custom-class="messagetitle" >
-          <view>
-            <!-- <van-tag type="danger">置顶</van-tag> -->
-            {{item.name}}
-          </view> 
+<view class="news"  wx:for="{{res}}"
+  bindtap="branch" data-id="{{item.id}}">
+  <van-row>
+    <van-col span="5" custom-class="messageuser" >
+      <image src="/image/cars.png" class="image_font"  mode="widthFix" />
+      <text class='j_name'>{{item.j_name}}</text>
+    </van-col>
+    <van-col span="12" custom-class="messagetitle" >
+      <view>
+        <!-- <van-tag type="danger">置顶</van-tag> -->
+        {{item.name}}
+      </view> 
 
-        </van-col>
-        <van-col span="19">
-          <view>
-            <view class="rate">{{item.scope}}</view>
-          </view>
-        </van-col>
-      </van-row>
-    </view>
+    </van-col>
+    <!-- <van-col span="19">
+      <view>
+        <view class="rate">{{item.scope}}</view>
+      </view>
+    </van-col> -->
+    <van-col span="15" custom-class="tagsbox">
+      <van-tag color="#f2f2f2" custom-class="tags">服务态度好</van-tag>
+      <van-tag color="#f2f2f2" custom-class="tags">末端网点多</van-tag>
+      <van-tag color="#f2f2f2" custom-class="tags">上门收货</van-tag>
+      <van-tag color="#f2f2f2" custom-class="tags">代收贷款</van-tag>
+      <van-tag color="#f2f2f2" custom-class="tags">线路直达</van-tag>
+    </van-col>
+    <van-col span="24" custom-class="more">
+        点击查看
+    </van-col>
+  </van-row>
+</view>
 
+<view class="tip">
+  物流公司入驻,请致电：17502005320（微信同号）
+</view>

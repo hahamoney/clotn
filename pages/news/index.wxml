@@ -24,8 +24,18 @@
   </block>
 </swiper>
 
+<view class="linkbtn wbg">
+  <view class="btnbox">
+    <navigator url="carlist">
+      <image src="/image/btn2.png" mode="widthFix"></image>
+    </navigator>
+  </view>
+  <view class="text">
+    · 优质师傅 · 低价实惠 · 随叫随到
+  </view>
+</view>
 
-<van-cell 
+<!-- <van-cell 
   value="" 
   icon="logistics" 
   is-link
@@ -36,15 +46,15 @@
   <view slot="title" > 
     <view class="van-cell-text">浏览车队物流</view>
   </view>
-</van-cell>
+</van-cell> -->
 
-  <van-cell-group>
+  <!-- <van-cell-group>
   
     <van-cell 
       title="个人物流" 
       custom-class="navcell2"
     />
-  </van-cell-group>
+  </van-cell-group> -->
 
 <van-tabs active="0" custom-class="tabswitch" bind:change="onChange">
   <van-tab wx:for="{{title_list}}" custom-class="newscard" wx:for-index="idx" wx:for-item="title" title="{{title}}">

@@ -24,7 +24,13 @@
 
 </van-cell-group>
 
-
+<view class="linkbtn wbg">
+  <view class="btnbox">
+    <navigator url="wechat">
+      <image src="/image/btn1.png" mode="widthFix"></image>
+    </navigator>
+  </view>
+</view>
 
 <van-tabs active="0" custom-class="tabswitch" bind:change="onChange">
   <van-tab wx:for="{{title_list}}" custom-class="newscard" wx:for-index="idx" wx:for-item="title" title="{{title}}">

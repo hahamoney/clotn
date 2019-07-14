@@ -3,7 +3,6 @@
     "pages/index/index",
     "pages/user/user",
     "pages/news/index",
-    "pages/news/list",
     "pages/news/detail",
     "pages/news/submit",
     "pages/news/product",
@@ -21,7 +20,8 @@
     "pages/merchant/apply",
     "pages/merchant/applypeople",
     "pages/merchant/map",
-    "pages/merchant/merchantdetail"
+    "pages/merchant/merchantdetail",
+    "pages/merchant/wechat"
   ],
   "tabBar": {
     "color": "#555555",

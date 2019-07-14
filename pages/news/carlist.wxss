@@ -76,8 +76,9 @@ page{
 }
 
 .news{
-  padding: 20rpx 4%;
-  margin: 0 0 12rpx 0;
+  background-color: #0389e9;
+  padding: 35rpx 4%;
+  margin: 0 auto 12rpx;
 }
 .news .messageuser{
   line-height: 0;
@@ -86,10 +87,10 @@ page{
   width: 120rpx;
 }
 .news .messagetitle{
-  color: #333333;
+  color: #ffffff;
   font-size: 28rpx;
   line-height: 1.5;
-  margin: 5rpx 0;
+  margin: 5rpx 0 5rpx 10rpx;
   text-align: left;
 }
 .news .messagetitle .van-tag{
@@ -151,11 +152,12 @@ page{
   float: left;
   text-align: left;
 }
-.news .news_foot .more{
+.news .more{
+  font-size: 26rpx;
   width: 50%;
   float: right;
   text-align: right;
-  color: #f56161;
+  color: #ffffff;
 }
 .news .news_foot .more .van-icon{
   margin-left: 3px;
@@ -174,4 +176,20 @@ page{
   color: #ffffff;
   position: relative;
   top:-58rpx;
+}
+.tagsbox{
+  text-align: left;
+  margin-left: 10rpx;
+}
+.tagsbox .tags{
+  color: #031a36;
+  margin: 0 20rpx 0 0;
+}
+.tip{
+  text-align: center;
+  color: #ffffff;
+  background-color: #006cf4;
+  padding: 20rpx 15rpx;
+  margin-top: 10px;
+  font-size: 30rpx;
 }

@@ -299,7 +299,7 @@ Page({
         })
         if (data.msg == 'success') {
           wx.showToast({
-            title: "提交成功",
+            title: data.data.msg,
             icon: 'none',
             duration: 1500,
             success(res) {

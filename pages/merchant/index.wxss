@@ -24,6 +24,17 @@ page{
   color: #333333;
   font-size: 28rpx;
 }
+.linkbtn{
+  width: 100%;
+  padding: 10px 0;
+}
+.linkbtn .btnbox{
+  width: 90%;
+  margin: 0 auto;
+}
+.linkbtn .btnbox image{
+  width: 100%;
+}
 .title{
 }
 .noticebar{

@@ -76,9 +76,10 @@ page{
 }
 
 .news{
-  background-color: #3260b4;
+  width: 85%;
   padding: 20rpx 4%;
-  margin: 0 0 12rpx 0;
+  margin: 0 auto 12rpx auto;
+  border-radius: 8rpx;
 }
 .news .messageuser{
 }
@@ -86,10 +87,10 @@ page{
   width: 120rpx;
 }
 .news .messagetitle{
-  color: #ffffff;
+  color: #333333;
   font-size: 28rpx;
   line-height: 1.5;
-  margin: 5rpx 0;
+  margin: 5rpx 10rpx;
   text-align: left;
 }
 .news .messagetitle .van-tag{
@@ -116,25 +117,23 @@ page{
   text-align: right;
   margin-right: 5%;
 }
-.news .share{
-  font-size: 24rpx;
+.share{
   color: #e3e6ec;
   padding: 14rpx 0;
 }
-.news .share .van-button{
+.share .van-button{
   /* opacity: 0; */
-  font-size: 24rpx;
   color: #e3e6ec;
   padding: 0;
   line-height: 1;
-  background-color: #3260b4;
+  background-color: #0389e9;
   border: 0;
   margin: 0;
   height: auto;
 }
 .news .tel{
   text-align: right;
-  line-height: 5;
+  line-height: 2;
   font-size: 26rpx;
 }
 .news .tel .van-icon{
@@ -176,6 +175,104 @@ page{
 .news .news_foot .more .van-icon{
   margin-left: 3px;
   top: 5rpx;
+}
+
+.newscard{
+  width: 85%;
+  background-color: #0389e9;
+  padding: 45rpx 4%;
+  margin: 10rpx auto 12rpx;
+  border-radius: 8rpx;
+}
+.newscard .messageuser{
+  line-height: 0;
+}
+.newscard .messageuser .image_font{
+  width: 120rpx;
+}
+.newscard .messagetitle{
+  color: #ffffff;
+  font-size: 28rpx;
+  line-height: 1.5;
+  margin: 5rpx 0 5rpx 10rpx;
+  text-align: left;
+}
+.newscard .messagetitle .van-tag{
+  margin: 0 10rpx 0 0;
+}
+.newscard .messagetitle .location{
+  margin: 10rpx 0 0;
+  font-size: 22rpx;
+  color: #8e8ea7;
+}
+.newscard .messagetitle .location text{
+  margin: 0 0 0 6rpx;
+}
+.newscard .rate{
+  width: 60%;
+  float: left;
+  text-align: left;
+  font-size: 22rpx;
+}
+.newscard .distance{
+  width: 34%;
+  float: right;
+  font-size: 24rpx;
+  color: #f5641a;
+  text-align: right;
+  margin-right: 5%;
+}
+.newscard .tel{
+  line-height: 2;
+  font-size: 26rpx;
+}
+.newscard .tel .van-icon{
+  top: 8rpx;
+  margin-right: 6rpx;
+  font-size: 35rpx;
+}
+.newscard .content{
+  font-size: 28rpx;
+  color: #444444;
+  margin: 10rpx 0;
+  text-align: left;
+}
+
+.newscard .more{
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  width: 50%;
+  float: right;
+  text-align: right;
+  color: #ffffff;
+}
+
+.boxtitle{
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #333333;
+  margin: 40rpx 0 10rpx 30rpx;
+}
+
+.scope{
+  width: 92%;
+  margin: 20rpx auto;
+  border-radius: 8rpx;
+}
+.scope .rate{
+  font-size: 28rpx;
+  color: #333333;
+  margin: 15rpx auto;
+  padding: 20rpx 30rpx;
+}
+
+.tagsbox{
+  text-align: left;
+  margin-left: 10rpx;
+}
+.tagsbox .tags{
+  color: #031a36;
+  margin: 0 20rpx 0 0;
 }
 
 .apply{

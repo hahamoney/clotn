@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 18,
 			"list": [
 				{
 					"id": -1,
@@ -126,13 +126,6 @@
 				},
 				{
 					"id": -1,
-					"name": "车队详情",
-					"pathName": "pages/news/cardetail",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
 					"name": "个人物流申请",
 					"pathName": "pages/merchant/applypeople",
 					"query": "",
@@ -161,13 +154,6 @@
 				},
 				{
 					"id": -1,
-					"name": "车队详情",
-					"pathName": "pages/news/product",
-					"query": "id=101",
-					"scene": null
-				},
-				{
-					"id": -1,
 					"name": "商家详情",
 					"pathName": "pages/merchant/merchantdetail",
 					"query": "id=140",
@@ -178,6 +164,13 @@
 					"name": "个人物流",
 					"pathName": "pages/news/peopledetail",
 					"query": "id=46",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "车队物流详情",
+					"pathName": "pages/news/branch",
+					"query": "id=7",
 					"scene": null
 				}
 			]

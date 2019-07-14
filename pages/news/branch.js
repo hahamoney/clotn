@@ -20,6 +20,17 @@ Page({
       return false;
     }
     wx.request({
+      url: app.data.api + 'car_detail?id=' + options.id,
+      success(res) {
+        var data = res.data.data;
+        _this.setData({
+          carname: data.name,
+          carscope: data.scope,
+          carid: data.id
+        })
+      }
+    })
+    wx.request({
       url: app.data.api +'car_branch?car_id='+options.id,
       success(res){
         _this.setData({
@@ -37,5 +48,11 @@ Page({
       title: '车队列表',
       path: '/pages/news/branch?id=' + id,
     }
-  }
+  },
+
+  onClickHome() {
+    wx.switchTab({
+      url: '/pages/index/index'
+    });
+  },
 })
