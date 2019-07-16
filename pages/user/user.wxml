@@ -15,26 +15,80 @@
 
 <view class="container">
   <view class='containerbox'>
+    <view class="box_container">
+      <van-row>
+        <van-col span="8" bindtap="error">
+          <van-icon name="vip-card" color='#fe1b54' />
+          <!-- <view class="htitle">我购买的服务</view> -->
+        </van-col>
+        <van-col span="8" bindtap="error">
+        <van-icon name="bill" color='#42c5ff' />
+          <!-- <view class="htitle">积分明细</view> -->
+        </van-col>
+        <van-col span="8">
+          <navigator url="userstar">
+            <van-icon name="shop-collect" color='#fe6602' />
+            <!-- <view class="htitle">我的收藏</view> -->
+          </navigator>
+        </van-col>
+      </van-row>
+    </view>
+  </view>
+  <view class='containerbox'>
     <view class="box_header">
-      <van-icon name="star" color='#ffd013' /><text > 我的服务 </text>
+      <van-icon name="star" color='#ffd013' /><text > 我的信息 </text>
     </view>
     <view class="box_container">
       <van-row>
-
-        <van-col span="24">
+        <van-col span="6">
           <navigator url="userpublish">
-            <van-icon name="card" color='#ff5d6d' /><text>我的发布</text>
+            <van-icon name="card" color='#f3a976' />
+            <view class="title">我的发布</view>
           </navigator>
         </van-col>
-        <van-col span="24">
+        <van-col span="6">
           <navigator url="userreply">
-            <van-icon name="smile-comment" color='#1edb9b' /><text>我的评论</text>
+            <van-icon name="smile-comment" color='#e88988' />
+            <view class="title">我的评论</view>
           </navigator>
         </van-col>
-        <van-col span="24">
-          <navigator url="userstar">
-            <van-icon name="bookmark" color='#ff8447' /><text>我的收藏</text>
+        <van-col span="6" bindtap="error">
+            <van-icon name="service" color='#63d9c3' />
+            <view class="title">联系客服</view>
+        </van-col>
+      </van-row>
+    </view>
+  </view>
+  <view class='containerbox'>
+    <view class="box_header">
+      <van-icon name="star" color='#ffd013' /><text > 入驻信息 </text>
+    </view>
+    <view class="box_container">
+      <van-row>
+        <van-col span="6">
+          <navigator url="managermer">
+            <van-icon name="shop" color='#ff5d6d' />
+            <view class="title">商家管理</view>
           </navigator>
+        </van-col>
+        <van-col span="6">
+          <navigator url="managercar">
+            <van-icon name="map-marked" color='#1edb9b' />
+            <view class="title">物流管理</view>
+          </navigator>
+        </van-col>
+      </van-row>
+    </view>
+  </view>
+  <view class='containerbox'>
+    <view class="box_header">
+      <van-icon name="star" color='#ffd013' /><text > 其他 </text>
+    </view>
+    <view class="box_container">
+      <van-row>
+        <van-col span="6" bindtap="error">
+          <van-icon name="gift" color='#d91f17' />
+          <!-- <view class="title">积分商城</view> -->
         </van-col>
       </van-row>
     </view>

@@ -9,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    address: "",
     longitude: '',
     latitude: '',
     classify: [],
@@ -32,55 +33,51 @@ Page({
       }
     });
 
+    var id = options.id;
+    if (id) {
+      wx.request({
+        url: app.data.api + 'people_detail',
+        method: 'get',
+        data: { id: id },
+        dataType: 'json',
+        success(res) {
+          var data = res.data;
+          console.log(data);
+          obj.setData({
+            peopleid: id,
+            name: data.data.name,
+            phone: data.data.phone,
+            content: data.data.announcement,
+            address: data.data.address,
+            longitude: data.data.longitude,
+            latitude: data.data.latitude,
+            type: data.data.type,
+            handsome: data.data.handsome,
+          })
+        }
+      })
+    }
+
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
+    this.setData({
+      address: wx.getStorageSync('address'),
+      longitude: wx.getStorageSync('longitude'),
+      latitude: wx.getStorageSync('latitude'),
+    });
+    wx.removeStorageSync('address');
+    wx.removeStorageSync('longitude');
+    wx.removeStorageSync('latitude');
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  onChangeAddress(){
+    wx.navigateTo({
+      url: "/pages/merchant/map"
+    });
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
 
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
   //列表
   classify(e) {
     this.setData({
@@ -105,6 +102,7 @@ Page({
     var _this = this;
     var data = e.detail.value;
     var user_id = wx.getStorageSync('user_id');
+    var peopleid = _this.data.peopleid;
     if (data.name == null || data.name.replace(/\s*/g, "") == '') {
       app.showMsg('名称不能为空');
       return;
@@ -118,27 +116,29 @@ Page({
       return;
     }
 
-    wx.request({
-      url: app.data.api + 'people_save',
-      method: 'post',
-      dataType: 'Json',
-      data: {
-        name: data.name,
-        type: _this.data.classify[data.type]['id'],
-        phone: data.phone,
-        announcement: data.announcement,
-        user_id: user_id,
-        address:wx.getStorageSync('my_address'),
-        latitude: wx.getStorageSync('my_latitude'),
-        longitude: wx.getStorageSync('my_longitude'),
-      },
-      success(res) {
-        var data = JSON.parse(res.data);
-        // console.log(data);
-        _this.setData({
-          disabled: true
-        })
-       
+    if (peopleid) {
+      wx.request({
+        url: app.data.api + 'people_update',
+        method: 'post',
+        dataType: 'Json',
+        data: {
+          id: peopleid,
+          name: data.name,
+          type: _this.data.classify[data.type]['id'],
+          phone: data.phone,
+          announcement: data.announcement,
+          user_id: user_id,
+          address: data.merchant_city,
+          longitude: _this.data.longitude,
+          latitude: _this.data.latitude,
+        },
+        success(res) {
+          var data = JSON.parse(res.data);
+          // console.log(data);
+          _this.setData({
+            disabled: true
+          })
+
           wx.showToast({
             title: data.data.msg,
             icon: 'none',
@@ -151,8 +151,50 @@ Page({
               }, 1500)
             }
           })
-        
-      }
-    })
+
+        }
+      })
+    } else {
+      wx.request({
+        url: app.data.api + 'people_save',
+        method: 'post',
+        dataType: 'Json',
+        data: {
+          name: data.name,
+          type: _this.data.classify[data.type]['id'],
+          phone: data.phone,
+          announcement: data.announcement,
+          user_id: user_id,
+          // address: data.merchant_city,
+          // longitude: _this.data.longitude,
+          // latitude: _this.data.latitude,
+          address: wx.getStorageSync('my_address'),
+          latitude: wx.getStorageSync('my_latitude'),
+          longitude: wx.getStorageSync('my_longitude'),
+        },
+        success(res) {
+          var data = JSON.parse(res.data);
+          // console.log(data);
+          _this.setData({
+            disabled: true
+          })
+
+          wx.showToast({
+            title: data.data.msg,
+            icon: 'none',
+            duration: 1500,
+            success(res) {
+              setTimeout(function () {
+                wx.switchTab({
+                  url: '/pages/index/index'
+                });
+              }, 1500)
+            }
+          })
+
+        }
+      })
+    }
+
   }
 })

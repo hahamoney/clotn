@@ -26,7 +26,7 @@
 
 <view class="linkbtn wbg">
   <view class="btnbox">
-    <navigator url="carlist">
+    <navigator url="carindex">
       <image src="/image/btn2.png" mode="widthFix"></image>
     </navigator>
   </view>

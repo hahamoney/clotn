@@ -49,6 +49,10 @@ page{
   bottom: 0;
   width: 100%;
 }
+.uploadbtn .van-button{
+  color: #ffffff;
+  background-color: #fd9769;
+}
 .one_image{
   width:200rpx;
   padding: 0 5rpx;

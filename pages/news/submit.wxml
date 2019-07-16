@@ -1,6 +1,19 @@
+<swiper
+  indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}"
+  interval="{{interval}}"
+  duration="{{duration}}"
+>
+  <block>
+    <swiper-item>
+      <image src="/image/banner2.png" style="width:100%" class="slide-image"  mode="widthFix" />
+    </swiper-item>
+  </block>
+</swiper>
+
 <van-row custom-class="wbg">
   <van-col span="20" offset="2" custom-class="noticecard">
-    <text>免责声明：平台发布的所有信息（收费、免费）；平台只负责发布、展示，与平台本身无关，平台不负任何责任。</text>
+    <text>纺织人脉圈：这里都是跟纺织行业相关的朋友，申请入驻或者发布信息后，别人就可以加你微信或者打电话跟你联系。</text>
   </van-col>
 </van-row>
 
@@ -13,8 +26,8 @@
   custom-class="apply"
 >
   <view slot="title">
-    <view class="van-cell-text">我是商家，申请入驻</view>
-    <view class="van-cell-text_2">超低成本，网络宣传，简单有效，方便快捷！</view>
+    <view class="van-cell-text">我是商家联系人，申请入驻</view>
+    <view class="van-cell-text_2">共享全球3万+纺织行业资源，接收各地合作需求</view>
   </view>
 </van-cell>
 
@@ -27,8 +40,8 @@
   custom-class="apply"
 >
   <view slot="title">
-    <view class="van-cell-text">我是个人物流，申请入驻</view>
-    <view class="van-cell-text_2">超低成本，网络宣传，简单有效，方便快捷！</view>
+    <view class="van-cell-text">我是物流师傅，申请入驻</view>
+    <view class="van-cell-text_2">在线接单，生意上门，收入自由，让赚钱变得更容易</view>
   </view>
 </van-cell>
 

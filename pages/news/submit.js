@@ -1,20 +1,34 @@
 // pages/news/submit.js
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    imageurl: '/image/',
+    imgUrls: [
+      // { path: "banner1.jpeg" },
+      // { path: "banner4.png" },
+      // { path: "banner5.png" }
+    ],
+    indicatorDots: true,
+    autoplay: true,
+    interval: 5000,
+    duration: 1000,
+    scrollTop: 100,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+      var _this = this;
       var ball =wx.getStorageSync('ball');
-      this.setDate({
-        ball:ball
+      _this.setData({
+        ball:ball,
+        imageurl: app.data.image,
       })
   },
 

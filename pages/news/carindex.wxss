@@ -75,6 +75,20 @@ page{
   /* margin: 12rpx 0; */
 }
 
+.news3title{
+  font-size: 28rpx;
+  /* font-weight: 600; */
+  color: #333333;
+  margin: 25rpx 0 20rpx 30rpx;
+}
+
+.news4title{
+  font-size: 28rpx;
+  /* font-weight: 600; */
+  color: #333333;
+  margin: 8% 0 5% 30rpx;
+}
+
 .news{
   width: 85%;
   background-size: cover;

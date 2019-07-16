@@ -3,6 +3,7 @@ const app = getApp()
 Page({
 
   data: {
+    qrshow: false,
   },
 
   carlist(e) {
@@ -26,7 +27,8 @@ Page({
         _this.setData({
           carname: data.name,
           carscope: data.scope,
-          carid: data.id
+          carid: data.id,
+          qrcode: data.qrcode,
         })
       }
     })
@@ -48,6 +50,20 @@ Page({
       title: '车队列表',
       path: '/pages/news/branch?id=' + id,
     }
+  },
+
+  preqrcode(e) {
+    var _this = this;
+    _this.setData({
+      qrshow: true
+    })
+  },
+
+  qrClose() {
+    var _this = this;
+    _this.setData({
+      qrshow: false
+    })
   },
 
   onClickHome() {

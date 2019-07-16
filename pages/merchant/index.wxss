@@ -35,6 +35,10 @@ page{
 .linkbtn .btnbox image{
   width: 100%;
 }
+.linkbtn .text{
+  font-size: 30rpx;
+  text-align: center;
+}
 .title{
 }
 .noticebar{
@@ -121,13 +125,14 @@ page{
   text-align: right;
 }
 .tabswitch .newscard .news .tel{
+  font-weight: 600;
   line-height: 2;
   font-size: 26rpx;
 }
 .tabswitch .newscard .news .tel .van-icon{
   top: 8rpx;
   margin-right: 6rpx;
-  font-size: 35rpx;
+  font-size: 36rpx;
 }
 .tabswitch .newscard .news .content{
   font-size: 28rpx;

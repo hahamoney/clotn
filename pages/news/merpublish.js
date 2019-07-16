@@ -26,6 +26,7 @@ Page({
         url: app.data.api + 'msg_type?fid=' + option.type,
         dataType: 'json',
         success(res) {
+          // console.log(res.data.data);
           _this.setData({
             type: res.data.data,
           })
@@ -37,6 +38,7 @@ Page({
         type:wx.getStorageSync('msg_type'+option.type),
       })
     }
+    // console.log(wx.getStorageSync('msg_type' + option.type));
     _this.setData({
       f_type:option.type,
       address: wx.getStorageSync('my_address'),

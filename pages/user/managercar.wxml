@@ -1,0 +1,34 @@
+<view wx:for="{{list}}" class="news wbg">
+  <van-row>
+    <van-col span="5" custom-class="messageuser">
+      <image src="{{imageurl}}{{item.handsome}}" class="image_font"  mode="widthFix" />
+    </van-col>
+    <van-col span="19" custom-class="messagetitle">
+      <view>
+        <van-tag type="danger">{{item.type}}</van-tag>
+        {{item.name}}
+      </view>
+    </van-col>
+    <view>
+      <van-col span="19" custom-class="location" >
+        <van-icon name="location" color="#f5641a" />
+        {{item.address}}
+      </van-col>
+      <van-col span="18">
+        <view>
+          <view class="distance">{{item.distance}}km</view>
+        </view>
+      </van-col>
+    </view>
+    <van-col span="23" custom-class='btns'>
+      <van-col span="12" custom-class="leftbtns">
+        <van-tag size="medium" color="#5d5d5d" bindtap="edit" data-id="{{item.id}}">编辑</van-tag>
+        <van-tag size="medium" color="#5d5d5d" bindtap="delete" data-id="{{item.id}}">删除</van-tag>
+        <van-dialog id="van-dialog" />
+      </van-col>
+      <van-col span="12" custom-class="rightbtns">
+        <van-tag size="medium" color="{{statuscolor}}">{{item.status}}</van-tag>
+      </van-col>
+    </van-col>
+  </van-row>
+</view>

@@ -89,10 +89,18 @@
   </form>
 </van-popup>
 
-<!-- <view class="qrcode wbg">
-  <image src="{{imageurl}}{{qrcode}}" class="qrimg" mode="widthFix" bindtouchstart='timestart' bindtouchend='timeend' bindtap='saveimg' />
-  <view>长按保存图片</view>
-</view> -->
+<van-popup show="{{ qrshow }}" bind:close="qrClose">
+  <view class="qrcode wbg">
+    <image src="/image/qrcodebg1.png" class="qrbg" mode="widthFix"  bindtap="qrClose" />
+    <view class="info">
+      <view class="info1">{{name}}  <image src="/image/icon_10.png" mode="widthFix" /></view>
+      <view class="info2">{{phone}}</view>
+      <view class="info3">{{merchant_city}}</view>
+    </view>
+    <image src="{{imageurl}}{{handsome}}" class="avatar"  mode="widthFix" />
+    <image src="{{qrcode}}" class="qrimg" mode="widthFix" />
+  </view>
+</van-popup>
 
 <view class='phoneball' bindtap="onClickCall"><text>拨 打\n电 话</text></view>
 
@@ -115,10 +123,16 @@
     text="收藏"
     bind:click="onClickStar"
   />
-  <van-goods-action-button
+  <!-- <van-goods-action-button
     type="warning"
     text="一键拨号：{{phone}}"
     custom-class="phone"
     bind:click="onClickCall"
+  /> -->
+  <van-goods-action-button
+    type="warning"
+    text="点击生成专属海报"
+    custom-class="phone"
+    bind:click="preqrcode"
   />
 </van-goods-action>

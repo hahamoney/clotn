@@ -28,7 +28,7 @@
     <van-cell-group>
       <van-field
         label="联系人："
-        placeholder="请输入用户名"
+        placeholder="请输入你的称呼"
         border="{{ false }}"
         name = 'linkman'
       />

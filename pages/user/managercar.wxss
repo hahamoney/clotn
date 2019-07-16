@@ -1,0 +1,76 @@
+page{
+  background-color: rgba(241, 241, 241, 0.705);
+}
+.wbg{
+  background-color: #ffffff;
+}
+.news{
+  padding: 20rpx 4%;
+  margin: 0 0 12rpx 0;
+}
+.news .messageuser{
+}
+.news .messageuser .image_font{
+  width: 120rpx;
+}
+.news .messagetitle{
+  color: #333333;
+  font-size: 28rpx;
+  line-height: 1.5;
+  margin: 5rpx 0;
+  text-align: left;
+}
+.news .messagetitle .van-tag{
+  margin: 0 10rpx 0 0;
+}
+.news .location{
+  margin: 10rpx 0 0;
+  font-size: 22rpx;
+  color: #8e8ea7;
+  text-align: left;
+}
+.news .location .van-icon{
+  text-align: left;
+}
+.news .rate{
+  width: 60%;
+  float: left;
+  text-align: left;
+}
+.news .distance{
+  width: 40%;
+  float: right;
+  font-size: 24rpx;
+  color: #f5641a;
+  text-align: right;
+}
+.news .content{
+  font-size: 28rpx;
+  color: #444444;
+  margin: 10rpx 0;
+  text-align: left;
+}
+
+.btns{
+  margin: 25rpx 10rpx 10rpx;
+}
+.btns .leftbtns{
+  text-align: left;
+}
+.btns .leftbtns .van-tag{
+  color: #dfdfdf;
+  font-size: 22rpx;
+  margin-right: 14rpx;
+  padding: 8rpx 20rpx;
+  border-radius: 4px;
+}
+.btns .rightbtns{
+  text-align: right;
+}
+.btns .rightbtns .van-tag{
+  color: #dfdfdf;
+  font-size: 22rpx;
+  margin-right: 14rpx;
+  padding: 8rpx 20rpx;
+  border-radius: 4px;
+}

@@ -5,7 +5,13 @@ Page({
     username: '',
     avatarUrl:'/image/icon_7.png'
   },
-  
+
+  error(){
+    wx.showToast({
+      title: '暂未开放',
+      icon: 'none'
+    })
+  },
 
   onLoad: function () {
     var avatarUrl = wx.getStorageSync('avatarUrl');
@@ -15,6 +21,7 @@ Page({
       username: username,
     })
   },
+
   bindGetUserInfo(e){
     var _this = this;
       var userInfo = e.detail.userInfo;

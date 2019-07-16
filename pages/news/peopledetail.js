@@ -7,6 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    qrshow: false,
   },
 
   onLoad(options) {
@@ -148,6 +149,20 @@ Page({
           })
         }
       }
+    })
+  },
+
+  preqrcode(e) {
+    var _this = this;
+    _this.setData({
+      qrshow: true
+    })
+  },
+
+  qrClose() {
+    var _this = this;
+    _this.setData({
+      qrshow: false
     })
   },
 

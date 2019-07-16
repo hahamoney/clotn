@@ -39,7 +39,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 18,
+			"current": 20,
 			"list": [
 				{
 					"id": -1,
@@ -104,13 +104,6 @@
 					"scene": null
 				},
 				{
-					"id": 9,
-					"name": "商家详情",
-					"pathName": "pages/merchant/merchantdetail",
-					"query": "",
-					"scene": null
-				},
-				{
 					"id": -1,
 					"name": "商家入驻申请",
 					"pathName": "pages/merchant/apply",
@@ -171,6 +164,27 @@
 					"name": "车队物流详情",
 					"pathName": "pages/news/branch",
 					"query": "id=7",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "热门车队",
+					"pathName": "pages/news/carindex",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商家信息管理",
+					"pathName": "pages/user/managermer",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "物流信息管理",
+					"pathName": "pages/user/managercar",
+					"query": "",
 					"scene": null
 				}
 			]

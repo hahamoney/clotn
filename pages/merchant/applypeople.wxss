@@ -71,3 +71,12 @@ page{
   top: 27rpx;
   left: -10rpx;
 }
+.uploadbtn .van-button{
+  color: #ffffff;
+  background-color: #fd9769;
+}
+.tip{
+  font-size: 24rpx;
+  color: #707070;
+  padding: 10rpx 30rpx;
+}

@@ -30,6 +30,9 @@
       <image src="/image/btn1.png" mode="widthFix"></image>
     </navigator>
   </view>
+  <view class="text">
+    · 纺织人脉广 · 关系好 · 货才好
+  </view>
 </view>
 
 <van-tabs active="0" custom-class="tabswitch" bind:change="onChange">

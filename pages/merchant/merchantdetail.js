@@ -10,6 +10,7 @@ Page({
     imageurl: '',
     facility: [],
     show: false,
+    qrshow: false,
     disabled: false
   },
 
@@ -193,6 +194,20 @@ Page({
       title: '商家详情',
       path: '/pages/merchant/merchantdtail?id='+id,
     }
+  },
+
+  preqrcode(e){
+    var _this = this;
+    _this.setData({
+      qrshow: true
+    })
+  },
+
+  qrClose(){
+    var _this = this;
+    _this.setData({
+      qrshow: false
+    })
   },
 
   formSubmit(e) {

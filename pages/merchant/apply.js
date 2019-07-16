@@ -30,17 +30,45 @@ Page({
    */
   onLoad: function (options) {
     var obj = this;
+    var id = options.id;
+    
+    wx.request({
+      url: app.data.api+'classify?config_id=1',
+      success(res){
+        obj.setData({
+          merchant_classify:res.data
+        })
+      } 
+    });
 
+    if (id) {
       wx.request({
-        url: app.data.api+'classify?config_id=1',
-        success(res){
-          obj.setData({
-            merchant_classify:res.data
-          })
-        } 
-      });
-
-
+        url: app.data.api + 'merchant_detail',
+        method: 'get',
+        dataType: 'json',
+        data: { id: id },
+        success(res) {
+          wx.hideLoading();
+          var data = res.data;
+          // console.log(data)
+          if (data.code == '200') {
+            obj.setData({
+              merid: data.data.res.id,
+              keyword: data.data.res.keyword,
+              username: data.data.res.name,
+              phone: data.data.res.phone,
+              address: data.data.res.merchant_city,
+              content: data.data.res.announcement,
+              merchant_time: data.data.res.merchant_time,
+              merchant_detail_image: data.data.detail_image,
+              image_list: data.data.image_list,
+              longitude: data.data.longitude,
+              latitude: data.data.latitude,
+            })
+          }
+        },
+      })
+    }
     
   },
 
@@ -244,6 +272,7 @@ Page({
      var _this=this;
      var data=e.detail.value;
      var user_id = wx.getStorageSync('user_id');
+    var merid = _this.data.merid;
     // console.log(data.merchant_city);return false;
     if (data.name==null||data.name.replace(/\s*/g, "")==''){
       app.showMsg('名称不能为空');
@@ -267,51 +296,100 @@ Page({
       app.showMsg('商家介绍不能为空');
       return;
     }
-    if (data.facility.length==0) {
-      app.showMsg('商家设施不能为空');
-      return;
-    }
-
-    wx.request({
-      url: app.data.api + 'merchant_enter',
-      method:'post',
-      dataType:'Json',
-      data:{
-        name: data.name,
-        type: _this.data.merchant_classify[data.type]['id'],
-        keyword: data.keyword,
-        merchant_city: data.merchant_city,
-        phone: data.phone,
-        merchant_time: data.merchant_time,
-        facility: data.facility,
-        announcement: data.announcement,
-        image_list: _this.data.image_list,
-        merchant_detail_list:_this.data.merchant_detail_list,
-        user_id : user_id,
-        longitude: _this.data.longitude,
-        latitude:_this.data.latitude,
-      },
-      success(res){
-        var data = JSON.parse(res.data);
-        // console.log(data);
-        _this.setData({
-          disabled: true
-        })
-        if (data.msg == 'success') {
-          wx.showToast({
-            title: data.data.msg,
-            icon: 'none',
-            duration: 1500,
-            success(res) {
-              setTimeout(function () {
-                wx.switchTab({
-                  url: '/pages/index/index'
-                });
-              }, 1500)
-            }
+    // if (data.facility.length==0) {
+    //   app.showMsg('商家设施不能为空');
+    //   return;
+    // }
+    if (merid) {
+      wx.request({
+        url: app.data.api + 'merchant_update',
+        method: 'post',
+        dataType: 'Json',
+        data: {
+          id: _this.data.merid,
+          name: data.name,
+          type: _this.data.merchant_classify[data.type]['id'],
+          keyword: data.keyword,
+          merchant_city: data.merchant_city,
+          phone: data.phone,
+          merchant_time: data.merchant_time,
+          facility: data.facility,
+          announcement: data.announcement,
+          image_list: _this.data.image_list,
+          merchant_detail_list: _this.data.merchant_detail_list,
+          user_id: user_id,
+          longitude: _this.data.longitude,
+          latitude: _this.data.latitude,
+        },
+        success(res) {
+          var data = JSON.parse(res.data);
+          _this.setData({
+            disabled: true
           })
+          if (data.msg == 'success') {
+            wx.showToast({
+              title: data.data.msg,
+              icon: 'none',
+              duration: 1500,
+              success(res) {
+                setTimeout(function () {
+                  wx.switchTab({
+                    url: '/pages/index/index'
+                  });
+                }, 1500)
+              }
+            })
+          }
+        },
+        fail(res) {
+          console.log(res)
         }
-      }
-    })
+      })
+    } else {
+      wx.request({
+        url: app.data.api + 'merchant_enter',
+        method: 'post',
+        dataType: 'Json',
+        data: {
+          name: data.name,
+          type: _this.data.merchant_classify[data.type]['id'],
+          keyword: data.keyword,
+          merchant_city: data.merchant_city,
+          phone: data.phone,
+          merchant_time: data.merchant_time,
+          facility: data.facility,
+          announcement: data.announcement,
+          image_list: _this.data.image_list,
+          merchant_detail_list: _this.data.merchant_detail_list,
+          user_id: user_id,
+          longitude: _this.data.longitude,
+          latitude: _this.data.latitude,
+        },
+        success(res) {
+          var data = JSON.parse(res.data);
+          _this.setData({
+            disabled: true
+          })
+          if (data.msg == 'success') {
+            wx.showToast({
+              title: data.data.msg,
+              icon: 'none',
+              duration: 1500,
+              success(res) {
+                setTimeout(function () {
+                  wx.switchTab({
+                    url: '/pages/index/index'
+                  });
+                }, 1500)
+              }
+            })
+          }
+        },
+        fail(res) {
+          console.log(res)
+        }
+      })
+    }
+    
   }
 })

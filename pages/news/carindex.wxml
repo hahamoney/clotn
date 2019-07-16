@@ -23,7 +23,9 @@
   bind:search="onSearch"
 />
 
-<view class="news"  style="background-image: url({{bgurl}}images/carbg.png)"  wx:for="{{res}}"
+<view class='news3title'>近期热门搜索</view>
+
+<view class="news" style="background-image: url({{bgurl}}images/carbg.png)"  wx:for="{{res}}"
   bindtap="branch" data-id="{{item.id}}">
   <van-row>
     <van-col span="5" custom-class="messageuser" >
@@ -53,6 +55,12 @@
         点击查看
     </van-col>
   </van-row>
+</view>
+
+<view class='news4title'>
+<navigator url="carlist">
+  搜索更多物流/车队 >>
+</navigator>
 </view>
 
 <view class="tip">

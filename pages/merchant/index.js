@@ -42,6 +42,7 @@ Page({
         res.data.data.res.forEach(function (elem) {
           list[idx].push(elem);
         });
+        console.log(res)
         _this.setData({
           message_list: list,
         })

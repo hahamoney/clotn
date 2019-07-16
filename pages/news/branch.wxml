@@ -63,20 +63,33 @@
   </van-row>
 </view>
 
+<van-popup show="{{ qrshow }}" bind:close="qrClose">
+  <view class="qrcode wbg">
+    <image src="/image/qrcodebg2.png" class="qrbg" mode="widthFix"  bindtap="qrClose" />
+    <view class="info">
+      <view class="info1">{{carname}}  <image src="/image/icon_10.png" mode="widthFix" /></view>
+      <view class="info2"></view>
+      <view class="info3">{{carscope}}</view>
+    </view>
+    <image src="/image/home6.png" class="avatar"  mode="widthFix" />
+    <image src="{{qrcode}}" class="qrimg" mode="widthFix" />
+  </view>
+</van-popup>
+
 <van-goods-action>
   <van-goods-action-icon
     icon="wap-home"
     text="首页"
     bind:click="onClickHome"
   />
-  <!-- <van-goods-action-icon
+  <van-goods-action-icon
     icon="share"
     text="分享"
     open-type="share"
     send-message-path
     send-message-img
     bind:click="onShareAppMessage"
-  /> -->
+  />
   <!-- <van-goods-action-icon
     icon="star-o"
     text="收藏"
@@ -90,10 +103,8 @@
   /> -->
   <van-goods-action-button
     type="warning"
-    text="点击分享"
-    open-type="share"
+    text="点击生成专属海报"
     custom-class="phone"
-    data-id='{{carid}}'
-    bind:click="share"
+    bind:click="preqrcode"
   />
 </van-goods-action>
