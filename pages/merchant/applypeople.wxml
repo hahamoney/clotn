@@ -35,11 +35,6 @@
     bind:click-icon="onChangeAddress"
   /> -->
 
-  <!-- <view class='tip wbg'>
-    注：首次入驻成功后，平台将按照此位置来匹配周边商家客户\n
-    后续如需变更，请前往“我的-物流管理”页面进行修改
-  </view> -->
-
   <van-row custom-class="wbg">
     <van-col span="24">
       <view class='title'>服务介绍</view>
@@ -56,6 +51,13 @@
     </van-col>
     <van-col span="22" offset="1">
     </van-col>
+  </van-row>
+
+  <van-row custom-class="">
+    <view class='tip'>
+      注：首次入驻成功后，平台将按照此位置来匹配周边商家客户\n
+      后续如需变更，请前往“我的-物流管理”页面进行修改
+    </view>
   </van-row>
   
 <button type="primary" size="default" form-type="submit" disabled="{{disabled}}">

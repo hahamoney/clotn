@@ -79,4 +79,5 @@ page{
   font-size: 24rpx;
   color: #707070;
   padding: 10rpx 30rpx;
+  margin: 20rpx 0;
 }

@@ -19,16 +19,16 @@
       <van-row>
         <van-col span="8" bindtap="error">
           <van-icon name="vip-card" color='#fe1b54' />
-          <!-- <view class="htitle">我购买的服务</view> -->
+          <view class="htitle">我购买的服务</view>
         </van-col>
         <van-col span="8" bindtap="error">
         <van-icon name="bill" color='#42c5ff' />
-          <!-- <view class="htitle">积分明细</view> -->
+          <view class="htitle">积分明细</view>
         </van-col>
         <van-col span="8">
           <navigator url="userstar">
             <van-icon name="shop-collect" color='#fe6602' />
-            <!-- <view class="htitle">我的收藏</view> -->
+            <view class="htitle">我的收藏</view>
           </navigator>
         </van-col>
       </van-row>
@@ -88,7 +88,7 @@
       <van-row>
         <van-col span="6" bindtap="error">
           <van-icon name="gift" color='#d91f17' />
-          <!-- <view class="title">积分商城</view> -->
+          <view class="title">积分商城</view>
         </van-col>
       </van-row>
     </view>

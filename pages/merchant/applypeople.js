@@ -42,7 +42,7 @@ Page({
         dataType: 'json',
         success(res) {
           var data = res.data;
-          console.log(data);
+          // console.log(data);
           obj.setData({
             peopleid: id,
             name: data.data.name,
