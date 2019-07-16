@@ -65,13 +65,14 @@
 
 <van-popup show="{{ qrshow }}" bind:close="qrClose">
   <view class="qrcode wbg">
-    <image src="/image/qrcodebg2.png" class="qrbg" mode="widthFix"  bindtap="qrClose" />
+    <image src="/image/qrcodebg3.jpg" class="qrbg" mode="widthFix"  bindtap="qrClose" />
     <view class="info">
-      <view class="info1">{{carname}}  <image src="/image/icon_10.png" mode="widthFix" /></view>
-      <view class="info2"></view>
+    <!-- <image src="/image/icon_10.png" mode="widthFix" /> -->
+      <view class="info1">{{carname}}</view>
+      <view class="info2">{{res[0].phone}}</view>
       <view class="info3">{{carscope}}</view>
     </view>
-    <image src="/image/home6.png" class="avatar"  mode="widthFix" />
+    <!-- <image src="/image/home6.png" class="avatar"  mode="widthFix" /> -->
     <image src="{{qrcode}}" class="qrimg" mode="widthFix" />
   </view>
 </van-popup>
