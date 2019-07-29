@@ -13,9 +13,6 @@
 >
   <block>
     <swiper-item>
-      <image src="/image/banner1.jpeg" style="width:100%" class="slide-image"  mode="widthFix" />
-    </swiper-item>
-    <swiper-item>
       <image src="/image/banner6.png" style="width:100%" class="slide-image"  mode="widthFix" />
     </swiper-item>
   </block>
@@ -45,7 +42,7 @@
         <van-col span="12" custom-class="messagetitle" bindtap="merchantdetail" data-id="{{item.id}}">
           <view>
             <van-tag type="danger">{{item.type}}</van-tag>
-            {{item.name}}
+            {{item.name}}{{item.username}}
           </view>
         </van-col>
         <van-col span="7" custom-class="tel" bindtap='phone' data-phone='{{item.phone}}'>

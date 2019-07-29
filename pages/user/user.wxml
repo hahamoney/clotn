@@ -5,7 +5,7 @@
     </view>
     <view class="username">
     <text bindtap='login'wx:if="{{username}}"> {{username}} </text>
-    <button wx:else size='mini' open-type="getUserInfo"  bindgetuserinfo="bindGetUserInfo">请登陆</button>
+    <button wx:else size='mini' bindtap="login">请登陆</button>
 
     </view>
 
@@ -94,3 +94,12 @@
     </view>
   </view>
 </view>
+<van-popup show="{{show}}" bind:close="onClose" custom-class="comment">
+    <van-row custom-class="commentbox">
+      <van-col span="22" offset="1">
+        <van-cell title="登录需要授权哦" custom-class="title" />
+      </van-col>
+      <van-button class="subbtn" bindtap="onClose">取消</van-button>
+      <van-button class="subbtn" open-type="getUserInfo"  bindgetuserinfo="bindGetUserInfo">确定</van-button>
+    </van-row>
+</van-popup>

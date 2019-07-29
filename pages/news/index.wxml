@@ -13,12 +13,6 @@
 >
   <block>
     <swiper-item>
-      <image src="/image/banner1.jpeg" style="width:100%" class="slide-image"  mode="widthFix" />
-    </swiper-item>
-    <swiper-item>
-      <image src="/image/banner4.png" style="width:100%" class="slide-image"  mode="widthFix" />
-    </swiper-item>
-    <swiper-item>
       <image src="/image/banner5.png" style="width:100%" class="slide-image"  mode="widthFix" />
     </swiper-item>
   </block>
@@ -26,9 +20,9 @@
 
 <view class="linkbtn wbg">
   <view class="btnbox">
-    <navigator url="carindex">
-      <image src="/image/btn2.png" mode="widthFix"></image>
-    </navigator>
+    <!-- <navigator url="carindex"> -->
+      <image bindtap="error" src="/image/btn2.png" mode="widthFix"></image>
+    <!-- </navigator> -->
   </view>
   <view class="text">
     · 优质师傅 · 低价实惠 · 随叫随到
@@ -61,7 +55,8 @@
     <view wx:for="{{message_list[idx]}}" class="news wbg">
       <van-row>
         <van-col span="4" custom-class="messageuser">
-          <image src="{{imageurl}}{{item.handsome}}" class="image_font"  mode="widthFix" />
+          <image wx:if="{{item.status == 1}}" src="{{imageurl}}{{item.handsome}}" class="image_font"  mode="widthFix" />
+              <image wx:else src="{{item.handsome}}" class="image_font"  mode="widthFix" />
         </van-col>
         <van-col span="12" custom-class="messagetitle" bindtap="peopledetail" data-id="{{item.id}}">
           <view>{{item.name}}</view> 

@@ -296,6 +296,10 @@ Page({
       app.showMsg('商家介绍不能为空');
       return;
     }
+    if (data.username == null || data.username.replace(/\s*/g, "") == '') {
+      app.showMsg('联系人不能为空');
+      return;
+    }
     // if (data.facility.length==0) {
     //   app.showMsg('商家设施不能为空');
     //   return;
@@ -320,6 +324,7 @@ Page({
           user_id: user_id,
           longitude: _this.data.longitude,
           latitude: _this.data.latitude,
+          username:data.username
         },
         success(res) {
           var data = JSON.parse(res.data);

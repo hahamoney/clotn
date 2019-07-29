@@ -96,3 +96,16 @@ page{
   color: #727272;
   line-height: 1; 
 }
+.comment .commentbox{
+  background-color: rgba(241, 241, 241, 0.705);
+}
+.comment .commentbox .title{
+  background-color: rgba(241, 241, 241, 0.705);
+}
+.comment .commentbox .subbtn .van-button--normal{
+  margin: 5px 0 0 0;
+  width: 50%;
+}
+.comment .commentbox .contentbox .van-field__input{
+  height: 40px;
+}

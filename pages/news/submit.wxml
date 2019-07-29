@@ -6,7 +6,7 @@
 >
   <block>
     <swiper-item>
-      <image src="/image/banner2.png" style="width:100%" class="slide-image"  mode="widthFix" />
+      <image src="/image/index2.jpg" style="width:100%" class="slide-image"  mode="widthFix" />
     </swiper-item>
   </block>
 </swiper>

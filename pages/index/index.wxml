@@ -13,13 +13,13 @@
 >
   <block>
     <swiper-item>
-      <image src="/image/banner1.jpeg" style="width:100%" class="slide-image"  mode="widthFix" />
-    </swiper-item>
-    <swiper-item>
       <image src="/image/banner2.png" style="width:100%" class="slide-image"  mode="widthFix" />
     </swiper-item>
     <swiper-item>
-      <image src="/image/banner3.png" style="width:100%" class="slide-image"  mode="widthFix" />
+      <image src="/image/index1.jpg" style="width:100%" class="slide-image"  mode="widthFix" />
+    </swiper-item>
+    <swiper-item>
+      <image src="/image/index2.jpg" style="width:100%" class="slide-image"  mode="widthFix" />
     </swiper-item>
   </block>
 </swiper>
@@ -55,7 +55,7 @@
 <van-notice-bar
   mode="closeable"
   custom-class="noticebar"
-  text="通告栏"
+  text="3万人的纺织社区，为你匹配客户资源；置顶推广联系175020053202"
 />
 
 
@@ -124,6 +124,7 @@
       <van-row>
         <van-col span="4" custom-class="messageuser">
           <image src="{{imageurl}}{{item.image[0].path}}" class="image_font"  mode="widthFix" />
+         
         </van-col>
         <van-col span="12" custom-class="messagetitle" bindtap="merchantdetail" data-id="{{item.id}}">
           <view>{{item.name}}</view> 

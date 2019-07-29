@@ -3,7 +3,8 @@ const app = getApp()
 Page({
   data: {
     username: '',
-    avatarUrl:'/image/icon_7.png'
+    avatarUrl:'/image/icon_7.png',
+    show:false
   },
 
   error(){
@@ -23,8 +24,12 @@ Page({
   },
 
   bindGetUserInfo(e){
+
     var _this = this;
       var userInfo = e.detail.userInfo;
+      _this.setData({
+        show:false,
+      })
         wx.login({
           success(res) {
               console.log(res.code);
@@ -40,11 +45,21 @@ Page({
                 wx.setStorageSync('username', data.name);
                   _this.setData({
                     avatarUrl: data.avatarUrl,
-                    username: data.name
+                    username: data.name,
+      
                   })
               }
             })
           }
         })
-      }
+      },
+  onClose(){
+    this.setData({
+      show:false
+    })
+  }, login(){
+    this.setData({
+        show:true,
+    });
+  }
 })

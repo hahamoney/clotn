@@ -100,6 +100,8 @@ Page({
       url: '/pages/news/peoplelist?type=' + type,
     })
   },
-
+  error(){
+    app.showMsg('敬请期待');
+  }
 
 })
